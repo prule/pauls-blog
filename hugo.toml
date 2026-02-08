@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://prule.github.io/pauls-blog/'
 languageCode = 'en-us'
 title = 'Pauls Blog'
 theme = 'hugo-theme-cleanwhite'
@@ -21,13 +21,14 @@ ignoreConfig = false
 ignoreImports = false
 path = 'hugo-theme-cleanwhite'
 
+
 # Define the number of posts per page
 [pagination]
     pagerSize = 10
 
 [params]
   algolia_search = false
-  header_image = "/images/pexels-codioful-7130472.jpg"
+  header_image = "/pauls-blog/images/pexels-codioful-7130472.jpg"
   SEOTitle = "Pauls Blog"
   description = "Random programming thoughts"
   keyword = "Kotlin, Java"
@@ -43,7 +44,7 @@ path = 'hugo-theme-cleanwhite'
 
   # Sidebar settings
   sidebar_about_description = "Software Developer"
-  sidebar_avatar = "/images/profile.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  sidebar_avatar = "/pauls-blog/images/profile.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
   about_me = true
 
   # Last posts

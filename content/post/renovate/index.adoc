@@ -3,9 +3,9 @@ layout:     post
 title:      "Dependency upgrades with Renovate"
 description: "Automate dependency upgrades"
 excerpt: "Renovate is an automated dependency management tool that monitors your repository’s dependencies and automatically creates pull requests when updates become available."
-date:    2026-02-07
+date:    2025-02-02
 author: "Paul"
-publishDate: 2026-02-07
+publishDate: 2025-02-02
 tags:
     - Web dev
     - App

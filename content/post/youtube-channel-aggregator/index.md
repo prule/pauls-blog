@@ -3,9 +3,9 @@ layout:     post
 title:      "YouTube channel aggregator experiment"
 description: "Experimenting with an aggregated and filtered YouTube channel feed"
 excerpt: "While trying to keep up with what's happening in tennis and motorsport, I found myself wondering if the experience could be better. What if I could configure a list of channels, aggregate the videos, tag those videos by looking for keywords in their titles, and then have a convenient way to filter and navigate those."
-date:    2026-02-07
+date:    2026-01-01
 author: "Paul"
-publishDate: 2026-02-07
+publishDate: 2026-01-01
 tags:
     - Web dev
     - App

@@ -55,6 +55,9 @@ path = 'hugo-theme-cleanwhite'
   [[params.additional_menus]]
     title = "References"
     href = "/page/references"
+  [[params.additional_menus]]
+    title = "Projects"
+    href = "/page/projects"
 
  [params.social]
   rss            = true

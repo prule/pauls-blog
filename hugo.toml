@@ -2,7 +2,6 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Pauls Blog'
 theme = 'hugo-theme-cleanwhite'
-contentDir = "../content"
 
 [security]
   [security.exec]

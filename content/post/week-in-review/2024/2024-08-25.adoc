@@ -1,0 +1,34 @@
+---
+layout:     post
+title:      "Week in review 2024-08-25"
+description:      "Week in review - 2024-08-25"
+date:    2024-08-25
+author: "Paul"
+publishDate: 2024-08-25
+tags:
+    - WeekInReview
+categories: [ general ]
+---
+
+### Roadmap.sh
+
+https://roadmap.sh
+
+* roadmap.sh is a community effort to create roadmaps, guides and other educational content to help guide developers in picking up a path and guide their learnings.
+* Roadmaps based on Role or Skill, plus best practice and questions to test your knowledge
+
+### StartDataEngineering.com
+
+https://www.startdataengineering.com
+
+* An interesting blog with lots of data engineering information
+* For example:
+** What are the types of data quality checks?
+** How to implement data quality checks with greatexpectations
+** Why use Apache Airflow (or any orchestrator)?
+
+### Making money from a side project
+https://switowski.com/blog/i-have-built-my-first-successful-side-project-and-i-hate-it/
+
+* The trials and tribulations of making money from a side project - it's not all plain sailing.
+

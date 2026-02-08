@@ -1,3 +1,67 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Pauls Blog'
+theme = 'hugo-theme-cleanwhite'
+contentDir = "../content"
+
+[security]
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.asciidocExt]
+    workingFolderCurrent = true
+
+[module]
+[[module.imports]]
+disable = false
+ignoreConfig = false
+ignoreImports = false
+path = 'hugo-theme-cleanwhite'
+
+# Define the number of posts per page
+[pagination]
+    pagerSize = 10
+
+[params]
+  algolia_search = false
+  header_image = "/images/pexels-codioful-7130472.jpg"
+  SEOTitle = "Pauls Blog"
+  description = "Random programming thoughts"
+  keyword = "Kotlin, Java"
+  slogan = "Programming is life"
+  upstreamAttribution = true
+
+  image_404 = "img/404-bg.jpg"
+  title_404 = "Not Found :("
+  omit_categories = true
+
+  featured_tags = true
+  featured_condition_size = 0
+
+  # Sidebar settings
+  sidebar_about_description = "Software Developer"
+  sidebar_avatar = "/images/profile.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  about_me = true
+
+  # Last posts
+  last_posts = true
+
+  [[params.additional_menus]]
+    title = "References"
+    href = "/page/references"
+
+ [params.social]
+  rss            = true
+  linkedin       = "https://www.linkedin.com/in/paulrule/"
+  github         = "https://github.com/prule"
+  medium         = "https://medium.com/@prule70"
+  substack       = "https://paulr70.substack.com"
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+    author = "authors"

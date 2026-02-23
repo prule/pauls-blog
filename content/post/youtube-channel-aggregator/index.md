@@ -22,23 +22,23 @@ So I built a thing... it's not there yet, but it's a start...
 
 ### Workspaces
 To allow for completely different subjects, individual workspaces can be created:
-![workspace.png](workspace.png)
+![workspace.webp](workspace.webp)
 
 ### Channels
 Then, add channels to a workspace:
-![channels.png](channels.png)
+![channels.webp](channels.webp)
 
 ### Rules
 Define some rules to tag the videos:
-![rules.png](rules.png)
+![rules.webp](rules.webp)
 
 ### Tag groups
 And group tags together:
-![tags.png](tags.png)
+![tags.webp](tags.webp)
 
 ### Stream
 Then, we can view the stream of videos and filter by tags:
-![stream.png](stream.png)
+![stream.webp](stream.webp)
 
 The workspace configuration is simply a JSON file - a workspace can be imported (and refreshed) from a URL which allows for people to share configurations easily. For example, I could define the Tennis workspace with all of the tournaments and players defined and host it in a github repository to save others the trouble!
 

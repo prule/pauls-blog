@@ -22,7 +22,7 @@ To scratch my own itch, I started with a google sheet. The principle is simple: 
 
 Here's the end result:
 
-![Annual leave.webp](Annual leave.webp)
+![Annual leave.webp](Annual%20leave.webp)
 
 It's very simple to use:
 
@@ -34,7 +34,7 @@ It's very simple to use:
 
 Your leave balance is calculated and projected into the future based on what you've entered. The graph lets you easily see when you are approaching zero!
 
-![Annual leave annotated.webp](Annual leave annotated.webp)
+![Annual leave annotated.webp](Annual%20leave%20annotated.webp)
 
 Here's a link to the template - you can make a copy and then fill it in for yourself: [Leave Planner Template](https://docs.google.com/spreadsheets/d/1Ro2LpwpK-mnRq_xpYEs2IJD8CYNKcZafyVZ9Ch9ZTJI/edit?usp=sharing)
 

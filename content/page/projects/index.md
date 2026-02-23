@@ -1,4 +1,3 @@
-## Create and Share Custom Countdown Timers Online
 
 ## Blog
 
@@ -25,7 +24,7 @@ https://prule.github.io/leave-planner/
 
 ----
 
-## My Countdown To
+## Create and Share Custom Countdown Timers Online
 
 https://mycountdownto.com
 

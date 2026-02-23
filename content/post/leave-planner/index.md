@@ -22,7 +22,7 @@ To scratch my own itch, I started with a google sheet. The principle is simple: 
 
 Here's the end result:
 
-![Annual leave.png](Annual leave.png)
+![Annual leave.webp](Annual leave.webp)
 
 It's very simple to use:
 
@@ -34,7 +34,7 @@ It's very simple to use:
 
 Your leave balance is calculated and projected into the future based on what you've entered. The graph lets you easily see when you are approaching zero!
 
-![Annual leave annotated.png](Annual leave annotated.png)
+![Annual leave annotated.webp](Annual leave annotated.webp)
 
 Here's a link to the template - you can make a copy and then fill it in for yourself: [Leave Planner Template](https://docs.google.com/spreadsheets/d/1Ro2LpwpK-mnRq_xpYEs2IJD8CYNKcZafyVZ9Ch9ZTJI/edit?usp=sharing)
 
@@ -43,15 +43,15 @@ Here's a link to the template - you can make a copy and then fill it in for your
 Now that the concept has proven useful to me, it's time to turn it into a web application for convenient use...
 
 Main view:
-![leave planner - main.png](leave%20planner%20-%20main.png "Main View")
+![leave planner - main.webp](leave%20planner%20-%20main.webp "Main View")
 
 Enter leave:
-![leave planner - enter leave.png](leave%20planner%20-%20enter%20leave.png)
+![leave planner - enter leave.webp](leave%20planner%20-%20enter%20leave.webp)
 
 Settings:
-![leave planner - settings.png](leave%20planner%20-%20settings.png)
+![leave planner - settings.webp](leave%20planner%20-%20settings.webp)
 
 About:
-![leave planner - about.png](leave%20planner%20-%20about.png)
+![leave planner - about.webp](leave%20planner%20-%20about.webp)
 
 Available here, on github pages: https://prule.github.io/leave-planner/

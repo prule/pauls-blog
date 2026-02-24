@@ -15,3 +15,7 @@ git init
 ```shell
 git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
 ```
+
+```shell
+hugo server
+```

@@ -53,3 +53,16 @@ If you're already using Leave Planner, simply refresh the page (or let the new a
 As always, your data is stored locally in your browser for maximum privacy. We recommend exporting your data regularly from the Settings page as a backup.
 
 Happy Planning! 🚀
+
+----
+
+![settings.webp](settings.webp "Settings - enter public holidays data source and financial year start selector")
+
+----
+
+![fy-totals.webp](fy-totals.webp "Finanical Year Totals")
+
+----
+
+![wfh-selector.webp](wfh-selector.webp "Work from home selector - public holidays disabled")
+

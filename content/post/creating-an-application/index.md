@@ -142,7 +142,12 @@ Here's how the jar is made available:
 - **Building**: JitPack runs the build commands (like `./gradlew install` or `mvn install`) on its own infrastructure to create the JAR or AAR file.
 - **Serving**: Once the build is finished, JitPack stores the resulting artifact and serves it to the user. Future requests for that same version use the cached file.
 
-By enabling `acc-messages` and `acc-client` this way, dependencies can be found and `acc-client-example` can build and release. I'm also using GraalVM to do native builds for macOS, Windows and Linux - see [Native Build Tools](https://graalvm.github.io/native-build-tools/latest/index.html).
+By enabling `acc-messages` and `acc-client` this way, dependencies can be found and `acc-client-example` can build and release. 
+
+- https://jitpack.io/#prule/acc-messages
+- https://jitpack.io/#prule/acc-client
+
+I'm also using GraalVM to do native builds for macOS, Windows and Linux - see [Native Build Tools](https://graalvm.github.io/native-build-tools/latest/index.html).
 
 A GitHub [workflow](https://github.com/prule/acc-client-example/blob/main/.github/workflows/release-native.yml) triggers when a tag is pushed to `acc-client-example` and the native images are built and available under [releases](https://github.com/prule/acc-client-example/releases).
 

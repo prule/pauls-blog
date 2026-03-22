@@ -25,6 +25,23 @@ One of the best ways to catch up on a lot of information is via the [Shift-F1](h
 
 ![shift-f1-primer.webp](shift-f1-primer.webp)
 
+----
+
+[Inside Line F1 Podcast](https://podcasts.apple.com/au/podcast/inside-line-f1-podcast/id632531804?i=1000748694765)
+
+F1 2026 rules explained. Active aero, boost mode, overtaking mode, sustainable fuels, Bahrain testing, no DRS, new power units, mega joules, battery management and what it means for fans.
+
+----
+
+[F1 Nation](https://podcasts.apple.com/au/podcast/f1-nation/id1510367515)
+The new home of [Shift-F1](https://podcasts.apple.com/au/podcast/f1-explains/id1683133020). 
+
+## YouTube
+
+[CYMotorsport](https://www.youtube.com/channel/UCxdcaGkqr7UiNZi46f35yDw)
+
+F1 news, analysis, & Formula 1 data for fans of any level. Objectivity, almost annoyingly so, is what you'll get here. You'll get historical deep dives and detailed looks at all types of Formula 1 stories. You'll get only the highest form of motorsport video journalism and storytelling.
+
 ## F1TV
 
 I've got a subscription to [F1TV](https://f1tv.formula1.com/) - the entry level subscription F1 TV Access for AUD35 per year - which has F1 live timing data and delayed race replays. I can't watch the current season full races - just highlights - full races become available AFTER the season has finished, in the archives section. What you do get is 30 minute highlights a couple of days after the race and slightly longer highlights than you might get on YouTube.

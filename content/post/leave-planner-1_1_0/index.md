@@ -12,6 +12,7 @@ tags:
 categories: [ code ]
 ---
 
+> [Leave Planner](https://prule.github.io/leave-planner/) helps you track your leave balance and plan future holidays with ease.
 
 # Announcing Leave Planner v1.1.0: Work From Home Tracking & More!
 

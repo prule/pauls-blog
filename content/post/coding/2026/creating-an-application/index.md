@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Creating and releasing an application"
-description: ""
+description: "Creating an application that makes use of Assetto Corsa Competizione (ACC) telemetry"
 date:    2026-03-22
 author: "Paul"
 publishDate: 2026-03-22

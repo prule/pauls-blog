@@ -27,6 +27,10 @@ One of the best ways to catch up on a lot of information is via the [Shift-F1](h
 
 ----
 
+Acquired has a great episode on the [history of F1](https://podcasts.apple.com/au/podcast/acquired/id1050462261?i=1000752750417). 
+
+----
+
 [Inside Line F1 Podcast](https://podcasts.apple.com/au/podcast/inside-line-f1-podcast/id632531804?i=1000748694765)
 
 F1 2026 rules explained. Active aero, boost mode, overtaking mode, sustainable fuels, Bahrain testing, no DRS, new power units, mega joules, battery management and what it means for fans.
@@ -34,7 +38,7 @@ F1 2026 rules explained. Active aero, boost mode, overtaking mode, sustainable f
 ----
 
 [F1 Nation](https://podcasts.apple.com/au/podcast/f1-nation/id1510367515)
-The new home of [Shift-F1](https://podcasts.apple.com/au/podcast/f1-explains/id1683133020). 
+The new home of [F1 Explains](https://podcasts.apple.com/au/podcast/f1-explains/id1683133020). 
 
 ## YouTube
 

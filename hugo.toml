@@ -60,7 +60,7 @@ path = 'hugo-theme-cleanwhite'
     href = "/page/projects"
   [[params.additional_menus]]
     title = "Book Summaries"
-    href = "/page/book-summaries"
+    href = "/page/booksummaries"
 
  [params.social]
   rss            = true

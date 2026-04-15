@@ -17,7 +17,7 @@ categories: [ code ]
 
 Json5 is a superset of JSON that allows for comments and trailing commas. It's a popular choice for configuration files due to its readability and flexibility.
 
-From the web site:
+From the website:
 
 > Formally, the JSON5 Data Interchange Format is a superset of JSON (so valid JSON files will always be valid JSON5 files) that expands its syntax to include some productions from ECMAScript 5.1 (ES5). It's also a subset of ES5, so valid JSON5 files will always be valid ES5.*
 
@@ -33,7 +33,7 @@ The main reason I'm using Json5 is to
 
 == Example
 
-Lets take a simple Json file:
+Let's take a simple JSON file:
 
 .sample.json
 [source,json]
@@ -49,7 +49,7 @@ And convert it to Json5:
 include::./sample-without-comments.json5[]
 ----
 
-Let's bling it up with comments so we can explain what's going on:
+Lets bling it up with comments so we can explain what's going on:
 
 .sample.json5
 [source,json5]
@@ -61,7 +61,7 @@ include::./sample.json5[]
 
 == Typescript
 
-Now lets pretend the snippet originated in a TypeScript or JavaScript file - we can copy it to a Json5 file without modification -
+Now let's pretend the snippet originated in a TypeScript or JavaScript file - we can copy it to a Json5 file without modification -
 the point being that we can easily copy from code into configuration without having to convert to Json format - eg quoting the property names:
 
 .sample-typescript-json5.ts
@@ -84,7 +84,7 @@ const obj = JSON5.parse(json5String)
 const str = JSON5.stringify(obj)
 ```
 
-To convert Json5 to Json use the cli:
+To convert Json5 to JSON use the cli:
 
 ```
 npm install --global json5
@@ -101,7 +101,7 @@ Json5.encodeToString(Person("John", 31u)) // {name:"John",age:31}
 
 <<<
 
-Intellij IDEA supports Json5 out of the box.
+IntelliJ IDEA supports Json5 out of the box.
 
 image::Intellij-support-for-json5.png[Intellij Json5 editor]
 

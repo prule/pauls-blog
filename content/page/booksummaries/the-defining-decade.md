@@ -1,3 +1,8 @@
+---
+layout:     page
+draft: false
+---
+
 ## [The Defining Decade](https://amzn.to/4tM7OGT) by Meg Jay, Clinical Psychologist
 
 ---

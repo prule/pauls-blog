@@ -1,6 +1,6 @@
 ## Book Summaries
 
-### [Rework](./rework)
+### [Rework](rework)
 
 > Rework is a business book that offers unconventional and practical advice for starting and running a successful business. It encourages readers to question traditional workplace practices and focus on simplicity, efficiency, and genuine customer service. The book is broken down into micro-chapters — each between 2–3 pages long and containing a single tip designed to show how the authors have bucked convention.
 

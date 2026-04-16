@@ -1,3 +1,8 @@
+---
+layout:     page
+draft: false
+---
+
 ## [The Lean Startup](https://amzn.to/426TnBl) by Eric Ries, Entrepreneur & Silicon Valley Pioneer
 
 ---

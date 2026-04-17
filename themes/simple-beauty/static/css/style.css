@@ -6,7 +6,6 @@
     --text-color: #334155;
     --heading-color: #0f172a;
     --accent-color: #2563eb;
-    --accent-soft: #eff6ff;
     --muted-color: #64748b;
     --border-color: #e2e8f0;
     --font-ui: 'Inter', -apple-system, sans-serif;
@@ -29,7 +28,7 @@ body {
 }
 
 .container {
-    max-width: var(--max-width);
+    max-width: var(--container-width, 720px);
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -74,14 +73,13 @@ header ul li a {
     color: var(--muted-color);
     font-size: 0.85rem;
     font-weight: 500;
-    transition: color 0.2s ease;
 }
 
 header ul li a:hover {
     color: var(--accent-color);
 }
 
-/* Main Content */
+/* Main Content Area */
 .site-main {
     min-height: 60vh;
 }
@@ -103,11 +101,10 @@ h2 { font-size: 1.5rem; letter-spacing: -0.01em; }
 a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: opacity 0.2s ease;
 }
 
 a:hover {
-    opacity: 0.8;
+    text-decoration: underline;
 }
 
 /* Post List */
@@ -142,6 +139,7 @@ a:hover {
 
 .post-title a:hover {
     color: var(--accent-color);
+    text-decoration: none;
 }
 
 .post-summary {
@@ -187,7 +185,6 @@ article header {
     margin-bottom: 1.5rem;
 }
 
-/* Fix for Bullet Points and Numbered Lists */
 .content ul, .content ol {
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
@@ -197,13 +194,8 @@ article header {
     margin-bottom: 0.5rem;
 }
 
-.content ul {
-    list-style-type: disc;
-}
-
-.content ol {
-    list-style-type: decimal;
-}
+.content ul { list-style-type: disc; }
+.content ol { list-style-type: decimal; }
 
 .content blockquote {
     border-left: 3px solid var(--accent-color);
@@ -211,7 +203,6 @@ article header {
     padding: 0.5rem 0 0.5rem 2rem;
     font-style: italic;
     color: var(--muted-color);
-    font-size: 1.2rem;
 }
 
 .content img {
@@ -221,19 +212,21 @@ article header {
     margin: 3rem 0;
 }
 
+/* Simplified Code Blocks */
 .content pre {
-    background: var(--section-bg);
-    border: 1px solid var(--border-color);
+    background: #f6f8fa; /* GitHub Light bg */
     padding: 1.5rem;
     border-radius: 8px;
     overflow-x: auto;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 0.9rem;
     margin: 2.5rem 0;
+    line-height: 1.5;
+    border: 1px solid var(--border-color);
 }
 
 .content code {
-    background: var(--section-bg);
+    background: #f1f5f9;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-size: 0.85em;
@@ -259,26 +252,13 @@ article header {
 .site-footer a {
     color: var(--muted-color);
     font-weight: 500;
-    text-decoration: none;
-}
-
-.site-footer a:hover {
-    color: var(--accent-color);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1.25rem;
-    }
-
-    .site-header {
-        padding: 2rem 0;
-    }
-
+    .site-header { padding: 2rem 0; }
     h1 { font-size: 2.2rem; }
     .intro h2 { font-size: 2.4rem; }
-
     .site-footer .container {
         flex-direction: column;
         gap: 1.5rem;

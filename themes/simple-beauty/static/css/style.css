@@ -187,6 +187,24 @@ article header {
     margin-bottom: 1.5rem;
 }
 
+/* Fix for Bullet Points and Numbered Lists */
+.content ul, .content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.content li {
+    margin-bottom: 0.5rem;
+}
+
+.content ul {
+    list-style-type: disc;
+}
+
+.content ol {
+    list-style-type: decimal;
+}
+
 .content blockquote {
     border-left: 3px solid var(--accent-color);
     margin: 2.5rem 0;

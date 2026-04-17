@@ -1,3 +1,9 @@
+---
+layout:     page
+draft: false
+---
+
+
 ## Book Summaries
 
 ### [Rework](rework)

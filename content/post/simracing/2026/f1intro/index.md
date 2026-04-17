@@ -46,6 +46,29 @@ The new home of [F1 Explains](https://podcasts.apple.com/au/podcast/f1-explains/
 
 F1 news, analysis, & Formula 1 data for fans of any level. Objectivity, almost annoyingly so, is what you'll get here. You'll get historical deep dives and detailed looks at all types of Formula 1 stories. You'll get only the highest form of motorsport video journalism and storytelling.
 
+## Movies
+
+[F1 The Movie](https://amzn.to/4cTVBJF)
+
+Sonny Hayes was the best driver Formula 1 never got to see. One crash ended it all. Thirty years later, he's back — broke-down team, hotshot rookie teammate, and absolutely nothing to lose.
+F1 was filmed live at actual Grand Prix weekends around the world, with Lewis Hamilton producing and real drivers in the mix. This isn't Hollywood pretending to know what a race car looks like. It's the genuine article — just with a killer story underneath it.
+
+[Rush](https://amzn.to/4dNnqoW)
+
+James Hunt (Chris Hemsworth) vs Niki Lauda (Daniel Brühl). Rush is a true story. Ron Howard directs, Hans Zimmer scores it, and the two leads are absolutely on fire. It's 89% on Rotten Tomatoes for good reason. You don't need to know anything about F1 to love this film.
+
+[Senna](https://amzn.to/4chDnTh)
+
+Directed by Asif Kapadia, it covers Ayrton Senna's career from 1984 to his death at Imola in 1994 using only archival footage.
+
+[Grand Prix](https://amzn.to/3OLyhWf)
+
+The OG. Many consider it the benchmark for any racing movie Formula 1, and it still holds up. Fictional story set across the 1966 F1 season, but actual F1 stars including Phil Hill, Graham Hill and Juan Manuel Fangio make cameo appearances Formula 1, and real race footage is woven throughout.
+
+[1: Life on the limit](https://amzn.to/4cPuH6B)
+
+A documentary narrated by Michael Fassbender about F1's golden and most dangerous era.
+
 ## F1TV
 
 I've got a subscription to [F1TV](https://f1tv.formula1.com/) - the entry level subscription F1 TV Access for AUD35 per year - which has F1 live timing data and delayed race replays. I can't watch the current season full races - just highlights - full races become available AFTER the season has finished, in the archives section. What you do get is 30 minute highlights a couple of days after the race and slightly longer highlights than you might get on YouTube.

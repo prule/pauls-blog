@@ -1,0 +1,12 @@
+name = "Simple Beauty"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "A simple and beautiful Hugo theme"
+homepage = "http://example.com/"
+tags = ["blog", "simple", "clean"]
+features = ["blog"]
+min_hugo_version = "0.110.0"
+
+[author]
+  name = "Paul Rule"
+  homepage = "https://github.com/prule"

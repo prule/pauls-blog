@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section id="home">
+    <div class="intro" style="margin-bottom: 3rem;">
+        {{ with .Site.Params.description }}
+        <p style="font-size: 1.25rem; color: var(--muted-color);">{{ . }}</p>
+        {{ end }}
+    </div>
+
+    <h2 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-color); margin-bottom: 1.5rem;">Latest Posts</h2>
+    <ul class="post-list">
+        {{ range first 10 .Site.RegularPages }}
+        <li class="post-item">
+            <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+            <div class="post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+
+    <div style="margin-top: 2rem;">
+        <a href="/post/" style="font-weight: 500;">View all posts &rarr;</a>
+    </div>
+</section>
+{{ end }}

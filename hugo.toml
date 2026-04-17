@@ -22,6 +22,20 @@ theme = 'simple-beauty'
     noClasses = true
     style = "github"
 
+[markup.related]
+  threshold = 20
+  includeNewer = true
+  toLower = true
+  [[markup.related.indices]]
+    name = "tags"
+    weight = 100
+  [[markup.related.indices]]
+    name = "categories"
+    weight = 80
+  [[markup.related.indices]]
+    name = "date"
+    weight = 10
+
 # Define the number of posts per page
 [pagination]
     pagerSize = 10

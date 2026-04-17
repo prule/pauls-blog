@@ -6,8 +6,10 @@ date:    2024-08-25
 author: "Paul"
 publishDate: 2024-08-25
 tags:
-    - WeekInReview
-categories: [ general ]
+  - code
+  - app
+  - kotlin
+categories: [ code ]
 ---
 
 == Clean architecture - part 1

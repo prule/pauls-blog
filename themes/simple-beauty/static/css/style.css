@@ -4,13 +4,13 @@
     --bg-color: #ffffff;
     --section-bg: #f8fafc; /* Subtle grey-blue for footer */
     --header-bg: #e0f2fe;  /* Nice Pastel Blue */
-    --header-text: #0f172a; /* Dark text for light background */
+    --header-text: #0f172a;
     --header-link: #475569;
     --text-color: #334155;
     --heading-color: #0f172a;
     --accent-color: #2563eb;
     --muted-color: #64748b;
-    --border-color: #bae6fd; /* Slightly darker blue for border */
+    --border-color: #bae6fd;
     --font-ui: 'Inter', -apple-system, sans-serif;
     --font-serif: 'Lora', Georgia, serif;
     --max-width: 720px;
@@ -237,6 +237,37 @@ article header {
     color: var(--heading-color);
 }
 
+/* Pagination Fix */
+.pagination {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 0;
+}
+
+.pagination li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background: var(--section-bg);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.pagination li.active a, .pagination li a:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.pagination li.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 /* Footer */
 .site-footer {
     background-color: var(--section-bg);
@@ -272,6 +303,7 @@ article header {
 @media (max-width: 768px) {
     .site-header { padding: 2rem 0; }
     h1 { font-size: 2.2rem; }
+    .intro { flex-direction: column; text-align: center; gap: 1.5rem; }
     .intro h2 { font-size: 2.4rem; }
     .site-footer .container {
         flex-direction: column;

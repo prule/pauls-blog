@@ -1,25 +1,29 @@
 {{ define "main" }}
 <section id="home">
-    <div class="intro" style="margin-bottom: 3rem;">
+    <div class="intro" style="margin-bottom: 5rem;">
+        <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 1rem;">Hey, I'm Paul.</h2>
         {{ with .Site.Params.description }}
-        <p style="font-size: 1.25rem; color: var(--muted-color);">{{ . }}</p>
+        <p style="font-size: 1.25rem; color: var(--muted-color); max-width: 500px; line-height: 1.5;">{{ . }}</p>
         {{ end }}
     </div>
 
-    <h2 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-color); margin-bottom: 1.5rem;">Latest Posts</h2>
-    <ul class="post-list">
-        {{ range first 10 .Site.RegularPages }}
-        <li class="post-item">
-            <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem;">
+        <h3 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted-color); margin: 0;">Recent Writing</h3>
+        <a href="/post/" style="font-size: 0.8rem; font-weight: 600; color: var(--accent-color);">View All &rarr;</a>
+    </div>
+
+    <div class="post-list">
+        {{ range first 5 .Site.RegularPages }}
+        <div class="post-item">
+            <time class="post-date">{{ .Date.Format "January 2, 2006" }}</time>
             <div class="post-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
             </div>
-        </li>
+            {{ with .Summary }}
+            <div class="post-summary">{{ . | plainify | truncate 150 }}</div>
+            {{ end }}
+        </div>
         {{ end }}
-    </ul>
-
-    <div style="margin-top: 2rem;">
-        <a href="/post/" style="font-weight: 500;">View all posts &rarr;</a>
     </div>
 </section>
 {{ end }}

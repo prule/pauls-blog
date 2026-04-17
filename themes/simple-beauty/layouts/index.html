@@ -15,7 +15,9 @@
     <div class="post-list">
         {{ range first 5 .Site.RegularPages }}
         <div class="post-item">
+            {{ if not .Date.IsZero }}
             <time class="post-date">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ end }}
             <div class="post-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
             </div>

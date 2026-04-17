@@ -3,9 +3,11 @@
     <header>
         <h1>{{ .Title }}</h1>
         <div class="post-meta">
+            {{ if not .Date.IsZero }}
             <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ end }}
             {{ with .Params.tags }}
-            <span class="tags" style="margin-left: 1rem;">
+            <span class="tags" style="{{ if not $.Date.IsZero }}margin-left: 1rem;{{ end }}">
                 {{ range . }}
                 <a href="{{ "tags/" | relURL }}{{ . | urlize }}" style="color: var(--muted-color); margin-right: 0.5rem;">#{{ . }}</a>
                 {{ end }}

@@ -1,6 +1,5 @@
 ---
 title: "The Defining Decade"
-date: 2026-04-02
 layout:     page
 draft: false
 ---

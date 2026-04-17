@@ -1,4 +1,6 @@
 ---
+title: "The lean startup"
+date: 2026-04-03
 layout:     page
 draft: false
 ---

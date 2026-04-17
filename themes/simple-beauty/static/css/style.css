@@ -28,7 +28,7 @@ body {
 }
 
 .container {
-    max-width: var(--container-width, 720px);
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -212,7 +212,7 @@ article header {
     margin: 3rem 0;
 }
 
-/* Simplified Code Blocks */
+/* Code Blocks */
 .content pre {
     background: #f6f8fa; /* GitHub Light bg */
     padding: 1.5rem;
@@ -249,9 +249,20 @@ article header {
     align-items: center;
 }
 
+.footer-right {
+    display: flex;
+    gap: 1.5rem;
+}
+
 .site-footer a {
     color: var(--muted-color);
     font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: var(--accent-color);
 }
 
 /* Responsive */

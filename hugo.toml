@@ -3,7 +3,7 @@ relativeURLs = true
 canonifyURLs = true
 languageCode = 'en-us'
 title = 'Pauls Blog'
-theme = 'hugo-theme-cleanwhite'
+theme = 'simple-beauty'
 
 [security]
   [security.exec]
@@ -15,55 +15,39 @@ theme = 'hugo-theme-cleanwhite'
       unsafe = true
   [markup.asciidocExt]
     workingFolderCurrent = true
-
-[module]
-[[module.imports]]
-disable = false
-ignoreConfig = false
-ignoreImports = false
-path = 'hugo-theme-cleanwhite'
-
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    noClasses = true
+    style = "github"
 
 # Define the number of posts per page
 [pagination]
     pagerSize = 10
 
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "References"
+    url = "/page/references"
+    weight = 2
+[[menu.main]]
+    name = "Projects"
+    url = "/page/projects"
+    weight = 3
+[[menu.main]]
+    name = "Book Summaries"
+    url = "/page/booksummaries"
+    weight = 4
+
 [params]
-  algolia_search = false
-  header_image = "/pauls-blog/images/pexels-codioful-7130472.webp"
-  SEOTitle = "Pauls Blog"
   description = "Random programming thoughts"
-  keyword = "Kotlin, Java"
   slogan = "Programming is life"
-  upstreamAttribution = true
 
-  image_404 = "img/404-bg.jpg"
-  title_404 = "Not Found :("
-  omit_categories = true
-
-  featured_tags = true
-  featured_condition_size = 0
-
-  # Sidebar settings
-  sidebar_about_description = "Software Developer"
-  sidebar_avatar = "/images/profile.webp"      # use absolute URL, seeing it's used in both `/` and `/about/`
-  about_me = true
-
-  # Last posts
-  last_posts = true
-
-  [[params.additional_menus]]
-    title = "References"
-    href = "/page/references"
-  [[params.additional_menus]]
-    title = "Projects"
-    href = "/page/projects"
-  [[params.additional_menus]]
-    title = "Book Summaries"
-    href = "/page/booksummaries"
-
- [params.social]
-  rss            = true
+  # Social links
   linkedin       = "https://www.linkedin.com/in/paulrule/"
   github         = "https://github.com/prule"
   medium         = "https://medium.com/@prule70"

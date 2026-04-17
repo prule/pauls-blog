@@ -2,12 +2,15 @@
 
 :root {
     --bg-color: #ffffff;
-    --section-bg: #f8fafc; /* Subtle grey-blue */
+    --section-bg: #f8fafc; /* Subtle grey-blue for footer */
+    --header-bg: #e0f2fe;  /* Nice Pastel Blue */
+    --header-text: #0f172a; /* Dark text for light background */
+    --header-link: #475569;
     --text-color: #334155;
     --heading-color: #0f172a;
     --accent-color: #2563eb;
     --muted-color: #64748b;
-    --border-color: #e2e8f0;
+    --border-color: #bae6fd; /* Slightly darker blue for border */
     --font-ui: 'Inter', -apple-system, sans-serif;
     --font-serif: 'Lora', Georgia, serif;
     --max-width: 720px;
@@ -35,7 +38,7 @@ body {
 
 /* Header & Nav */
 .site-header {
-    background-color: var(--section-bg);
+    background-color: var(--header-bg);
     border-bottom: 1px solid var(--border-color);
     padding: 3rem 0;
     margin-bottom: 4rem;
@@ -57,7 +60,7 @@ header h1 {
 
 header h1 a {
     text-decoration: none;
-    color: var(--heading-color);
+    color: var(--header-text);
 }
 
 header ul {
@@ -70,9 +73,10 @@ header ul {
 
 header ul li a {
     text-decoration: none;
-    color: var(--muted-color);
+    color: var(--header-link);
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
 header ul li a:hover {
@@ -258,7 +262,6 @@ article header {
     color: var(--muted-color);
     font-weight: 500;
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
 .site-footer a:hover {

@@ -3,7 +3,7 @@ relativeURLs = true
 canonifyURLs = true
 languageCode = 'en-us'
 title = 'Pauls Blog'
-theme = 'simple-beauty'
+theme = 'hugo-simple-beauty'
 
 [security]
   [security.exec]
@@ -20,6 +20,20 @@ theme = 'simple-beauty'
     guessSyntax = true
     lineNos = false
     noClasses = false
+
+[markup.related]
+  threshold = 20
+  includeNewer = true
+  toLower = true
+  [[markup.related.indices]]
+    name = "tags"
+    weight = 100
+  [[markup.related.indices]]
+    name = "categories"
+    weight = 80
+  [[markup.related.indices]]
+    name = "date"
+    weight = 10
 
 # Define the number of posts per page
 [pagination]

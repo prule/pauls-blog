@@ -13,9 +13,13 @@ git init
 ```
 
 ```shell
-git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+git submodule add https://github.com/prule/hugo-simple-beauty.git themes/hugo-simple-beauty
 ```
 
 ```shell
 hugo server
+```
+
+```shell
+hugo server --disableFastRender
 ```

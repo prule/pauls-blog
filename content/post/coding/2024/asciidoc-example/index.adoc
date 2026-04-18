@@ -18,7 +18,11 @@ categories: [ code ]
 // ifdef::env_hugo[:samples-dir: content/post/asciidoc-example]
 // ifndef::env_hugo[:samples-dir: .]
 
-[sidebar]
+{{< notice type="info" title="Note" >}}
+The source code for this document is available at [github](https://github.com/prule/asciidoc-example).
+Unfortunately though, GitHub does NOT support includes so you won't see this document rendered properly. Instead, I've used the Intellij plugin to generate a PDF document which you can see here: [ReadMe.pdf](ReadMe.pdf).
+{{< /notice >}}
+
 The source code for this document is available at {url-repo}[github].
 Unfortunately though, GitHub does NOT support includes so you won't see this document rendered properly. Instead, I've used the Intellij plugin to generate a PDF document which you can see here: link:ReadMe.pdf[ReadMe.pdf].
 

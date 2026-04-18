@@ -22,27 +22,27 @@
     --max-width: 720px;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #0f172a;
-        --section-bg: #1e293b;
-        --header-bg: #1e293b;
-        --header-text: #f8fafc;
-        --header-link: #cbd5e1;
-        --text-color: #cbd5e1;
-        --heading-color: #f8fafc;
-        --accent-color: #38bdf8;
-        --muted-color: #94a3b8;
-        --border-color: #334155;
-        --code-bg: #0d1117;
-        --code-keyword: #ff7b72;
-        --code-string: #a5d6ff;
-        --code-comment: #8b949e;
-        --code-name: #c9d1d9;
-        --code-func: #d2a8ff;
-    }
+/* Dark Mode Overrides */
+html[data-theme='dark'] {
+    --bg-color: #0f172a;
+    --section-bg: #1e293b;
+    --header-bg: #1e293b;
+    --header-text: #f8fafc;
+    --header-link: #cbd5e1;
+    --text-color: #cbd5e1;
+    --heading-color: #f8fafc;
+    --accent-color: #38bdf8;
+    --muted-color: #94a3b8;
+    --border-color: #334155;
+    --code-bg: #0d1117;
+    --code-keyword: #ff7b72;
+    --code-string: #a5d6ff;
+    --code-comment: #8b949e;
+    --code-name: #c9d1d9;
+    --code-func: #d2a8ff;
 }
 
+/* Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -68,7 +68,7 @@ body {
 .site-header {
     background-color: var(--header-bg);
     border-bottom: 1px solid var(--border-color);
-    padding: 3rem 0;
+    padding: 2rem 0;
     margin-bottom: 4rem;
     transition: background-color 0.3s ease;
 }
@@ -92,6 +92,12 @@ header h1 a {
     color: var(--header-text);
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 header ul {
     list-style: none;
     padding: 0;
@@ -111,6 +117,36 @@ header ul li a {
 header ul li a:hover {
     color: var(--accent-color);
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--header-link);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--accent-color);
+}
+
+html[data-theme='dark'] .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Icons */
+.sun-icon { display: none; }
+.moon-icon { display: block; }
+
+html[data-theme='dark'] .sun-icon { display: block; }
+html[data-theme='dark'] .moon-icon { display: none; }
 
 /* Main Content Area */
 .site-main {
@@ -259,12 +295,12 @@ article header {
     border: 1px solid var(--border-color);
 }
 
-.chroma .k { color: var(--code-keyword); font-weight: bold; } /* Keyword */
-.chroma .s { color: var(--code-string); } /* String */
-.chroma .c { color: var(--code-comment); font-style: italic; } /* Comment */
-.chroma .n { color: var(--code-name); } /* Name */
-.chroma .nf { color: var(--code-func); } /* Function */
-.chroma .m { color: var(--code-keyword); } /* Number/Literal */
+.chroma .k { color: var(--code-keyword); font-weight: bold; }
+.chroma .s { color: var(--code-string); }
+.chroma .c { color: var(--code-comment); font-style: italic; }
+.chroma .n { color: var(--code-name); }
+.chroma .nf { color: var(--code-func); }
+.chroma .m { color: var(--code-keyword); }
 
 .content code {
     background: var(--section-bg);
@@ -274,7 +310,7 @@ article header {
     color: var(--heading-color);
 }
 
-/* Pagination Fix */
+/* Pagination */
 .pagination {
     display: flex;
     list-style: none;
@@ -332,16 +368,11 @@ article header {
     color: var(--accent-color);
 }
 
-/* Related Writing Partial Fix */
-.related-posts {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
-    .site-header { padding: 2rem 0; }
+    .site-header { padding: 1.5rem 0; }
+    header nav { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .nav-right { flex-direction: column; gap: 1rem; }
     h1 { font-size: 2.2rem; }
     .intro { flex-direction: column; text-align: center; gap: 1.5rem; }
     .intro h2 { font-size: 2.4rem; }

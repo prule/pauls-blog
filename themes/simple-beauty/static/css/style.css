@@ -11,7 +11,6 @@
     --accent-color: #2563eb;
     --muted-color: #64748b;
     --border-color: #bae6fd;
-    --code-bg: #f8fafc;
     --code-keyword: #d73a49;
     --code-string: #032f62;
     --code-comment: #6a737d;
@@ -34,7 +33,6 @@ html[data-theme='dark'] {
     --accent-color: #38bdf8;
     --muted-color: #94a3b8;
     --border-color: #334155;
-    --code-bg: #0d1117;
     --code-keyword: #ff7b72;
     --code-string: #a5d6ff;
     --code-comment: #8b949e;
@@ -67,7 +65,7 @@ body {
 /* Header & Nav */
 .site-header {
     background-color: var(--header-bg);
-    padding: 0.75rem 0; /* Tightened padding */
+    padding: 0.75rem 0;
     margin-bottom: 2rem;
     transition: background-color 0.3s ease;
 }
@@ -292,7 +290,7 @@ article header {
 
 /* Syntax Highlighting */
 .content pre {
-    background: var(--code-bg);
+    background: var(--section-bg);
     color: var(--code-name);
     padding: 1.25rem;
     border-radius: 8px;

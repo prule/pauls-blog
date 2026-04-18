@@ -23,6 +23,11 @@ html {
     --font-ui: 'Inter', -apple-system, sans-serif;
     --font-serif: 'Lora', Georgia, serif;
     --max-width: 720px;
+
+    --notice-info-bg: #e0f2fe;
+    --notice-info-border: #0ea5e9;
+    --notice-warning-bg: #ffedd5;
+    --notice-warning-border: #f97316;
 }
 
 /* Dark Mode Overrides */
@@ -42,6 +47,9 @@ html[data-theme='dark'] {
     --code-comment: #8b949e;
     --code-name: #c9d1d9;
     --code-func: #d2a8ff;
+
+    --notice-info-bg: #082f49;
+    --notice-warning-bg: #431407;
 }
 
 /* Base Styles */
@@ -296,6 +304,32 @@ article header {
     margin: 2.5rem 0;
 }
 
+/* Notices / Callouts */
+.notice {
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-left: 4px solid;
+    border-radius: 4px;
+}
+
+.notice.info {
+    background-color: var(--notice-info-bg);
+    border-color: var(--notice-info-border);
+}
+
+.notice.warning {
+    background-color: var(--notice-warning-bg);
+    border-color: var(--notice-warning-border);
+}
+
+.notice-title {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
 /* Syntax Highlighting */
 .content pre {
     background: var(--section-bg);
@@ -323,6 +357,43 @@ article header {
     border-radius: 4px;
     font-size: 0.85em;
     color: var(--heading-color);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--accent-color);
+    color: #ffffff !important; /* Force pure white for maximum contrast */
+    width: 44px; /* Slightly larger */
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff; /* Explicitly white */
+}
+
+.back-to-top:hover {
+    transform: translateY(-4px);
+    background-color: var(--heading-color); /* Change color on hover to stand out more */
 }
 
 /* Pagination */
@@ -398,4 +469,5 @@ article header {
         gap: 1.5rem;
         text-align: center;
     }
+    .back-to-top { right: 1.5rem; bottom: 1.5rem; }
 }

@@ -1,5 +1,4 @@
 baseURL = 'https://prule.github.io/pauls-blog/'
-relativeURLs = true
 canonifyURLs = true
 languageCode = 'en-us'
 title = 'Pauls Blog'
@@ -7,12 +6,11 @@ theme = 'hugo-simple-beauty'
 
 [security]
   [security.exec]
-    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
+    allow = ['^asciidoctor$']
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  [markup.goldmark.renderer]
+    unsafe = true
   [markup.asciidocExt]
     workingFolderCurrent = true
   [markup.highlight]
@@ -74,11 +72,6 @@ theme = 'hugo-simple-beauty'
   github         = "https://github.com/prule"
   medium         = "https://medium.com/@prule70"
   substack       = "https://paulr70.substack.com"
-
-[taxonomies]
-    category = "categories"
-    tag = "tags"
-    author = "authors"
 
 [services]
   [services.googleAnalytics]

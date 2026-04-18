@@ -1,6 +1,0 @@
-<div class="notice {{ .Get "type" | default "info" }}">
-    <div class="notice-title">{{ .Get "title" | default (upper (.Get "type" | default "info")) }}</div>
-    <div class="notice-content">
-        {{ .Inner | markdownify }}
-    </div>
-</div>

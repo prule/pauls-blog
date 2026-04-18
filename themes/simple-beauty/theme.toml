@@ -1,6 +1,6 @@
 name = "Simple Beauty"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/prule/hugo-simple-beauty/blob/master/LICENSE"
 description = "A simple and beautiful Hugo theme"
 homepage = "http://example.com/"
 tags = ["blog", "simple", "clean"]

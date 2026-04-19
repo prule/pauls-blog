@@ -6,6 +6,10 @@ draft: false
 
 ## [The Defining Decade](https://amzn.to/4tM7OGT) by Meg Jay, Clinical Psychologist
 
+{{< notice type="info" title="Amazon Affiliates Link" >}}
+Buy on Amazon [The Defining Decade](https://amzn.to/4tM7OGT)
+{{< /notice >}}
+
 ---
 
 ### Core Thesis

@@ -6,6 +6,10 @@ draft: false
 
 ## [REWORK](https://amzn.to/3Osu2yB) by Jason Fried and David Heinemeier Hansson of 37signals:
 
+{{< notice type="info" title="Amazon Affiliates Link" >}}
+Buy on Amazon [REWORK](https://amzn.to/3Osu2yB)
+{{< /notice >}}
+
 ---
 
 ## What It Is

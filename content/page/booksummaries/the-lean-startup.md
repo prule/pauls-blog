@@ -6,6 +6,10 @@ draft: false
 
 ## [The Lean Startup](https://amzn.to/426TnBl) by Eric Ries, Entrepreneur & Silicon Valley Pioneer
 
+{{< notice type="info" title="Amazon Affiliates Link" >}}
+Buy on Amazon [The Lean Startup](https://amzn.to/426TnBl)
+{{< /notice >}}
+
 ---
 
 ### Core Thesis

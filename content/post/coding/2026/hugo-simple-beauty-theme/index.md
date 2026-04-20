@@ -11,6 +11,10 @@ tags:
 categories: [ web ]
 ---
 
+{{< notice type="info" title="Github" >}}
+https://github.com/prule/hugo-simple-beauty
+{{< /notice >}}
+  
 
 # Hugo Simple Beauty Theme
 
@@ -104,11 +108,10 @@ Ensure your highlighter is configured to use classes:
 MIT
 
 ## Screenshots
+![Light mode](ScreenShot-light.webp)
 
-![Light mode](ScreenShot-light.png)
+![Dark mode](ScreenShot-dark.webp "Dark mode")
 
-![Dark mode](ScreenShot-dark.png "Dark mode")
+![Example markdown](ScreenShot-Markdown.webp "Example markdown")
 
-![Example markdown](ScreenShot-Markdown.png "Example markdown")
-
-![Example notice](ScreenShot-notice.png "Example notice")
+![Example notice](ScreenShot-notice.webp "Example notice")

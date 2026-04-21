@@ -29,6 +29,8 @@ The philosophy is simple: **One way to format code.** By removing the ability to
 
 The best way to use `ktfmt` is to never think about it. By installing the **ktfmt IntelliJ plugin**, you can have your IDE automatically format your code every time you save.
 
+> See https://plugins.jetbrains.com/plugin/14912-ktfmt and https://github.com/facebook/ktfmt#intellij-android-studio-and-other-jetbrains-ides
+
 ### Setup:
 1.  Install the **ktfmt** plugin from the IntelliJ Marketplace.
 2.  Go to `Settings > Other Settings > ktfmt Settings`.
@@ -38,17 +40,33 @@ The best way to use `ktfmt` is to never think about it. By installing the **ktfm
 
 Now, you can type as messily as you want; hitting `Cmd + S` will snap everything into a clean, consistent structure.
 
-> Note, Intellij configuration (files in the `.idea` folder) can be added to git so it's contained in the repository for everyone.
+To make intellij format as closely as possible, grab one of the editorconfig files from here https://github.com/facebook/ktfmt/tree/main/docs/editorconfig and make sure to have the editorconfig plugin enabled https://plugins.jetbrains.com/plugin/7294-editorconfig
+
+
+
+{{< notice type="info" title="Java Projects?" >}}
+If you are working on a Java project instead of Kotlin, you can get the exact same benefits by using the **google-java-format** plugin and its corresponding Gradle/Maven plugins.
+
+Use the spotless gradle plugin
+https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format
+
+and the Intellij plugin
+https://plugins.jetbrains.com/plugin/8527-google-java-format
+{{< /notice >}}
+
+> Note, IntelliJ configuration (files in the `.idea` folder) can be added to git so it's contained in the repository for everyone.
 
 ## 2. Gradle Integration: The Source of Truth
 
 While IDE plugins are great for individuals, you need a way to enforce formatting across the whole project. This is where the **ktfmt-gradle** plugin comes in.
 
+> See https://github.com/cortinico/ktfmt-gradle
+
 Add the following to your `build.gradle.kts`:
 
 ```kotlin
 plugins {
-    id("com.ncorti.ktfmt.gradle") version "0.20.0"
+    id("com.ncorti.ktfmt.gradle") version "0.26.0"
 }
 
 ktfmt {

@@ -53,6 +53,6 @@ https://github.com/prule
   - A coding exercise, design challenge, documentation workout - follows the incremental design and implementation of a configurable data processing pipeline.
 - [Rest/Hateoas example](https://github.com/prule/rest-hateoas)
   - A sample project to demonstrate a rest api with resources containing links to drive the frontend.
-  - Also see https://github.com/prule/spring-boot-react-hateoas-template
+  - Also see https://github.com/prule/spring-boot-react-hateoas-template/tree/material-ui-spike (the main branch is out of date, look at the material-ui-spike branch)
 - [Jsonata-java fork](https://github.com/prule/jsonata-java)
   - Fork of the jsonata-java library to use BigDecimal instead of float in order to solve the binary arithmetic problem (e.g. https://stackoverflow.com/questions/588004/is-floating-point-math-broken).

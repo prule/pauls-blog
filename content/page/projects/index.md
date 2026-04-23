@@ -12,6 +12,7 @@ https://prule.github.io/pauls-blog/
 https://prule.github.io/pauls-blog/tags/ytca/
 
 ![youtube-channel-aggregator.webp](youtube-channel-aggregator.webp)
+
 ----
 
 ## Leave planner
@@ -45,3 +46,13 @@ https://www.dailymotivationquotes.com
 ## GitHub
 
 https://github.com/prule
+
+- [Laptime Insight (WIP)](https://github.com/prule/laptime-insights-server)
+  - Current project in progress to show a dashboard for ACC laptimes.
+- [Data processing experiment](https://github.com/prule/data-processing-experiment/tree/latest)
+  - A coding exercise, design challenge, documentation workout - follows the incremental design and implementation of a configurable data processing pipeline.
+- [Rest/Hateoas example](https://github.com/prule/rest-hateoas)
+  - A sample project to demonstrate a rest api with resources containing links to drive the frontend.
+  - Also see https://github.com/prule/spring-boot-react-hateoas-template
+- [Jsonata-java fork](https://github.com/prule/jsonata-java)
+  - Fork of the jsonata-java library to use BigDecimal instead of float in order to solve the binary arithmetic problem.

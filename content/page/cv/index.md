@@ -1,6 +1,6 @@
 ---
 title: "CV"
-date: 2025-01-01
+date: 2026-05-27
 draft: false
 description: "Paul Rule - Senior Software Developer"
 ---
@@ -10,7 +10,7 @@ description: "Paul Rule - Senior Software Developer"
 **Senior Software Developer**
 
 Sydney, Australia (open to remote or hybrid)
- [linkedin.com/in/paulrule](https://www.linkedin.com/in/paulrule) · [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog/)
+· [linkedin.com/in/paulrule](https://www.linkedin.com/in/paulrule) · [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog/)
 
 ---
 

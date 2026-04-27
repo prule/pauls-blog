@@ -1,0 +1,19 @@
+extends: default
+font:
+  catalog:
+    Roboto:
+      normal: Roboto-Regular.ttf
+      bold: Roboto-Bold.ttf
+      italic: Roboto-Italic.ttf
+      bold_italic: Roboto-BoldItalic.ttf
+base:
+  font_family: Roboto
+heading:
+  font_family: Roboto
+  font_style: bold
+literal:
+  font_family: Roboto
+code:
+  font_family: Roboto
+monospace:
+  font_family: Roboto

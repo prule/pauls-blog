@@ -5,14 +5,19 @@ draft: false
 description: "Paul Rule - Senior Software Developer"
 ---
 
-# Paul Rule
+:pdf-themesdir: .
+:pdf-theme: cv-theme.yml
+:pdf-fontsdir: ./fonts
+
+
+## Paul Rule
 
 **Senior Software Developer**
 
 Sydney, Australia (open to remote or hybrid)
 · [linkedin.com/in/paulrule](https://www.linkedin.com/in/paulrule) · [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog/)
 
-References: https://www.linkedin.com/in/paulrule/details/recommendations/ 
+References: https://www.linkedin.com/in/paulrule/details/recommendations/
 
 ---
 

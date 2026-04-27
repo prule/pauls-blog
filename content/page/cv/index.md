@@ -12,6 +12,8 @@ description: "Paul Rule - Senior Software Developer"
 Sydney, Australia (open to remote or hybrid)
 · [linkedin.com/in/paulrule](https://www.linkedin.com/in/paulrule) · [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog/)
 
+References: https://www.linkedin.com/in/paulrule/details/recommendations/ 
+
 ---
 
 ## Summary

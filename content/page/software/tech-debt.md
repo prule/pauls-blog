@@ -1,3 +1,9 @@
+---
+title: "Technical Debt"
+layout:     page
+draft: false
+---
+
 ## Technical Debt — Thinking About It Honestly
 
 ### The Metaphor and Its Limits

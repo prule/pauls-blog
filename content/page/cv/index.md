@@ -26,6 +26,42 @@ Looking for a senior or lead engineering role in a friendly, energetic team that
 
 ---
 
+## Projects & Writing
+
+**Blog** — [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog)
+Technical writing covering Kotlin/Java/Programming, software design, and development practice.
+
+**GitHub** — [github.com/prule](https://github.com/prule)
+
+- **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry.
+- **Data Processing Experiment** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
+- **REST/HATEOAS Example** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
+- **JSONata-Java Fork** — Forked the JSONata Java library to replace floating-point arithmetic with `BigDecimal`, solving binary precision issues in expression evaluation.
+
+---
+
+## Skills
+
+**Languages & Frameworks**
+Kotlin, Java, Spring Boot, Ktor, Exposed, React, TypeScript, Node.js
+
+**Data**
+PostgreSQL, Apache Spark, JPA, Hibernate, SpiceDB
+
+**Architecture & Design**
+Clean architecture, domain modelling, REST/HATEOAS, ReBAC, CRDT
+
+**Testing**
+TDD, BDD, JBehave, JUnit
+
+**Tooling & Platforms**
+Git, Gradle, Maven, IntelliJ IDEA, Renovate
+
+**Practices**
+Agile/Scrum, technical mentoring, code review, pair programming
+
+---
+
 ## Experience
 
 ### Senior Software Developer — OneTeam Services
@@ -106,42 +142,6 @@ Contributed to the design and implementation of key platform functionality, incl
 ---
 
 *For earlier career history, see [LinkedIn](https://www.linkedin.com/in/paulrule)*
-
----
-
-## Skills
-
-**Languages & Frameworks**
-Kotlin, Java, Spring Boot, Ktor, Exposed, React, TypeScript, Node.js
-
-**Data**
-PostgreSQL, Apache Spark, JPA, Hibernate, SpiceDB
-
-**Architecture & Design**
-Clean architecture, domain modelling, REST/HATEOAS, ReBAC, CRDT
-
-**Testing**
-TDD, BDD, JBehave, JUnit
-
-**Tooling & Platforms**
-Git, Gradle, Maven, IntelliJ IDEA, Renovate
-
-**Practices**
-Agile/Scrum, technical mentoring, code review, pair programming
-
----
-
-## Projects & Writing
-
-**Blog** — [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog)
-Technical writing covering Kotlin/Java/Programming, software design, and development practice.
-
-**GitHub** — [github.com/prule](https://github.com/prule)
-
-- **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry.
-- **Data Processing Experiment** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
-- **REST/HATEOAS Example** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
-- **JSONata-Java Fork** — Forked the JSONata Java library to replace floating-point arithmetic with `BigDecimal`, solving binary precision issues in expression evaluation.
 
 ---
 

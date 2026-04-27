@@ -65,6 +65,10 @@ theme = 'hugo-simple-beauty'
     name = "CV"
     url = "/page/cv"
     weight = 7
+[[menu.main]]
+    name = "Software Development"
+    url = "/page/software"
+    weight = 7
 
 [params]
   description = "Random programming thoughts"

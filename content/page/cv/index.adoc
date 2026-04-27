@@ -1,10 +1,3 @@
----
-title: "CV"
-date: 2026-05-27
-draft: false
-description: "Paul Rule - Senior Software Developer"
----
-
 :pdf-themesdir: .
 :pdf-theme: cv-theme.yml
 :pdf-fontsdir: ./fonts
@@ -113,6 +106,8 @@ Contributed to the design and implementation of key platform functionality, incl
 *For earlier career history, see [LinkedIn](https://www.linkedin.com/in/paulrule)*
 
 ---
+
+<<<
 
 ## Skills
 

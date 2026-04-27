@@ -8,12 +8,40 @@ font:
       bold_italic: Roboto-BoldItalic.ttf
 base:
   font_family: Roboto
+  align: left
+  font_color: 333333
 heading:
   font_family: Roboto
   font_style: bold
+  font_color: 222222
+  h1:
+    font_size: 28
+    align: center
+    border_bottom_width: 1
+    border_bottom_color: EEEEEE
+  h2:
+    font_size: 16
+    margin_top: 20
+    border_bottom_width: 0.5
+    border_bottom_color: DDDDDD
 literal:
   font_family: Roboto
 code:
   font_family: Roboto
 monospace:
   font_family: Roboto
+footer:
+  font_size: 9
+  font_color: 777777
+  height: 0.5in
+  line_height: 1
+  recto:
+    right:
+      content: '{page-number} of {page-count}'
+    left:
+      content: 'Paul Rule'
+  verso:
+    right:
+      content: '{page-number} of {page-count}'
+    left:
+      content: 'Paul Rule'

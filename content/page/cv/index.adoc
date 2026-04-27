@@ -3,26 +3,21 @@
 :pdf-fontsdir: ./fonts
 
 
-## Paul Rule
+# Paul Rule
 
 **Senior Software Developer**
 
 Sydney, Australia (open to remote or hybrid)
-· [linkedin.com/in/paulrule](https://www.linkedin.com/in/paulrule) · [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog/)
-
-References: https://www.linkedin.com/in/paulrule/details/recommendations/
-
----
+· https://www.linkedin.com/in/paulrule[linkedin.com/in/paulrule] · https://prule.github.io/pauls-blog/[prule.github.io/pauls-blog]
+References
+· https://www.linkedin.com/in/paulrule/details/recommendations/[linkedin.com/in/paulrule/details/recommendations]
 
 ## Summary
-
 Senior Software Developer with 20+ years of experience building robust, maintainable systems on the JVM — primarily Java with Spring Boot, and increasingly Kotlin. Brings a strong emphasis on clean architecture, recognisable patterns, and thoughtful code design: writing software that communicates its intent clearly, encourages reuse, and stays easy to maintain as teams and requirements evolve.
 
 Collaborative by nature, with a track record of working alongside engineers and stakeholders to shape solutions together — not just delivering code, but bringing people on the journey, building shared understanding, and raising the capability of the team in the process.
 
 Looking for a senior or lead engineering role in a friendly, energetic team that takes pride in what it ships. Open to fully remote or hybrid positions based in Sydney, Australia.
-
----
 
 ## Experience
 
@@ -43,7 +38,7 @@ Joined early in the platform's development to help design and build the backend 
 
 *Stack: Kotlin, Ktor, Exposed, PostgreSQL, SpiceDB, Automerge, TypeScript, React*
 
----
+<<<
 
 ### Senior Software Developer — Prospection
 *2019–2024*
@@ -52,7 +47,7 @@ Prospection is a health data analytics platform providing insights to pharmaceut
 
 - **Generative AI assistant** — Part of the team that built a natural language interface to the Prospection platform, delivering a production Gen AI capability powered by ChatGPT.
 - **Common data format & task pipeline** — Introduced a common data format and designed the task pipeline to process it, replacing bespoke per-client development with a generic, configurable approach. Added dependency-aware concurrent task execution to maximise throughput and minimise processing time.
-- **Configurable data transforms** — Prototyped a configurable transformation framework allowing data to be mapped to a standard model using a combination of generic and custom logic — reducing reliance on code deployments for routine changes and improving standardisation across data sources. Separately implemented data transformations using Apache Spark supporting multiple input schemas and formats.
+- **Configurable data transforms** — Prototyped a transformation framework allowing data to be mapped to a standard model using a combination of generic and custom logic — reducing reliance on code deployments for routine changes and improving standardisation across data sources. Separately implemented data transformations using Apache Spark supporting multiple input schemas and formats.
 - **Zero-downtime data refresh** — Implemented background data loading using A/B schema switching, ensuring seamless data updates without system downtime.
 - **Simplified data loading prototype** — Explored using natural business keys to reduce processing complexity, resulting in faster loads and significantly easier debugging.
 - **Pipeline visibility** — Built a React frontend for controlling, monitoring, and observing the task pipeline, giving the team a clean operational interface.
@@ -70,7 +65,7 @@ Beyond client delivery, contributed to the consultancy's own capability by build
 
 *Stack: Java 8, Spring Boot, React, JavaScript, HTML5, CSS, PostgreSQL, Heroku, AWS, REST, HATEOAS, Microservices, Swift, iOS, Android, Node.js, Ember, Gradle, Git*
 
----
+<<<
 
 ### Software Developer — Reserve Bank of Australia
 *2014*
@@ -103,9 +98,7 @@ Contributed to the design and implementation of key platform functionality, incl
 
 ---
 
-*For earlier career history, see [LinkedIn](https://www.linkedin.com/in/paulrule)*
-
----
+*For earlier career history, see https://www.linkedin.com/in/paulrule[LinkedIn]*
 
 <<<
 
@@ -133,10 +126,10 @@ Agile/Scrum, technical mentoring, code review, pair programming
 
 ## Projects & Writing
 
-**Blog** — [prule.github.io/pauls-blog](https://prule.github.io/pauls-blog)
+**Blog** — https://prule.github.io/pauls-blog[prule.github.io/pauls-blog]
 Technical writing covering Kotlin/Java/Programming, software design, and development practice.
 
-**GitHub** — [github.com/prule](https://github.com/prule)
+**GitHub** — https://github.com/prule[github.com/prule]
 
 - **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry.
 - **Data Processing Experiment** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.

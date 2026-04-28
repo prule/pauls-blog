@@ -8,6 +8,10 @@ draft: false
 
 **By Kent Beck — Creator of Extreme Programming & Pioneer of Test-Driven Development**
 
+{{< notice type="info" title="Amazon Affiliates Link" >}}
+Buy on Amazon [Tidy First](https://amzn.to/4cB4oRJ)
+{{< /notice >}}
+
 ---
 
 ### Core Thesis

@@ -6,7 +6,11 @@ draft: false
 
 ## Be Useful: Seven Tools for Life — Summary
 
-**By Arnold Schwarzenegger — Actor, Bodybuilder, Governor, and self-described "Terminator"**
+**By Arnold Schwarzenegger — Actor, Bodybuilder, Governor**
+
+{{< notice type="info" title="Amazon Affiliates Link" >}}
+Buy on Amazon [Be Useful](https://amzn.to/4mU1RWj)
+{{< /notice >}}
 
 ---
 

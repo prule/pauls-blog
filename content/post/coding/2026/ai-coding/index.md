@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "AI Assisted coding"
+title: "AI-Assisted Engineering: From Implementation to Specification"
 description: "Are we using it properly"
 date:    2026-04-20
 author: "Paul"
@@ -9,39 +9,43 @@ tags:
   - Programming
   - AI
   - Productivity
-categories: [ code ]
-draft: true
+categories: [ diary ]
+draft: false
 ---
 
-Since I began using AI to assist with coding, it didn't take long to realise that the more relevant information (context) available to the assistant the better the result. I've already started putting ADRs and design decisions etc in git alongside the code (goodbye Confluence!). 
+The more I use AI to assist with coding, the more I realize that **context is the primary currency of effective assistance.** The quality of the output is directly proportional to the quality of information available to the assistant.
 
-This lead to the thoughts that the better I document the features I want then the better result I'll get - and once those features are properly documented, hopefully that makes maintenance easier too. This emphasises that spending more time on requirements - figuring out what it is that you want - leads to less time building/coding. And all of this would be true regardless of whether humans or AI are doing the implementing. 
+This realization has fundamentally changed how I work. I’ve started treating ADRs (Architecture Decision Records) and design documents not as "after-the-fact" documentation, but as essential inputs to be versioned in Git alongside the code. Goodbye Confluence; hello documentation-as-code.
 
-Now though, I'm starting to realise how much I've been missing out on. While researching Spec Driven Development, I came across this podcast about BMAD. 
+### The Shift to Specification-Driven Development
 
-https://podcasts.apple.com/au/podcast/tech-lead-journal/id1523421550?i=1000762391704
+There is a growing epiphany in the industry: the better we document the features we want, the better results we get from AI. But this isn't just about "better prompts." It’s about a shift toward **Spec-Driven Development**.
 
-I still think a lot of us aren’t using it properly. I know I haven’t. After listening to this podcast though, I am going to change things. Like all tools, we need to learn how to use them properly. These tools will get better over time, we’ve seen that happen SIGNIFICANTLY over the last 3 years.
+When we spend more time figuring out exactly what we want and documenting it clearly, implementation time shrinks. This is true whether a human or an AI is doing the work, but AI has made the ROI of a good specification much more immediate.
 
-This is only one such tool, there are many others - everyone is trying to solve this problem:
+I recently encountered the **BMAD** (Business, Model, Action, Data) framework via the [Tech Lead Journal](https://podcasts.apple.com/au/podcast/tech-lead-journal/id1523421550?i=1000762391704), and it reinforced that many of us (myself included) aren't yet using these tools to their full potential. We are still learning how to move from "writing code" to "orchestrating intent."
 
-- https://github.com/addyosmani/agent-skills
-- https://github.com/lilacmohr/ai-engineering-playbook
-- https://github.com/gsd-build/get-shit-done
-- https://github.com/obra/superpowers
-- https://github.com/msitarzewski/agency-agents
-- https://github.com/JohnCrickett/ai-assisted-engineering
+### The Emerging Ecosystem
 
-I’m hoping to spend this afternoon building an app this way and see how it works and learn more about it. On the surface, it looks like a process we should follow anyway. While I'm impressed with results from just a series of simple prompts, I'm hoping a structured approach will provide better results - from an implementation and maintenance perspective.
+This isn't just a change in mindset; a massive ecosystem of tools and playbooks is emerging to solve the "orchestration" problem:
 
-I would however like to stay with the incremental approach instead of waterfall - to learn and verify as I go.
+*   **Agent Skills & Playbooks:** [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) and the [AI Engineering Playbook](https://github.com/lilacmohr/ai-engineering-playbook).
+*   **Structured Automation:** Tools like [get-shit-done](https://github.com/gsd-build/get-shit-done), [superpowers](https://github.com/obra/superpowers), and [ai-assisted-engineering](https://github.com/JohnCrickett/ai-assisted-engineering).
+*   **Agent Frameworks:** [agency-agents](https://github.com/msitarzewski/agency-agents).
 
-Also, another interesting podcast here about how DHH has changed his opinion about AI assisted coding from negative to positive. https://podcasts.apple.com/au/podcast/the-pragmatic-engineer/id1769051199?i=1000760299204
+### Incrementalism vs. Waterfall
 
-We aren’t there yet, but things are changing…
+There is a risk that "Spec-Driven Development" sounds like a return to Big Design Up Front (Waterfall). However, I believe the future is **Incremental Specification**. We should still learn and verify as we go, using the AI to build thin, vertical slices of a feature, verifying the result, and then refining the spec for the next slice.
 
+Even [DHH has noted this shift](https://podcasts.apple.com/au/podcast/the-pragmatic-engineer/id1769051199?i=1000760299204), moving from AI-skepticism to seeing it as a transformative tool for the pragmatic programmer.
 
-Here's a couple of snippets from the BMAD podcast transcript that stood out to me:
+### The Path Forward
+
+We aren't "there" yet. The tools and our mental models are still evolving—significantly so over just the last three years. But the direction is clear: the most valuable skill for a developer is no longer just "knowing the syntax," but the ability to decompose a problem and specify its solution with precision.
+
+---
+
+Here's a couple of snippets from the [Tech Lead Journal #255 #255 - Stop Vibe Coding: Spec-Driven Development with The BMad Method - Brian Madison transcript](https://techleadjournal.dev/episodes/255/) that stood out to me:
 
 > I said for this sprint, what we’re gonna do is everybody’s only gonna have one story. Each will be assigned a story. That’s not something we normally do in Agile. We want it to be more organic, but I said, in this case, everybody will have one story to do. This is a piece of work that would normally take you two to three days to do. But the only caveat is everybody has to use the agent mode. You cannot type any code. And if you get it done, I want you to do it over again and keep doing it and refining it.
 

@@ -1,4 +1,10 @@
-## Mindset: The New Psychology of Success — Summary
+---
+title: "Mindset: The New Psychology of Success"
+layout:     page
+draft: false
+---
+
+## Mindset: The New Psychology of Success
 
 **By Carol S. Dweck — Professor of Psychology, Stanford University**
 

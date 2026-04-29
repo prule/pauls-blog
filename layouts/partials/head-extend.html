@@ -1,4 +1,112 @@
 <link rel="stylesheet" href="https://promo-manager.netlify.app/promo-style.css">
 <style>
     body { margin-bottom:25px; }
+    .post-toc {
+        margin-bottom: 2rem; /* Adjust this value as needed for spacing */
+    }
+
+    /* New styles for responsive TOC sidebar */
+    .single-post-layout {
+        display: flex;
+        flex-direction: column; /* Default to column for mobile */
+        gap: 2rem; /* Spacing between content and TOC */
+    }
+
+    .post-toc {
+        /* Basic styling for TOC on all screen sizes */
+        background-color: var(--section-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle separation */
+    }
+
+    .post-toc h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        color: var(--heading-color);
+    }
+
+    .post-toc ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .post-toc ul ul {
+        padding-left: 1rem; /* Indent sub-levels */
+    }
+
+    .post-toc li {
+        margin-bottom: 0.5rem;
+    }
+
+    .post-toc a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .post-toc a:hover {
+        color: var(--accent-color);
+        text-decoration: underline;
+    }
+
+    /* Desktop styles for sticky sidebar */
+    @media (min-width: 1200px) {
+        body.single-post .container {
+            max-width: 1100px; /* Wider container for sidebar */
+        }
+
+        .single-post-layout {
+            flex-direction: row-reverse; /* Reorder so TOC (first in HTML) is on the right */
+            justify-content: center;
+            align-items: flex-start;
+            gap: 4rem; /* Direct gap between content and sidebar */
+        }
+
+        .content {
+            flex: 0 1 var(--max-width);
+            width: var(--max-width);
+            margin-right: 0; /* Clear previous margin */
+        }
+
+        .post-toc {
+            position: sticky;
+            top: 4rem; /* Spacing from top when scrolling */
+            width: 280px; /* Slightly wider sidebar */
+            flex: 0 0 280px;
+            margin-bottom: 0;
+            max-height: calc(100vh - 8rem); /* Prevent TOC from being taller than screen */
+            overflow-y: auto; /* Allow scroll within TOC if too long */
+        }
+    }
+
+    /* Override theme's back-to-top positioning for vertical centering on all screens */
+    .back-to-top {
+        top: 50%;
+        bottom: auto; /* Remove default bottom positioning */
+        transform: translateY(-50%);
+    }
+
+    .back-to-top:hover {
+        /* Ensure hover effect combines with vertical centering */
+        transform: translateY(-50%) translateY(-4px);
+    }
+
+    @media (max-width: 768px) {
+        .back-to-top {
+            /* Override mobile-specific bottom positioning, keep right position */
+            top: 50%;
+            bottom: auto;
+            right: 1.5rem; /* Keep the mobile right position */
+            transform: translateY(-50%);
+        }
+        .back-to-top:hover {
+            transform: translateY(-50%) translateY(-4px);
+        }
+    }
 </style>

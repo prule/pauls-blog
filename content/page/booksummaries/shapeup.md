@@ -278,21 +278,6 @@ A feature that's 95% complete and not in production is not done. Shape Up optimi
 
 ---
 
-### Adding to the Synthesised Philosophy
-
-| Principle | Source |
-|---|---|
-| Shape work before assigning it — rough but not vague | Shape Up |
-| Appetite sets time budget before design, not after estimation | Shape Up |
-| No backlog — if it matters it will be pitched again | Shape Up |
-| Fixed time, variable scope — hammer scope not deadlines | Shape Up |
-| Small autonomous teams with no handoffs | Shape Up |
-| Uphill work and downhill work are fundamentally different | Shape Up |
-| Circuit breaker — extension is a new bet, not a default | Shape Up |
-| Cooldown is structural, not slack to fill | Shape Up |
-
----
-
 ### The Central Message
 
 > **Most teams aren't slow because their developers are slow. They're slow because the work arriving at developers is the wrong shape — too vague to start, too prescriptive to own, too large to finish, and too disconnected from real value to prioritise honestly. Fix the shape of the work before it reaches the team, give the team real autonomy and a real deadline, and then get out of the way. Shipping something real in six weeks beats planning something perfect for six months.**

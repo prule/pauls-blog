@@ -74,6 +74,7 @@ theme = 'hugo-simple-beauty'
   description = "Random programming thoughts"
   slogan = "Programming is life"
   sidebar_avatar = "/images/profile.webp"
+  showTableOfContents = true
 
   # Social links
   linkedin       = "https://www.linkedin.com/in/paulrule/"

@@ -31,7 +31,6 @@ The best way to use `ktfmt` is to never think about it. By installing the **ktfm
 
 > See https://plugins.jetbrains.com/plugin/14912-ktfmt and https://github.com/facebook/ktfmt#intellij-android-studio-and-other-jetbrains-ides
 
-### Setup:
 1.  Install the **ktfmt** plugin from the IntelliJ Marketplace.
 2.  Go to `Settings > Other Settings > ktfmt Settings`.
 3.  Tick **Enable ktfmt**.

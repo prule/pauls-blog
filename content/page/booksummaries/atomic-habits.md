@@ -9,7 +9,7 @@ draft: false
 
 **By James Clear — Writer, Entrepreneur, and Habits Researcher**
 
-{{< notice type="info" title="Online book" >}}
+{{< notice type="info" title="Amazon Affiliates Link" >}}
 Buy on Amazon [Atomic Habits: Tiny Changes, Remarkable Results](https://amzn.to/4t563Uz)
 {{< /notice >}}
 

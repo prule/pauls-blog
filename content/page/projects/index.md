@@ -22,6 +22,16 @@ https://prule.github.io/pauls-blog/
 
 ----
 
+## Laptime Insights
+
+https://laptimeinsights.com
+
+> Coming soon...
+
+![laptimeinsights-800w.webp](laptimeinsights-800w.webp)
+
+----
+
 ## YouTube channel aggregator
 
 https://prule.github.io/pauls-blog/tags/ytca/
@@ -56,3 +66,10 @@ https://www.dailymotivationquotes.com
 
 ![dailymotivationquotes.webp](./dailymotivationquotes.webp)
 
+----
+
+## Toolbox
+
+https://prule.github.io/tool-box/
+
+![toolbox.webp](toolbox.webp)

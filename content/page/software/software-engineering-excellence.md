@@ -2,6 +2,7 @@
 title: "A Pyramid Principle Structure - Software Engineering Excellence"
 layout:     page
 draft: false
+description: "This attempts to apply the McKinsey Pyramid Principle to these software development thoughts and practices."
 ---
 
 > This attempts to apply the McKinsey Pyramid Principle to these software development thoughts and practices.

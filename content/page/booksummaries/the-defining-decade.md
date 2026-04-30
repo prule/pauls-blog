@@ -1,5 +1,6 @@
 ---
 title: "The Defining Decade"
+description: "A summary of Meg Jay's The Defining Decade, arguing why your twenties are the most transformative and critical decade of your life."
 layout:     page
 draft: false
 ---

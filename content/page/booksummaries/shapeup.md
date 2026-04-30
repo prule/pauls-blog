@@ -1,5 +1,6 @@
 ---
 title: "Shape Up: Stop Running in Circles and Ship Work that Matters"
+description: "A summary of Shape Up by Ryan Singer, detailing Basecamp's approach to software development and shipping work that matters."
 layout:     page
 draft: false
 ---

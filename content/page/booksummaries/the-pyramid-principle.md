@@ -1,5 +1,6 @@
 ---
 title: "The Pyramid Principle"
+description: "A summary of Barbara Minto's The Pyramid Principle, a framework for structured communication and logical thinking."
 layout:     page
 draft: false
 ---

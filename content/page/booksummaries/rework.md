@@ -1,5 +1,6 @@
 ---
 title: "Rework"
+description: "A summary of Rework by Jason Fried and David Heinemeier Hansson, offering unconventional advice for building a successful business."
 layout:     page
 draft: false
 ---

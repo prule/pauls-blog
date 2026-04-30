@@ -1,5 +1,6 @@
 ---
 title: "Team Topologies"
+description: "A summary of Team Topologies by Matthew Skelton and Manuel Pais, focusing on team design as a first-class engineering decision."
 layout:     page
 draft: false
 ---

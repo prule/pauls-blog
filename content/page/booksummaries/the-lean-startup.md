@@ -1,5 +1,6 @@
 ---
 title: "The lean startup"
+description: "A summary of Eric Ries's The Lean Startup, introducing a scientific approach to building and managing successful startups."
 layout:     page
 draft: false
 ---

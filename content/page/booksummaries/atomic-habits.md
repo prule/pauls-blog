@@ -1,5 +1,6 @@
 ---
 title: "Atomic Habits"
+description: "A summary of James Clear's Atomic Habits, exploring how tiny changes lead to remarkable results through systems and consistency."
 layout:     page
 draft: false
 ---

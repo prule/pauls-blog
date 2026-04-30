@@ -1,5 +1,6 @@
 ---
 title: "Tidy First"
+description: "A summary of Kent Beck's Tidy First?, exploring the relationship between code structure, human behavior, and economic value."
 layout:     page
 draft: false
 ---

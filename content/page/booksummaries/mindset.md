@@ -1,5 +1,6 @@
 ---
 title: "Mindset: The New Psychology of Success"
+description: "A summary of Carol Dweck's Mindset, explaining the difference between fixed and growth mindsets and how they impact success."
 layout:     page
 draft: false
 ---

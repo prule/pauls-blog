@@ -1,5 +1,6 @@
 ---
 title: "Be Useful"
+description: "A summary of Arnold Schwarzenegger's Be Useful: Seven Tools for Life, providing a practical guide for success and purpose."
 layout:     page
 draft: false
 ---

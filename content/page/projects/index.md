@@ -2,10 +2,10 @@
 
 https://github.com/prule
 
-- [Laptime Insight (WIP)](https://github.com/prule/laptime-insights-server)
+- [Laptime Insights (WIP)](https://github.com/prule/laptime-insights-server)
     - Current project in progress to show a dashboard for ACC laptimes. Practice clean architecture, integration with sim racing software, kotlin/ktor/exposed/websockets.
 - [Data processing experiment](https://github.com/prule/data-processing-experiment/tree/latest)
-    - A coding exercise, design challenge, documentation workout - follows the incremental design and implementation of a configurable data processing pipeline.
+    - A coding exercise, design challenge, documentation workout - follows the incremental design and implementation of a configurable data processing pipeline. Each part is in its own branch with its own documentation - be sure to look at the branch "latest" for the end result.
 - [Rest/Hateoas example](https://github.com/prule/rest-hateoas)
     - A sample project to demonstrate a rest api with resources containing links to drive the frontend.
     - Also see https://github.com/prule/spring-boot-react-hateoas-template/tree/material-ui-spike (the main branch is out of date, look at the material-ui-spike branch)

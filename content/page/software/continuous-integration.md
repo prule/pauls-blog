@@ -2,6 +2,7 @@
 title: "Continuous Integration and Delivery"
 layout:     page
 draft: false
+description: "An in-depth look at Continuous Integration and Delivery, explaining how small, frequent integration events reduce risk and improve development economics."
 ---
 
 ## Continuous Integration and Delivery

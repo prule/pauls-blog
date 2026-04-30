@@ -2,6 +2,7 @@
 title: "Coding Tips — Principles in Practice"
 layout:     page
 draft: false
+description: "A collection of practical micro-decisions and coding patterns to improve readability, maintainability, and clarity in everyday development."
 ---
 
 ## Coding Tips — Principles in Practice

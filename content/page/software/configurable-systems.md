@@ -2,6 +2,7 @@
 title: "Configurable Systems"
 layout:     page
 draft: false
+description: "Discusses the transition from building bespoke solutions to creating configurable frameworks that model the shape of a problem, enabling faster delivery through configuration over code."
 ---
 
 ## Configurable Systems and the Right Abstraction

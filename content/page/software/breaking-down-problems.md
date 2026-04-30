@@ -2,6 +2,7 @@
 title: "Breaking Down Problems"
 layout:     page
 draft: false
+description: "An exploration of problem decomposition as a continuous cognitive skill essential for effective software engineering, from planning to implementation."
 ---
 
 ## Breaking Down Problems — Decomposition as a Core Skill

@@ -2,6 +2,7 @@
 title: "Feature Flags and Trunk-Based Development"
 layout:     page
 draft: false
+description: "Explores how feature flags and trunk-based development work together to decouple deployment from release, enabling continuous integration and safer, more controlled rollouts."
 ---
 
 ## Feature Flags and Trunk-Based Development

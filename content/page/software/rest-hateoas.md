@@ -2,6 +2,7 @@
 title: "REST and HATEOAS"
 layout:     page
 draft: false
+description: "Clarifies the core constraints of REST and the often-overlooked HATEOAS principle, explaining how hypermedia links can decouple clients from server-side URL structures and business logic."
 ---
 
 ## REST and HATEOAS

@@ -2,7 +2,7 @@
 title: "A Pyramid Principle Structure - Software Engineering Excellence"
 layout:     page
 draft: false
-description: "This attempts to apply the McKinsey Pyramid Principle to these software development thoughts and practices."
+description: "Applies the McKinsey Pyramid Principle to synthesize the key arguments of this collection into a coherent governing idea: that excellence comes from compounding practices rather than individual talent."
 ---
 
 > This attempts to apply the McKinsey Pyramid Principle to these software development thoughts and practices.

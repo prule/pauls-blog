@@ -1,6 +1,7 @@
 ---
 title: "The Spirit of the Craft"
 layout: "page"
+description: "The core philosophy behind this collection of software engineering documents, emphasizing human-centric design, complexity management, and the central importance of the business domain."
 ---
 
 # The Spirit of the Craft

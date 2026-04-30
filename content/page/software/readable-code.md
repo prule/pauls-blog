@@ -2,6 +2,7 @@
 title: "Writing Code for the Reader"
 layout:     page
 draft: false
+description: "Focuses on the human-centric aspect of programming, offering techniques to write code that communicates intent clearly through consistent abstraction levels and logical structure."
 ---
 
 ## Writing Code for the Reader

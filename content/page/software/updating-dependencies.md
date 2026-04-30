@@ -2,6 +2,7 @@
 title: "Keeping Dependencies Up to Date with Renovate"
 layout:     page
 draft: false
+description: "Highlights the importance of keeping dependencies current and demonstrates how tools like Renovate can automate this process, reducing security risks and upgrade debt through small, frequent updates."
 ---
 
 ## Keeping Dependencies Up to Date with Renovate

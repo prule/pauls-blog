@@ -2,6 +2,7 @@
 title: "Modelling Domains in Kotlin With Value Objects"
 layout:     page
 draft: false
+description: "Demonstrates the power of value objects in Kotlin to eliminate primitive obsession, enforce domain invariants at compile time, and create more expressive, self-documenting code."
 ---
 
 ## Modelling Domains in Kotlin With Value Objects

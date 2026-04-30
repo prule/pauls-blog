@@ -2,6 +2,7 @@
 title: "Managing Complexity"
 layout:     page
 draft: false
+description: "An analysis of essential versus accidental complexity, offering strategies to represent domain logic faithfully while relentlessly eliminating unnecessary technical noise."
 ---
 
 ## Managing Complexity — Keeping Systems Comprehensible

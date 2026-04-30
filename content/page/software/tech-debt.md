@@ -2,6 +2,7 @@
 title: "Technical Debt"
 layout:     page
 draft: false
+description: "Provides an honest framework for thinking about technical debt, categorizing different types of debt and offering strategies for when to address it based on interest rates and delivery impact."
 ---
 
 ## Technical Debt — Thinking About It Honestly

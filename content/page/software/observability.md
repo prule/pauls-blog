@@ -2,6 +2,7 @@
 title: "Observability"
 layout:     page
 draft: false
+description: "Argues that observability should be a design-time concern, explaining how structured logging, correlation IDs, and metrics enable meaningful production insights."
 ---
 
 ## Observability — Understanding Your System in Production

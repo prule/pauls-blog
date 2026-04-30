@@ -2,6 +2,7 @@
 title: "Test-Driven Development"
 layout:     page
 draft: false
+description: "An introduction to Test-Driven Development, detailing the red-green-refactor cycle and how writing tests first serves as a powerful design tool that builds confidence and ensures long-term maintainability."
 ---
 
 ## Test-Driven Development (TDD)

@@ -2,6 +2,7 @@
 title: "Collaborative Development"
 layout:     page
 draft: false
+description: "Examines a spectrum of collaborative development modes beyond strict pair programming, highlighting how to leverage second perspectives for better problem-solving and knowledge transfer."
 ---
 
 ## Collaborative Development — Beyond Strict Pair Programming

@@ -2,6 +2,7 @@
 title: "Decision Making"
 layout:     page
 draft: false
+description: "Explores strategies for making architectural decisions under uncertainty, distinguishing between reversible and irreversible choices to maintain optionality and speed."
 ---
 
 ## Decision Making Under Uncertainty

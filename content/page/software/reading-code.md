@@ -2,6 +2,7 @@
 title: "Reading and Understanding Unfamiliar Codebases"
 layout:     page
 draft: false
+description: "A guide to the essential but often neglected skill of reading and understanding unfamiliar codebases, providing strategies to build mental models quickly and effectively."
 ---
 
 ## Reading and Understanding Unfamiliar Codebases

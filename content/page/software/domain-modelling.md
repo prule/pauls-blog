@@ -2,6 +2,7 @@
 title: "Domain Modelling"
 layout:     page
 draft: false
+description: "Advocates for rich domain models that encapsulate business logic and protect invariants, drawing on Domain-Driven Design principles to create more robust and expressive code."
 ---
 
 ## Domain Modelling and Rich Domain Models

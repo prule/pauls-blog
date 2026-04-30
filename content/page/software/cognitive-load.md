@@ -2,6 +2,7 @@
 title: "Cognitive Load"
 layout:     page
 draft: false
+description: "Explores the impact of cognitive load on software development and provides strategies to minimize extraneous complexity to keep systems comprehensible."
 ---
 
 ## Cognitive Load — The Hidden Cost of Complexity

@@ -2,6 +2,7 @@
 title: "A Game Plan for Product and Software Development"
 layout:     page
 draft: false
+description: "A comprehensive roadmap for product and software development, integrating domain modelling, team topologies, and delivery practices into a coherent strategy for building sustainable systems."
 ---
 
 

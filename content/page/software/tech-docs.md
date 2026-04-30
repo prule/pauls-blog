@@ -2,6 +2,7 @@
 title: "Technical Documentation — What's Worth Writing Down"
 layout:     page
 draft: false
+description: "Proposes a pragmatic approach to technical documentation, focusing on recording the 'why' behind non-obvious decisions through lightweight formats like Architecture Decision Records (ADRs)."
 ---
 
 ## Technical Documentation — What's Worth Writing Down

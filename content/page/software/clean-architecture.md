@@ -2,6 +2,7 @@
 title: "Clean Architecture"
 layout:     page
 draft: false
+description: "A deep dive into Clean Architecture principles, explaining how to organize code so business logic remains central and independent of external frameworks and infrastructure."
 ---
 
 ## Clean Architecture

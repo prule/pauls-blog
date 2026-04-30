@@ -82,6 +82,11 @@ theme = 'hugo-simple-beauty'
   medium         = "https://medium.com/@prule70"
   substack       = "https://paulr70.substack.com"
 
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
 [services]
   [services.googleAnalytics]
     ID = 'G-QYKTN5W199'

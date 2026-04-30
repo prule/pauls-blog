@@ -9,7 +9,7 @@ https://github.com/prule
 - [Rest/Hateoas example](https://github.com/prule/rest-hateoas)
     - A sample project to demonstrate a rest api with resources containing links to drive the frontend.
     - Also see https://github.com/prule/spring-boot-react-hateoas-template/tree/material-ui-spike (the main branch is out of date, look at the material-ui-spike branch)
-- [Jsonata-java fork](https://github.com/prule/jsonata-java)
+- [Jsonata-java fork](https://github.com/prule/jsonata-java/tree/bigdecimal-experiment)
     - Fork of the jsonata-java library to use BigDecimal instead of float in order to solve the binary arithmetic problem (e.g. https://stackoverflow.com/questions/588004/is-floating-point-math-broken).
 
 ----

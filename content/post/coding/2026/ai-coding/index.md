@@ -9,7 +9,7 @@ tags:
   - Programming
   - AI
   - Productivity
-categories: [ diary ]
+categories: [ code ]
 draft: false
 ---
 

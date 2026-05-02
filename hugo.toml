@@ -71,7 +71,7 @@ theme = 'hugo-simple-beauty'
     weight = 7
 
 [params]
-  description = "Practical software development: Kotlin, AI-assisted engineering, and clean code."
+  description = "Practical software development: Java, Kotlin, AI-assisted engineering, and clean code."
   slogan = "Programming is life"
   sidebar_avatar = "/images/profile.webp"
   showTableOfContents = true

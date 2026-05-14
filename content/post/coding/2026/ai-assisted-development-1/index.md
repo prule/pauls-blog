@@ -65,8 +65,8 @@ Establishing the backend framework manually before using Claude Code wasn't a wo
 
 *Code is on [GitHub](https://github.com/prule/laptime-insights-server). More on this project as it develops.*
 
-![dashboard.png](dashboard.png)
+![dashboard.webp](dashboard.webp)
 
-![live.png](live.png)
+![live.webp](live.webp)
 
-![claude-design.png](claude-design.png)
+![claude-design.webp](claude-design.webp)

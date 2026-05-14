@@ -132,6 +132,51 @@ The `0` for height tells `cwebp` to maintain the aspect ratio automatically.
 
 ---
 
+## Integrating with IntelliJ/WebStorm External Tools
+
+For an even smoother workflow, you can configure IntelliJ-based IDEs (like IntelliJ IDEA or WebStorm) to run the `cwebp` conversion script directly on a directory. This allows you to right-click a folder containing PNGs and convert them all to WebP with a single action.
+
+Here's how to set it up:
+
+1.  **Create a shell script** (e.g., `convert_to_webp.sh`) in a convenient location (e.g., your project root or a `scripts` directory):
+
+    ```bash
+    #!/bin/bash
+    # convert_to_webp.sh
+    # Converts all PNG files in the current directory to WebP.
+
+    # Check if cwebp is installed
+    if ! command -v cwebp &> /dev/null
+    then
+        echo "cwebp could not be found. Please install it first (e.g., brew install webp)."
+        exit 1
+    fi
+
+    # Iterate over all .png files in the current directory
+    for f in *.png; do cwebp "$f" -o "${f%.png}.webp"; done
+    echo "All PNG files processed."
+    ```
+
+2.  **Make the script executable**:
+    ```bash
+    chmod +x convert_to_webp.sh
+    ```
+
+3.  **Configure External Tool in IntelliJ/WebStorm**:
+    *   Go to `Settings/Preferences` > `Tools` > `External Tools`.
+    *   Click the `+` icon to add a new tool.
+    *   **Name**: `Convert PNGs to WebP` (or similar)
+    *   **Description**: `Converts all PNG images in the selected directory to WebP format.`
+    *   **Program**: Click the folder icon and navigate to your `convert_to_webp.sh` script.
+    *   **Arguments**: `$FileDir$` (This passes the absolute path of the selected directory to your script).
+    *   **Working directory**: `$ProjectFileDir$` (This ensures the script runs from your project root, or adjust if your script expects a different working directory).
+    *   Check `Open console` to see the script's output.
+    *   Click `OK` to save.
+
+Now, you can right-click on any directory in your project, go to `External Tools`, and select `Convert PNGs to WebP` to run the script.
+
+---
+
 ## Deploying WebP on Your Site
 
 Once you have your `.webp` files, use the HTML `<picture>` element to serve WebP with a PNG fallback for any older browsers:
@@ -151,9 +196,9 @@ Modern browsers pick the WebP source; anything that doesn't support WebP falls b
 
 The case is simple:
 
-1. **WebP is smaller** — typically 25–80% smaller than PNG for the same visual quality
-2. **`cwebp` is fast** — one command, instant results, no GUI needed
-3. **Browser support is universal** — no meaningful risk to switching today
+1.  **WebP is smaller** — typically 25–80% smaller than PNG for the same visual quality
+2.  **`cwebp` is fast** — one command, instant results, no GUI needed
+3.  **Browser support is universal** — no meaningful risk to switching today
 
 If your site is still serving PNG files, you're sending your users more data than they need. `cwebp` fixes that in an afternoon.
 
@@ -231,25 +276,25 @@ Lossless-alpha compressed size: 14979 bytes
 **laptimeinsights.png 371 KB**
 {{< /center >}}
 
-![laptimeinsights.png](laptimeinsights.png "laptimeinsights.png 371 KB") 
+![laptimeinsights.png](laptimeinsights.png "laptimeinsights.png 371 KB")
 
 ---
 
 {{< center >}}
 **laptimeinsights-lossless.webp 110 KB**
 {{< /center >}}
-![laptimeinsights-lossless.webp](laptimeinsights-lossless.webp) 
+![laptimeinsights-lossless.webp](laptimeinsights-lossless.webp)
 
 ---
 
 {{< center >}}
 **laptimeinsights.webp 74 KB**
 {{< /center >}}
-![laptimeinsights.webp](laptimeinsights.webp) 
+![laptimeinsights.webp](laptimeinsights.webp)
 
 ---
 
 {{< center >}}
 **laptimeinsights-800w.webp 40 KB**
 {{< /center >}}
-![laptimeinsights-800w.webp](laptimeinsights-800w.webp) 
+![laptimeinsights-800w.webp](laptimeinsights-800w.webp)

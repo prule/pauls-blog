@@ -1,7 +1,7 @@
 ---
 title: "Building an ACC Dashboard with AI-Assisted Development"
 date: 2026-05-14
-tags: [kotlin, ai, claude-code, grpc, protobuf, clean-architecture, assetto-corsa]
+tags: [kotlin, ai, claude-code, grpc, protobuf, clean-architecture, assetto-corsa-competizione, LTI]
 description: "How I'm using Claude Code and AI design tools to build an ACC lap time dashboard - and what I'm learning about AI-assisted development in the process."
 ---
 

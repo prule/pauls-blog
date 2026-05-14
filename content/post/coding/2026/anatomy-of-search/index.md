@@ -8,6 +8,13 @@ publishDate: 2026-05-11
 tags:
   - Programming
   - Clean architecture
+  - LTI
+  - Kotlin
+  - Exposed
+  - Database
+  - KTOR
+  - HATEOAS
+  - Search
 categories: [ code ]
 draft: false
 ---

@@ -2,9 +2,9 @@
 layout:     post
 title: "Anatomy of a Search Endpoint: Filter, Sort, Paginate, HATEOAS"
 description: "A walk through `GET /api/1/sessions` in the Laptime Insights server"
-date:    2026-05-15
+date:    2026-05-11
 author: "Paul"
-publishDate: 2026-05-15
+publishDate: 2026-05-11
 tags:
   - Programming
   - Clean architecture

@@ -81,16 +81,43 @@ Now you have access to two critical tasks:
 
 Even with a Gradle plugin, developers sometimes forget to run the check before pushing. You can prevent unformatted code from ever entering your repository by using a **Git Hook**.
 
-I recommend using **Husky** or a simple shell script in your `.git/hooks/pre-commit` file:
+To make Git hooks shareable and version-controlled within your repository, you can use a dedicated `.githooks` directory. This is a modern approach that allows all team members to automatically use the same hooks.
 
-```bash
-#!/bin/sh
-# Run ktfmt on changed files before committing
-./gradlew ktfmtFormat
-git add .
-```
+Here's how to set it up:
 
-This ensures that every commit is already compliant with the team's style guide, making your PRs look pristine from day one.
+1.  **Create a `.githooks` directory** in the root of your repository if it doesn't already exist.
+
+    ```bash
+    mkdir -p .githooks
+    ```
+
+2.  **Configure Git to use this directory** for hooks. Run this command once per repository:
+
+    ```bash
+    git config core.hooksPath .githooks
+    ```
+
+    This command tells Git to look for hooks in `.githooks/` instead of the default `.git/hooks/`.
+
+3.  **Create your `pre-commit` hook script** inside the `.githooks` directory (e.g., `.githooks/pre-commit`):
+
+    ```bash
+    #!/bin/sh
+    # Run ktfmt on changed files before committing
+    # Use this command
+    #   git config core.hooksPath .githooks
+    # to tell Git to look for hooks in `.githooks/` instead of the default `.git/hooks/`.
+    ./gradlew ktfmtFormat
+    git add .
+    ```
+
+4.  **Make the hook executable**:
+
+    ```bash
+    chmod +x .githooks/pre-commit
+    ```
+
+Now, every time you `git commit`, this script will automatically format any staged Kotlin files using `ktfmtFormat` and re-add them to your commit. This ensures that all code committed to the repository is consistently formatted. Remember to commit the `.githooks` directory and its contents so other team members can benefit from it. They will only need to run `git config core.hooksPath .githooks` once after cloning the repository.
 
 ## Conclusion
 

@@ -3,6 +3,7 @@ canonifyURLs = true
 languageCode = 'en-us'
 title = 'Pauls Blog'
 theme = 'hugo-simple-beauty'
+timezone = 'Australia/Sydney'
 
 [security]
   [security.exec]

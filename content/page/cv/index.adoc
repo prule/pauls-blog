@@ -47,7 +47,7 @@ Currently exploring senior and lead engineering opportunities with modern, high-
 |Git, Gradle, Maven, IntelliJ IDEA, Renovate
 
 |Practices
-|Agile/Scrum, technical mentoring, code review, pair programming
+|Agile/Scrum, technical mentoring, code review, pair programming, AI assisted development
 |===
 
 <<<

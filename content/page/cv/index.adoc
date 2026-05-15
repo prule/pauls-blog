@@ -12,18 +12,45 @@ Sydney, Australia (open to remote or hybrid)
 * https://www.linkedin.com/in/paulrule[linkedin.com/in/paulrule]
 * https://prule.github.io/pauls-blog/[prule.github.io/pauls-blog]
 
-References
-
-* https://www.linkedin.com/in/paulrule/details/recommendations/[linkedin.com/in/paulrule/details/recommendations]
+See LinkedIn for https://www.linkedin.com/in/paulrule/details/recommendations/[references]
 
 == Summary
 
-Senior Software Developer with 20+ years of experience building robust, maintainable systems on the JVM — primarily Java with Spring Boot, and increasingly Kotlin. Brings a strong emphasis on clean architecture, recognisable patterns, and thoughtful code design: writing software that communicates its intent clearly, encourages reuse, and stays easy to maintain as teams and requirements evolve.
+Senior Software Engineer with 20+ years of experience designing and delivering scalable JVM-based systems using Java, Spring Boot, and Kotlin. Known for building software that stays clean, adaptable, and maintainable long after the first release — with a strong focus on architecture, engineering discipline, and code that communicates clearly.
 
-Collaborative by nature, with a track record of working alongside engineers and stakeholders to shape solutions together — not just delivering code, but bringing people on the journey, building shared understanding, and raising the capability of the team in the process.
+I care deeply about creating systems that teams can move quickly and confidently within: well-structured codebases, consistent patterns, pragmatic design decisions, and engineering practices that reduce complexity instead of adding to it.
 
-Looking for a senior or lead engineering role in a friendly, energetic team that takes pride in what it ships. Open to fully remote or hybrid positions based in Sydney, Australia.
+Beyond hands-on development, I’ve built a reputation as a highly collaborative engineer who works closely with developers, product teams, and stakeholders to shape solutions together. I enjoy mentoring, lifting engineering standards, and helping teams build shared ownership and momentum — not just shipping features.
 
+I’m most energised by product-focused teams that value thoughtful engineering, continuous improvement, and high-quality delivery.
+
+Currently exploring senior and lead engineering opportunities with modern, high-performing teams — either hybrid in Sydney or fully remote.
+
+**Skills**
+
+[%noheader, cols="1,2"]
+
+|===
+
+|Languages & Frameworks|Kotlin, Java, Spring Boot, Ktor, Exposed, React, TypeScript, Node.js, Claude Code, Copilot
+
+|Data
+|PostgreSQL, Apache Spark, JPA, Hibernate, SpiceDB
+
+|Architecture & Design
+|Clean architecture, domain modelling, REST/HATEOAS, ReBAC, CRDT
+
+|Testing
+|TDD, BDD, JBehave, JUnit
+
+|Tooling & Platforms
+|Git, Gradle, Maven, IntelliJ IDEA, Renovate
+
+|Practices
+|Agile/Scrum, technical mentoring, code review, pair programming
+|===
+
+<<<
 
 == Projects & Writing
 
@@ -32,32 +59,11 @@ Technical writing covering Kotlin/Java/Programming, software design, and develop
 
 **GitHub** — https://github.com/prule[github.com/prule]
 
+- **Agent Harness Comparison** *(WIP)* - Experimenting with agent harnesses (eg OpenSpec, OpenCode) looking for sustainable ways to build and maintain software efficiently with the assistance of AI. Also comparing subscription LLMs to local LLMs.
 - **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry.
 - **Data Processing Experiment** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
 - **REST/HATEOAS Example** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
 - **JSONata-Java Fork** — Forked the JSONata Java library to replace floating-point arithmetic with `BigDecimal`, solving binary precision issues in expression evaluation.
-
-== Skills
-
-**Languages & Frameworks**
-Kotlin, Java, Spring Boot, Ktor, Exposed, React, TypeScript, Node.js
-
-**Data**
-PostgreSQL, Apache Spark, JPA, Hibernate, SpiceDB
-
-**Architecture & Design**
-Clean architecture, domain modelling, REST/HATEOAS, ReBAC, CRDT
-
-**Testing**
-TDD, BDD, JBehave, JUnit
-
-**Tooling & Platforms**
-Git, Gradle, Maven, IntelliJ IDEA, Renovate
-
-**Practices**
-Agile/Scrum, technical mentoring, code review, pair programming
-
-<<<
 
 == Education & Certifications
 
@@ -66,6 +72,8 @@ Agile/Scrum, technical mentoring, code review, pair programming
 **Sun Certified Java Programmer** — Sun Microsystems *(2001)*
 
 **Certified ScrumMaster** — Scrum With Style *(2011)*
+
+<<<
 
 == Experience
 
@@ -84,7 +92,7 @@ Joined early in the platform's development to help design and build the backend 
 - **Architecture uplift** — Introduced clean architecture, object-oriented patterns, and HATEOAS conventions, improving testability, maintainability, and consistency across the codebase.
 - **Developer tooling** — Built and iteratively improved a debug/test harness to support faster development and validation of flow execution behaviour.
 
-*Stack: Kotlin, Ktor, Exposed, PostgreSQL, SpiceDB, Automerge, TypeScript, React*
+*Stack: Copilot, Kotlin, Ktor, Exposed, PostgreSQL, SpiceDB, Automerge, TypeScript, React*
 
 <<<
 

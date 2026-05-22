@@ -1,6 +1,18 @@
+---
+title: "Building an app with OpenSpec"
+date: 2026-05-22
+tags: [ai, openspec]
+description: ""
+categories: [ code ]
+draft: true
+---
+
+
 Building an app with **OpenSpec** (openspec.dev) involves a process called **Spec-Driven Development (SDD)**. Instead of jumping straight into coding, you define a "source of truth" in Markdown files that guide an AI agent (like Claude Code, Cursor, or GitHub Copilot) to build exactly what you need.
 
 The core workflow follows a simple loop: **Propose → Apply → Archive**.
+
+Note that you DON'T need to do full upfront specification of your application (waterfall) - you can just define and implement each feature one at a time.
 
 ---
 

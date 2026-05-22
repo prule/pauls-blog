@@ -53,7 +53,7 @@ This will start a local development server, usually accessible at `http://localh
 If you encounter issues with fast rendering (e.g., changes not appearing), you can disable it:
 
 ```bash
-hugo server --disableFastRender
+hugo server --disableFastRender --buildDrafts
 ```
 
 ## Building the Site

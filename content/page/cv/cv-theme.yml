@@ -45,3 +45,11 @@ footer:
       content: '{page-number} of {page-count}'
     left:
       content: 'Paul Rule'
+ulist:
+  marker:
+    disc:
+      content: "\u2022"
+    circle:
+      content: "\u25e6"
+    square:
+      content: "\u25aa"

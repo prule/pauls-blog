@@ -59,11 +59,16 @@ Technical writing covering Kotlin/Java/Programming, software design, and develop
 
 **GitHub** — https://github.com/prule[github.com/prule]
 
-- **Agent Harness Comparison** *(WIP)* - Experimenting with agent harnesses (eg OpenSpec, OpenCode) looking for sustainable ways to build and maintain software efficiently with the assistance of AI. Also comparing subscription LLMs to local LLMs.
-- **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry.
-- **Data Processing Experiment** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
-- **REST/HATEOAS Example** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
-- **JSONata-Java Fork** — Forked the JSONata Java library to replace floating-point arithmetic with `BigDecimal`, solving binary precision issues in expression evaluation.
+* **Agent Harness Comparison** *(WIP)* - Experimenting with agent harnesses (eg OpenSpec, OpenCode) looking for sustainable ways to build and maintain software efficiently with the assistance of AI. Also comparing subscription LLMs to local LLMs. **Claude Code, OpenSpec, Vue, Supabase**
+
+* **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry. **Claude Code, Gemini, React, Kotlin, Ktor, Exposed, WebSockets, UDP, Gradle multi module, Github Pages**
+
+* **Data Processing Experiment** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
+* **REST/HATEOAS Example** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
+* **JSONata-Java Fork** — Forked the JSONata Java library to replace floating-point arithmetic with `BigDecimal`, solving binary precision issues in expression evaluation.
+
+* And more https://prule.github.io/pauls-blog/page/projects/
+
 
 == Education & Certifications
 
@@ -91,8 +96,17 @@ Joined early in the platform's development to help design and build the backend 
 - **Permissions** — Implemented a SpiceDB relationship-based access control (ReBAC) system with a local index, integrated with PostgreSQL row-level security.
 - **Architecture uplift** — Introduced clean architecture, object-oriented patterns, and HATEOAS conventions, improving testability, maintainability, and consistency across the codebase.
 - **Developer tooling** — Built and iteratively improved a debug/test harness to support faster development and validation of flow execution behaviour.
+- Implemented *Renovate* for automatic upgrading of dependencies.
+- Implemented *Ktfmt* for automatic formatting of source code to produce less noise in pull requests.
 
-*Stack: Copilot, Kotlin, Ktor, Exposed, PostgreSQL, SpiceDB, Automerge, TypeScript, React*
+Tech stack:
+
+* AI Tools: Copilot, Rovo, CodeRabbit
+* Project management: JIRA, Confluence
+* Languages and frameworks:
+    * Kotlin, KTOR, Exposed, REST, React, Typescript, JUnit
+    * SpiceDB, Automerge, Renovate, PostgreSQL
+* Patterns: Clean architecture, Hateoas
 
 <<<
 

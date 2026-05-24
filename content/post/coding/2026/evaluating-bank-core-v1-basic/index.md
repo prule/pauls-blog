@@ -2,7 +2,7 @@
 title: "Evaluating bank-core v1-basic: Locking, Concurrency, and the Limits of Web-Prompted AI"
 date: 2026-05-24T18:36:21+10:00
 publishDate: 2026-05-24
-draft: true
+draft: false
 layout: "post"
 tags: ["springboot", "concurrency", "database-locking", "ai-assisted-coding"]
 categories: ["coding"]

@@ -108,3 +108,7 @@ value class Percentage(val value: Double) {
 ## Summary
 
 Primitives are convenient but dangerous for domain modelling. Value objects make illegal states unrepresentable, push validation to the boundary, and produce clearer APIs. In Kotlin, `@JvmInline value class` gives you this with no runtime overhead. Default to value objects for domain concepts — use primitives only when you genuinely mean a raw number, string, or boolean.
+
+{{< notice type="tip" >}}
+ [Project Valhalla](https://openjdk.org/projects/valhalla/) is bringing value objects to Java!
+{{< /notice >}}

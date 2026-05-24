@@ -16,7 +16,7 @@ author: "Paul"
 
 ---
 
-## The Core Wins: Lock Sequencing and DB Auditing
+## The Core Wins: OpenAPI, Locking, and DB Auditing
 
 The primary goal of `v1-basic` was to refresh my memory with respect to java and spring boot after being in the Kotlin/Ktor ecosystem for a while.
 
@@ -24,13 +24,21 @@ The browser based prompting worked quite well for a prototype considering I didn
 
 From the prototype code I would go on to generate requirements and specs which I would later use with OpenSpec to compare outcomes.
 
-### 1. Deadlock-Free Pessimistic Locking
+Some of the attributes of this experiment:
+
+### 1. OpenAPI Contract-First Generation
+
+The public API contract is defined explicitly in `src/main/resources/static/openapi/`. During the Gradle build lifecycle, the `openapi-generator` plugin automatically scaffolds the underlying Spring MVC interface (`TransfersApi`) and all core request/response DTOs (`TransferRequest`). 
+
+By enforcing this contract-first pattern, the network interface is decoupled from internal model definitions. The API contract remains the single source of truth, eliminating the risk of drifting controller signatures or out-of-sync parameter validations.
+
+### 2. Deadlock-Free Pessimistic Locking
 
 Cyclic deadlocks occur when concurrent threads request locks on hot accounts in different orders (e.g., Thread A locks Account 1 &rarr; 2, while Thread B locks Account 2 &rarr; 1). `v1-basic` eliminates this by sorting account identifiers lexicographically before acquiring row-level database locks (`SELECT FOR UPDATE`).
 
 Concurrent operations queue up in a deterministic order, completely bypassing cyclic waiting states.
 
-### 2. O(1) Ledger Validation
+### 3. O(1) Ledger Validation
 
 Rather than pulling transaction histories into application memory to verify that debits equal credits, the system offloads validation directly to the database layer using a single optimized native query:
 

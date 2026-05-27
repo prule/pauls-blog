@@ -12,7 +12,13 @@ author: "Paul"
 
 `bank-core` version `v1-basic` successfully demonstrates deadlock-free pessimistic database locking and high-throughput $O(1)$ ledger validation, but suffers from anemic procedural layers typical of raw browser-prompted AI code. To fix these leaky boundaries, the upcoming `v2` will pivot to spec-driven development utilizing **Claude Code** to enforce domain-driven isolation.
 
-> https://github.com/prule/bank-example/tree/v1-basic
+{{< notice type="info" title="GitHub" >}}
+https://github.com/prule/bank-example/tree/v1-basic
+{{< /notice >}}
+
+{{< notice type="info" title="Next episode" >}}
+[Evaluating bank-core v2-openspec-claude]( {{< ref "post/coding/2026/evaluating-bank-core-v2-openspec-claude" >}} )
+{{< /notice >}}
 
 ---
 

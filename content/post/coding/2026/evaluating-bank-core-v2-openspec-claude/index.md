@@ -143,29 +143,29 @@ All artifacts complete! Run `/opsx:apply` to start implementing.
 
 Using change: `fund-transfer`. Override with `/opsx:apply <other>`.
 
-## Implementing: fund-transfer (schema: spec-driven)
+#### Implementing: fund-transfer (schema: spec-driven)
 
 I have propose-phase context. Reading the few files I'll need to extend.
 
 Got the patterns. Starting implementation.
 
-## Task 1.1–1.3: domain
+#### Task 1.1–1.3: domain
 
-## Task 2: application use case
+#### Task 2: application use case
 
 Now the unit tests (2.3, 2.4).
 
-## Task 3: OpenAPI contract additions
+#### Task 3: OpenAPI contract additions
 
 `amount` generated as `BigDecimal` with `@DecimalMin("0.01")`, account fields with `@NotNull @Size(min = 1)`. Task 3 done.
 
-## Task 4: controller + mapper
+#### Task 4: controller + mapper
 
-## Task 5: GlobalExceptionHandler extensions
+#### Task 5: GlobalExceptionHandler extensions
 
-## Task 6: bean wiring
+#### Task 6: bean wiring
 
-## Task 7: integration tests
+#### Task 7: integration tests
 
 Spring Boot 3.4.5 — `@MockitoSpyBean` is supported. Cleaning up unused imports.
 
@@ -173,9 +173,9 @@ Now the controller integration test (7.2).
 
 Task 7.3: extend `OpenApiContractTest`.
 
-## Task 8: close `self-transfer` open decision
+#### Task 8: close `self-transfer` open decision
 
-## Task 9: verification
+#### Task 9: verification
 
 Application module has no assertj — using junit + mockito only.
 
@@ -194,13 +194,13 @@ All checks pass:
 
 Stop the app + mark tasks complete.
 
-## Implementation Complete
+#### Implementation Complete
 
 **Change:** fund-transfer
 **Schema:** spec-driven
 **Progress:** 34/34 tasks complete ✓
 
-### Files created
+##### Files created
 - `domain/.../SameAccountTransferException.java` + `test`
 - `application/.../transfer/` — `TransferCommand`, `TransferFunds`
 - `application/.../transfer/test/` — `TransferCommandTest`, `TransferFundsTest`
@@ -208,7 +208,7 @@ Stop the app + mark tasks complete.
 - `openapi/paths/transfers.yaml` + `openapi/schemas/transfer-request.yaml`
 - `TransferAtomicityIntegrationTest` + `TransferControllerTest`
 
-### Files edited
+##### Files edited
 - `openapi.yaml` — registered `/api/v1/transfers` path + `TransferRequest` schema + `transfers` tag
 - `GlobalExceptionHandler.java` — 4 new `@ExceptionHandler` entries + Javadoc update
 - `BankCoreApplication.java` — `@Bean Clock systemClock()` + `@Bean TransferFunds`
@@ -217,7 +217,7 @@ Stop the app + mark tasks complete.
 - `OpenApiContractTest.java` — 2 new assertions for `createTransfer` + `TransferRequest`
 - `openspec/config.yaml` — `self-transfer` open decision closed
 
-### Verification
+##### Verification
 - `:domain:test`, `:application:test`, `:bootstrap:test` all green
 - `./gradlew clean build` green (25 tasks)
 - bootRun live checks: `operationId=createTransfer`; empty body → 400 BAD_REQUEST_PAYLOAD with field-naming message; nonexistent accounts → 404 RESOURCE_NOT_FOUND end-to-end via lock-then-load
@@ -237,7 +237,7 @@ Sync the delta spec into openspec/specs/fund-transfer/spec.md before archiving?
 Sync now
 ```
 
-## Archive Complete
+#### Archive Complete
 
 **Change:** fund-transfer
 **Schema:** spec-driven

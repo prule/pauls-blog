@@ -141,5 +141,5 @@ Once planning concludes, the host locks in the final selection, updating the gro
 Building with advanced agent systems requires structural discipline. Keep these principles in mind:
 
 *   **Decouple Design and Logic**: Let Claude Design handle the aesthetics and layout exports, and let Claude Code focus on state machine wiring, integrations, and database operations.
-*   **Enforce Strict Verbosity Rules**: Caveman mode or system-level directives to avoid chatty AI behaviors save up to 40% of token consumption over prolonged sessions.
-*   **Maintain Versioned Specifications**: Using tools like OpenSpec to separate the *specification stage* from the *implementation stage* ensures context windows aren't wasted on debugging incorrect architectural assumptions.
+*   **Enforce Strict Verbosity Rules**: Caveman mode or system-level directives to avoid chatty AI behaviors saves token consumption over prolonged sessions.
+*   **Maintain Versioned Specifications**: Keeping specifications up to date and accurately reflecting the goal means a focussed context.

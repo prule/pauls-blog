@@ -76,7 +76,9 @@ graph TD
     C --> D[opsx:apply Implementation]
     D --> E[Automatic Preview & Manual Test]
     E --> F[opsx:archive Specification]
-    F --> G[End Session / Next Feature]
+    F --> H[Raise Pull Request]
+    H --> I[Merge to Main]
+    I --> G[Next Feature Loop / End Session]
 {{< /mermaid >}}
 
 ### The Feature Loop Steps:
@@ -106,6 +108,8 @@ Once the proposal passed sanity checks, `/opsx:apply` kicked off file writing. T
 /opsx:archive
 ```
 After verifying the changes in my local browser, archiving the feature updated the master specifications directory. This ensured future Claude sessions could build upon accurate, current context without carrying deprecated drafts.
+
+After archiving I'd instruct Claude to "raise PR" and subsequently "merge".
 
 ---
 

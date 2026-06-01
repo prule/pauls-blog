@@ -2,7 +2,7 @@
 title: "Building CatchUp: A React + Supabase PWA Crafted with Claude Code and Claude Design"
 date: 2026-06-01T20:57:17+10:00
 publishDate: 2026-06-01
-draft: true
+draft: false
 layout: "post"
 tags: ["react", "supabase", "pwa", "claude-code", "claude-design", "openspec"]
 categories: ["coding"]
@@ -46,7 +46,11 @@ brew install supabase/tap/supabase
 supabase init
 ```
 
-We populated the `ReadMe.md` and `openspec/config.yaml` to ensure the Claude agents had immediate, grounded references for the product's boundaries before writing a single line of logic.
+I populated the `ReadMe.md` and `openspec/config.yaml` to ensure the Claude agents had immediate, grounded references for the product's boundaries before writing a single line of logic.
+
+{{< notice type="info" >}}
+Once I had Supabase installed and running in Docker, I configured the `.env` with the anon key - and from there Claude took care of everything - applying migrations, resetting the database when needed etc.
+{{< /notice >}}
 
 ---
 
@@ -71,14 +75,14 @@ Rather than feeding raw instructions directly to Claude Code, all features were 
 
 {{< mermaid >}}
 graph TD
-    A[Start Session + Caveman Mode] --> B[opsx:propose <feature>]
+    A[Start Session + Caveman Mode] --> B["opsx:propose 'feature'"]
     B --> C[Evaluate Spec, Tasks & Schema]
     C --> D[opsx:apply Implementation]
     D --> E[Automatic Preview & Manual Test]
     E --> F[opsx:archive Specification]
     F --> H[Raise Pull Request]
     H --> I[Merge to Main]
-    I --> G[Next Feature Loop / End Session]
+    I --> G["Next Feature Loop / End Session"]
 {{< /mermaid >}}
 
 ### The Feature Loop Steps:
@@ -147,3 +151,98 @@ Building with advanced agent systems requires structural discipline. Keep these 
 *   **Decouple Design and Logic**: Let Claude Design handle the aesthetics and layout exports, and let Claude Code focus on state machine wiring, integrations, and database operations.
 *   **Enforce Strict Verbosity Rules**: Caveman mode or system-level directives to avoid chatty AI behaviors saves token consumption over prolonged sessions.
 *   **Maintain Versioned Specifications**: Keeping specifications up to date and accurately reflecting the goal means a focussed context.
+
+{{< notice type="note" >}}
+I plan on using AntiGravity to do a code review and see if anything can be improved. 
+{{< /notice >}}
+
+## Current openspec directory content
+
+For anyone interested, my `openspec` directory looks like the following:
+
+```text
+openspec/
+├── changes
+│   └── archive
+│       ├── 2026-05-29-add-authentication
+│       ├── 2026-05-29-add-dev-docs
+│       ├── 2026-05-29-add-group-city-field
+│       ├── 2026-05-29-add-group-invite-links
+│       ├── 2026-05-29-create-event
+│       ├── 2026-05-29-group-add-venues
+│       ├── 2026-05-29-init-supabase-local
+│       ├── 2026-05-29-manage-groups
+│       ├── 2026-05-29-setup-react-project
+│       ├── 2026-05-30-add-event-voting
+│       ├── 2026-05-30-allow-status-rollback
+│       ├── 2026-05-30-change-event-status
+│       ├── 2026-05-30-fix-group-roster
+│       ├── 2026-05-30-fix-realtime-event-sync
+│       ├── 2026-05-30-fix-venue-search-input-visibility
+│       ├── 2026-05-30-group-invite-links
+│       ├── 2026-05-30-integrate-members-list
+│       ├── 2026-05-30-move-lock-trigger-to-footer
+│       ├── 2026-05-30-optout-toggle-switch
+│       ├── 2026-05-30-personalize-member-identity
+│       ├── 2026-05-30-redesign-lock-in-dialog
+│       ├── 2026-05-30-simplify-voting-to-tickbox
+│       ├── 2026-05-30-vote-bg-percentage
+│       ├── 2026-05-31-add-user-display-name
+│       ├── 2026-05-31-edit-groups
+│       ├── 2026-05-31-fix-mobile-menus
+│       ├── 2026-05-31-join-via-link-flow
+│       ├── 2026-05-31-locked-event-calendar-link
+│       ├── 2026-05-31-restrict-invite-link-to-admins
+│       ├── 2026-05-31-wire-up-admin-promote-members
+│       └── 2026-06-01-wire-up-remove-member
+├── config.yaml
+└── specs
+    ├── authentication
+    │   └── spec.md
+    ├── dashboard
+    │   └── spec.md
+    ├── developer-getting-started
+    │   └── spec.md
+    ├── display-name-editing
+    │   └── spec.md
+    ├── event-calendar-export
+    │   └── spec.md
+    ├── event-voting
+    │   └── spec.md
+    ├── events
+    │   └── spec.md
+    ├── frontend-app-scaffold
+    │   └── spec.md
+    ├── group-invites
+    │   └── spec.md
+    ├── group-venues
+    │   └── spec.md
+    ├── groups
+    │   └── spec.md
+    ├── local-development-environment
+    │   └── spec.md
+    ├── location-autocomplete
+    │   └── spec.md
+    ├── member-identity
+    │   └── spec.md
+    ├── mobile-navigation
+    │   └── spec.md
+    └── user-profiles
+        └── spec.md
+```
+
+An example archive directory:
+
+```text
+openspec/changes/archive/2026-05-29-add-authentication
+├── design.md
+├── proposal.md
+├── specs
+│   ├── authentication
+│   │   └── spec.md
+│   ├── dashboard
+│   │   └── spec.md
+│   └── user-profiles
+│       └── spec.md
+└── tasks.md
+```

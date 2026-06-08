@@ -82,6 +82,7 @@ timezone = 'Australia/Sydney'
   github         = "https://github.com/prule"
   medium         = "https://medium.com/@prule70"
   substack       = "https://paulr70.substack.com"
+  kofi           = "prule"
 
 [sitemap]
   changefreq = "weekly"

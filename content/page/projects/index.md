@@ -22,6 +22,31 @@ https://prule.github.io/pauls-blog/
 
 ----
 
+## Video aggregator
+
+Gives you a chronological, filtered YouTube feed instead of an algorithmic one. Organize subscriptions under Sources → Topics → Channels, apply hierarchical include/exclude rules, and
+pivot your timeline by auto-matched tags.
+
+![videoaggregator.webp](./videoaggregator.webp)
+
+----
+
+## Intention Horizon
+
+A local-first habit tracker: define intentions, group them by category, tick them off each day, and watch your count move against a target you set — N completions over M days.
+
+![intentionhorizon.webp](./intentionhorizon.webp)
+
+----
+
+## Catchup
+
+Catchup helps groups of friends coordinate social catch-ups — proposing dates, voting on venues, and locking in events — without the chaos of group messaging.
+
+![catchup.webp](./catchup.webp)
+
+----
+
 ## Laptime Insights
 
 https://laptimeinsights.com
@@ -29,14 +54,6 @@ https://laptimeinsights.com
 > Coming soon...
 
 ![laptimeinsights-800w.webp](laptimeinsights-800w.webp)
-
-----
-
-## YouTube channel aggregator
-
-https://prule.github.io/pauls-blog/tags/ytca/
-
-![youtube-channel-aggregator.webp](youtube-channel-aggregator.webp)
 
 ----
 

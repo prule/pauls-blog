@@ -84,6 +84,7 @@ timezone = 'Australia/Sydney'
   substack       = "https://paulr70.substack.com"
   kofi           = "prule"
 
+
 [sitemap]
   changefreq = "weekly"
   priority = 0.5

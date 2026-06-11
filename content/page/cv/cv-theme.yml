@@ -46,10 +46,11 @@ footer:
     left:
       content: 'Paul Rule'
 ulist:
+  marker-type: disc circle square
   marker:
     disc:
       content: "\u2022"
     circle:
-      content: "\u25e6"
+      content: "\u2022"
     square:
-      content: "\u25aa"
+      content: "\u2022"

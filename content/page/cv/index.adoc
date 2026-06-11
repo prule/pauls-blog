@@ -18,7 +18,7 @@ See LinkedIn for https://www.linkedin.com/in/paulrule/details/recommendations/[r
 
 Senior Software Engineer with 20+ years of experience designing and delivering scalable JVM-based systems using Java, Spring Boot, and Kotlin. Known for building software that stays clean, adaptable, and maintainable long after the first release — with a strong focus on architecture, engineering discipline, and code that communicates clearly.
 
-I care deeply about creating systems that teams can move quickly and confidently within: well-structured codebases, consistent patterns, pragmatic design decisions, and engineering practices that reduce complexity instead of adding to it.
+I care about creating systems that teams can move quickly and confidently within: well-structured codebases, consistent patterns, pragmatic design decisions, and engineering practices that reduce complexity instead of adding to it.
 
 Beyond hands-on development, I’ve built a reputation as a highly collaborative engineer who works closely with developers, product teams, and stakeholders to shape solutions together. I enjoy mentoring, lifting engineering standards, and helping teams build shared ownership and momentum — not just shipping features.
 
@@ -59,7 +59,7 @@ Technical writing covering Kotlin/Java/Programming, software design, and develop
 
 **GitHub** — https://github.com/prule[github.com/prule]
 
-* **Agent Harness Comparison** *(WIP)* - Experimenting with agent harnesses (eg OpenSpec, OpenCode) looking for sustainable ways to build and maintain software efficiently with the assistance of AI. Also comparing subscription LLMs to local LLMs. **Claude Code, OpenSpec, Vue, Supabase**
+* **Agent Harness Comparison** *(WIP)* - Experimenting with agent harnesses (eg OpenSpec) looking for sustainable ways to build and maintain software efficiently with the assistance of AI. **Claude Code, OpenSpec, Vue, Supabase**
 
 * **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry. **Claude Code, Gemini, React, Kotlin, Ktor, Exposed, WebSockets, UDP, Gradle multi module, Github Pages**
 
@@ -67,7 +67,24 @@ Technical writing covering Kotlin/Java/Programming, software design, and develop
 * **REST/HATEOAS Example** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
 * **JSONata-Java Fork** — Forked the JSONata Java library to replace floating-point arithmetic with `BigDecimal`, solving binary precision issues in expression evaluation.
 
-* And more https://prule.github.io/pauls-blog/page/projects/
+* **Banking example** - An experiment with AI coding using OpenSpec.
+
+* **Video aggregator** - Gives you a chronological, filtered YouTube feed instead of an algorithmic one. Organise subscriptions under Sources > Topics > Channels, apply hierarchical include/exclude rules, and pivot your timeline by auto-matched tags.
+
+* **Intention Horizon** - A local-first habit tracker: define intentions, group them by category, tick them off each day, and watch your count move against a target you set — N completions over M days.
+
+* **Catchup** - helps groups of friends coordinate social catch-ups — proposing dates, voting on venues, and locking in events — without the chaos of group messaging.
+
+* **Leave planner** - Plan your annual leave with ease.
+
+* **Countdown** - From weddings and birthdays to product launches and holidays, this free online countdown creator lets you build and share beautiful, animated timers in seconds. Customize backgrounds, choose the perfect font, and share a link with anyone, on any device.
+
+* **Daily motivation quotes** - Daily motivation and life tips.
+
+* **Toolbox** - A collection of developer tools implemented in the browser.
+
+
+* And more... see https://prule.github.io/pauls-blog/page/projects/
 
 
 == Education & Certifications
@@ -89,23 +106,22 @@ OneTeam Services was building a SaaS platform for business process automation, e
 
 Joined early in the platform's development to help design and build the backend from the ground up. Core contributions included:
 
-- **Flow engine** — Designed and built the Kotlin-based engine responsible for parsing, validating, and executing multi-step automation sequences, with JSONata powering dynamic expression evaluation within flow steps.
-- **Core data model** — Worked on the PostgreSQL schema underpinning dynamic workspaces, form definitions, and configurable execution pipelines — a non-trivial modelling challenge given the flexibility the product required.
-- **REST API** — Designed and implemented a Kotlin/Ktor/Exposed API consumed by the React frontend, supporting real-time workflow configuration and form submission.
-- **Collaborative editing** — Integrated Automerge CRDT to support real-time, conflict-free collaborative editing of workspace documents.
-- **Permissions** — Implemented a SpiceDB relationship-based access control (ReBAC) system with a local index, integrated with PostgreSQL row-level security.
-- **Architecture uplift** — Introduced clean architecture, object-oriented patterns, and HATEOAS conventions, improving testability, maintainability, and consistency across the codebase.
-- **Developer tooling** — Built and iteratively improved a debug/test harness to support faster development and validation of flow execution behaviour.
-- Implemented *Renovate* for automatic upgrading of dependencies.
-- Implemented *Ktfmt* for automatic formatting of source code to produce less noise in pull requests.
+- **Flow engine** - Enabled dynamic, user-configurable automation by architecting a high-performance Kotlin engine with integrated JSONata expression evaluation, supporting reliable execution of complex multi-step sequences.
+- **REST API and Core data model** - Delivered a highly responsive user experience on the React frontend by implementing a low-latency, real-time workflow configuration and form submission API using Kotlin, Ktor, and Exposed.
+- **Collaborative editing** - Unlocked real-time co-authoring capabilities across workspace documents by integrating Automerge CRDT, guaranteeing conflict-free concurrent editing with zero data loss.
+- **Permissions** - Enforced enterprise-grade security and low-latency isolation by deploying a SpiceDB relationship-based access control (ReBAC) system integrated with PostgreSQL Row-Level Security (RLS).
+- **Architecture uplift** - Improved test coverage and code maintainability by leading a migration to Clean Architecture, object-oriented design patterns, and HATEOAS conventions, ensuring API consistency.
+- **Developer tooling** - Accelerated developer velocity and test reliability by building a custom debug and simulation harness to quickly validate complex flow execution behaviors.
+- **Dependency management** - Reduced security risk and technical debt by automating package upgrades with Renovate, keeping dependencies continuously up to date.
+- **Code quality** - Streamlined code review cycles and eliminated formatting disputes by standardizing the codebase on Ktfmt, reducing visual noise in pull requests.
 
 Tech stack:
 
 * AI Tools: Copilot, Rovo, CodeRabbit
 * Project management: JIRA, Confluence
 * Languages and frameworks:
-    * Kotlin, KTOR, Exposed, REST, React, Typescript, JUnit
-    * SpiceDB, Automerge, Renovate, PostgreSQL
+** Kotlin, KTOR, Exposed, REST, React, Typescript, JUnit
+** SpiceDB, Automerge, Renovate, PostgreSQL
 * Patterns: Clean architecture, Hateoas
 
 <<<
@@ -113,16 +129,26 @@ Tech stack:
 === Senior Software Developer — Prospection
 *2019–2024*
 
-Prospection is a health data analytics platform providing insights to pharmaceutical and healthcare organisations. Over five years, contributed across data infrastructure, pipeline architecture, and product capability — consistently pushing toward more configurable, maintainable, and scalable solutions. Led a small team of three developers for a significant portion of this time.
+Prospection | Health Data Analytics Platform
 
-- **Generative AI assistant** — Part of the team that built a natural language interface to the Prospection platform, delivering a production Gen AI capability powered by ChatGPT.
-- **Common data format & task pipeline** — Introduced a common data format and designed the task pipeline to process it, replacing bespoke per-client development with a generic, configurable approach. Added dependency-aware concurrent task execution to maximise throughput and minimise processing time.
-- **Configurable data transforms** — Prototyped a transformation framework allowing data to be mapped to a standard model using a combination of generic and custom logic — reducing reliance on code deployments for routine changes and improving standardisation across data sources. Separately implemented data transformations using Apache Spark supporting multiple input schemas and formats.
-- **Zero-downtime data refresh** — Implemented background data loading using A/B schema switching, ensuring seamless data updates without system downtime.
-- **Simplified data loading prototype** — Explored using natural business keys to reduce processing complexity, resulting in faster loads and significantly easier debugging.
-- **Pipeline visibility** — Built a React frontend for controlling, monitoring, and observing the task pipeline, giving the team a clean operational interface.
+Senior Software Engineer / Team Lead
 
-*Stack: Java, Kotlin, Spring Boot, Apache Spark, React, PostgreSQL, OpenAI API*
+Contributed to the evolution of a health data analytics platform over a five-year tenure, scale-proofing data infrastructure, pipeline architecture, and core product capabilities. Led a three-developer team to deliver highly configurable, maintainable, and scalable data solutions.
+
+- **Generative AI capability** - Enabled intuitive, natural language data exploration for healthcare clients by co-developing a production-grade Generative AI assistant integrated with the OpenAI API.
+- **Pipeline architecture** - Eliminated bespoke per-client development overhead by designing a standardized data format and a configurable task pipeline; implemented dependency-aware concurrent execution to maximize data throughput and minimize processing times.
+- **Configurable data transforms** - Decoupled routine data mapping from deployment cycles by prototyping a dynamic transformation framework; developed scalable Apache Spark pipelines to seamlessly standardize and process multi-format incoming datasets.
+- **Platform reliability** - Guaranteed 100% platform uptime during data refreshes by implementing an A/B schema switching mechanism for seamless background data loading without service interruption.
+- **Data loading performance** - Accelerated load times and simplified troubleshooting by prototyping a simplified data-loading flow utilizing natural business keys, reducing system complexity and debugging overhead.
+- **Operational visibility** - Reduced pipeline management overhead by building a React-based monitoring dashboard, providing the engineering and operations teams with real-time pipeline observability and control.
+
+Tech stack:
+
+* AI Tools: Copilot, OpenAI API
+* Project management: JIRA, Confluence
+* Languages and frameworks:
+** Java, Kotlin, Spring Boot,  React,
+** PostgreSQL, OpenAI API, Apache Spark
 
 '''
 

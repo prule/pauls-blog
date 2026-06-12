@@ -61,27 +61,28 @@ Technical writing covering Kotlin/Java/Programming, software design, and develop
 
 * **Agent Harness Comparison** *(WIP)* - Experimenting with agent harnesses (eg OpenSpec) looking for sustainable ways to build and maintain software efficiently with the assistance of AI. **Claude Code, OpenSpec, Vue, Supabase**
 
-* **Laptime Insights** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry. **Claude Code, Gemini, React, Kotlin, Ktor, Exposed, WebSockets, UDP, Gradle multi module, Github Pages**
+* **https://laptimeinsights.com[Laptime Insights]** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry. **Claude Code, Gemini, React, Kotlin, Ktor, Exposed, WebSockets, UDP, Gradle multi module, Github Pages**
 
-* **Data Processing Experiment** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
-* **REST/HATEOAS Example** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
+* **https://github.com/prule/data-processing-experiment[Data Processing Experiment]** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
+
+* **https://github.com/prule/spring-boot-react-hateoas-template[REST/HATEOAS Example]** — A reference implementation demonstrating a REST API with HATEOAS-driven navigation, paired with a Spring Boot + React template.
 * **JSONata-Java Fork** — Forked the JSONata Java library to replace floating-point arithmetic with `BigDecimal`, solving binary precision issues in expression evaluation.
 
-* **Banking example** - An experiment with AI coding using OpenSpec.
+* **https://github.com/prule/bank-example/tree/v2-openspec-claude[Banking example]** - A hands-on Java Spring Boot coding exercise designed to explore concurrent data modifications, database locking strategies, and AI assisted coding.
 
-* **Video aggregator** - Gives you a chronological, filtered YouTube feed instead of an algorithmic one. Organise subscriptions under Sources > Topics > Channels, apply hierarchical include/exclude rules, and pivot your timeline by auto-matched tags.
+* **https://video.vamonossoftware.com[Video aggregator]** - Gives you a chronological, filtered YouTube feed instead of an algorithmic one. Organise subscriptions under Sources > Topics > Channels, apply hierarchical include/exclude rules, and pivot your timeline by auto-matched tags.
 
-* **Intention Horizon** - A local-first habit tracker: define intentions, group them by category, tick them off each day, and watch your count move against a target you set — N completions over M days.
+* **https://intention.vamonossoftware.com/[Intention Horizon]** - A local-first habit tracker: define intentions, group them by category, tick them off each day, and watch your count move against a target you set — N completions over M days.
 
-* **Catchup** - helps groups of friends coordinate social catch-ups — proposing dates, voting on venues, and locking in events — without the chaos of group messaging.
+* **https://catchup.vamonossoftware.com[Catchup]** - helps groups of friends coordinate social catch-ups — proposing dates, voting on venues, and locking in events — without the chaos of group messaging.
 
-* **Leave planner** - Plan your annual leave with ease.
+* **https://prule.github.io/leave-planner/[Leave planner]** - Plan your annual leave with ease.
 
-* **Countdown** - From weddings and birthdays to product launches and holidays, this free online countdown creator lets you build and share beautiful, animated timers in seconds. Customize backgrounds, choose the perfect font, and share a link with anyone, on any device.
+* **https://mycountdownto.com[Countdown]** - From weddings and birthdays to product launches and holidays, this free online countdown creator lets you build and share beautiful, animated timers in seconds. Customize backgrounds, choose the perfect font, and share a link with anyone, on any device.
 
-* **Daily motivation quotes** - Daily motivation and life tips.
+* **https://www.dailymotivationquotes.com[Daily motivation quotes]** - Daily motivation and life tips.
 
-* **Toolbox** - A collection of developer tools implemented in the browser.
+* **https://prule.github.io/tool-box/[Toolbox]** - A collection of developer tools implemented in the browser.
 
 
 * And more... see https://prule.github.io/pauls-blog/page/projects/

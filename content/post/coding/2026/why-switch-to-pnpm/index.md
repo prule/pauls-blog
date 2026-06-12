@@ -33,15 +33,15 @@ When you run `pnpm install`, pnpm checks the store first. If a package has alrea
 
 {{< mermaid >}}
 graph TD
-    subgraph Global Store [Global Content-Addressable Store]
+    subgraph GlobalStore [Global Content-Addressable Store]
         pkgA[lodash@4.17.21]
         pkgB[react@18.2.0]
     end
-    subgraph Project A [Project A node_modules]
+    subgraph ProjectA [Project A node_modules]
         pA_deps[deps] -->|Hard link| pkgA
         pA_deps -->|Hard link| pkgB
     end
-    subgraph Project B [Project B node_modules]
+    subgraph ProjectB [Project B node_modules]
         pB_deps[deps] -->|Hard link| pkgA
     end
 {{< /mermaid >}}

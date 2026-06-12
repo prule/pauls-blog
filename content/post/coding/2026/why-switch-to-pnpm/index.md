@@ -85,7 +85,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -93,14 +93,26 @@ jobs:
           version: 9
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version-file: .nvmrc
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Run Lint
+        run: pnpm lint
+
+      - name: Run Format Check
+        run: pnpm format:check
+
+      - name: Run Type Check
+        run: pnpm typecheck
+
+      - name: Run Build
+        run: pnpm build
+        
       - name: Run tests
         run: pnpm test
 ```

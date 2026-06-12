@@ -32,18 +32,37 @@ Instead of duplicating files or flattening directories, pnpm keeps a single, glo
 When you run `pnpm install`, pnpm checks the store first. If a package has already been downloaded, pnpm creates a **hard link** from the global store to your project's `node_modules`. 
 
 {{< mermaid >}}
-graph TD
+graph LR
+%% Global Store Styling
+classDef store fill:#e1f5fe,stroke:#0288d1,stroke-width:2px,stroke-dasharray: 5 5;
+%% Project Styling
+classDef project fill:#f9fbe7,stroke:#689f38,stroke-width:2px;
+%% Link Styling
+classDef linkNode fill:#fff3e0,stroke:#f57c00,stroke-width:1px;
+
     subgraph GlobalStore [Global Content-Addressable Store]
-        pkgA[lodash@4.17.21]
-        pkgB[react@18.2.0]
+        pkgA["lodash@4.17.21 (.js/.json files)"]
+        pkgB["react@18.2.0 (.js/.json files)"]
     end
-    subgraph ProjectA [Project A node_modules]
-        pA_deps[deps] -->|Hard link| pkgA
-        pA_deps -->|Hard link| pkgB
+    class pkgA,pkgB store;
+
+    subgraph ProjectA [Project A .pnpm virtual store]
+        pA_sym["node_modules/lodash"] -- Symlink --> pA_hard["nested lodash@4.17.21/node_modules/lodash"]
+        pA_deps["node_modules (Project Root)"] -- Symlink --> pA_sym
     end
-    subgraph ProjectB [Project B node_modules]
-        pB_deps[deps] -->|Hard link| pkgA
+    class pA_sym,pA_hard,pA_deps project;
+
+    subgraph ProjectB [Project B .pnpm virtual store]
+        pB_sym["node_modules/lodash"] -- Symlink --> pB_hard["nested lodash@4.17.21/node_modules/lodash"]
+        pB_deps["node_modules (Project Root)"] -- Symlink --> pB_sym
     end
+    class pB_sym,pB_hard,pB_deps project;
+
+    %% Cross-subgraph Hard Links to Global Store
+    pA_hard --> |Hard link| pkgA
+    pA_deps --> |Hard link to direct dep| pkgB
+    pB_hard --> |Hard link| pkgA
+
 {{< /mermaid >}}
 
 Because it uses hard links, your project directories point to the exact same physical sectors on your disk. Installing a package in a second project takes milliseconds because no new files are written to disk.

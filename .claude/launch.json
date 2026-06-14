@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hugo",
+      "runtimeExecutable": "hugo",
+      "runtimeArgs": ["server", "--bind", "127.0.0.1", "--port", "1399", "--baseURL", "http://localhost:1399/", "--appendPort=false"],
+      "autoPort": false,
+      "port": 1399
+    }
+  ]
+}

@@ -61,7 +61,7 @@ Technical writing covering Kotlin/Java/Programming, software design, and develop
 
 * **Agent Harness Comparison** *(WIP)* - Experimenting with agent harnesses (eg OpenSpec) looking for sustainable ways to build and maintain software efficiently with the assistance of AI. **Claude Code, OpenSpec, Vue, Supabase**
 
-* **https://laptimeinsights.com[Laptime Insights]** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry. **Claude Code, Gemini, React, Kotlin, Ktor, Exposed, WebSockets, UDP, Gradle multi module, Github Pages**
+* **https://www.laptimeinsights.com[Laptime Insights]** *(WIP)* — A personal project building a dashboard for Assetto Corsa Competizione lap time data. Practising clean architecture with Kotlin, Ktor, Exposed, and WebSockets, integrated with sim racing broadcast telemetry. **Claude Code, Gemini, React, Kotlin, Ktor, Exposed, WebSockets, UDP, Gradle multi module, Github Pages**
 
 * **https://github.com/prule/data-processing-experiment[Data Processing Experiment]** — A documented coding exercise following the incremental design and implementation of a configurable data processing pipeline. Equal parts design challenge and architecture writeup.
 

@@ -51,7 +51,7 @@ Catchup helps groups of friends coordinate social catch-ups — proposing dates,
 
 ## Laptime Insights
 
-https://laptimeinsights.com
+https://www.laptimeinsights.com
 
 > Coming soon...
 

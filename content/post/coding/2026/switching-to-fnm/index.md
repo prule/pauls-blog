@@ -10,7 +10,7 @@ description: "Drop nvm and switch to fnm to instantly eliminate shell startup la
 author: "Paul"
 ---
 
-Drop `nvm` and install `fnm` (Fast Node Manager). Your shell will open instantly instead of hanging for half a second waiting for Node versions to initialize. 
+`fnm` and `nvm` are tools for managing node installations. This is useful for ensuring the correct version of node is used for each project.
 
 `fnm` is built in Rust. It's orders of magnitude faster than `nvm`, cross-platform, and fully compatible with existing `.nvmrc` and `.node-version` files.
 
@@ -123,3 +123,5 @@ This keeps your CI pipeline perfectly synced with your local `fnm` environment, 
 ## Resources
 
 - [fnm GitHub Repository](https://github.com/Schniz/fnm)
+- [nvm GitHub Repository](https://github.com/nvm-sh/nvm)
+

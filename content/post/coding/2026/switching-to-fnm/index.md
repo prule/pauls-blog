@@ -2,7 +2,7 @@
 title: "Switching from nvm to fnm"
 date: 2026-06-26T20:28:52+10:00
 publishDate: 2026-06-26
-draft: true
+draft: false
 layout: "post"
 tags: ["node", "fnm", "nvm", "shell", "performance"]
 categories: ["coding"]

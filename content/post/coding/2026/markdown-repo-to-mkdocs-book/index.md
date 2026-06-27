@@ -2,7 +2,7 @@
 title: "Turning a Markdown Repository into a Hosted Docs Site with MkDocs"
 date: 2026-06-28T22:14:08+10:00
 publishDate: 2026-06-28
-draft: true
+draft: false
 layout: "post"
 tags: ["mkdocs", "documentation", "github-actions"]
 categories: ["coding"]

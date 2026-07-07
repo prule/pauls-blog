@@ -140,9 +140,17 @@ jobs:
 
 Switching an existing project is straightforward and takes less than a minute.
 
-1. **Install pnpm globally:**
+1. **Install pnpm:**
+   Avoid installing `pnpm` globally via `npm` (e.g., `npm install -g pnpm`), as this ties it to a single Node version and causes it to disappear if you switch Node versions. Instead, use a standalone installation.
+
+   Using the official standalone script:
    ```bash
-   npm install -g pnpm
+   curl -fsSL https://get.pnpm.io/install.sh | sh -
+   ```
+
+   Using Homebrew (macOS/Linux):
+   ```bash
+   brew install pnpm
    ```
 
 2. **Import your current lockfile:**

@@ -54,7 +54,9 @@ Using Homebrew (macOS/Linux):
 brew install fnm
 ```
 
-Hook `fnm` into your shell. Add the following to your `~/.zshrc` or `~/.bashrc`:
+Hook `fnm` into your `.zshenv` instead of `.zshrc`. This ensures `fnm` is available in both interactive and non-interactive shells, which is necessary if you use tools that run background processes or AI agents like Claude Code.
+
+Add the following to your `~/.zshenv`:
 
 ```bash
 eval "$(fnm env --use-on-cd --resolve-engines --version-file-strategy=recursive)"

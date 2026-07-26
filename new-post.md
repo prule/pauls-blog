@@ -1,0 +1,102 @@
+# A rest api
+
+The openapi definition
+
+```yaml
+post:
+  tags:
+    - transfers
+  operationId: createTransfer
+  summary: Transfer funds from one account to another
+  description: >
+    Atomically debits the source account, credits the destination account,
+    and records exactly one balanced journal entry with status PENDING.
+    Either all effects commit or none do. Callers re-read the affected
+    accounts via GET /api/v1/accounts/{accountNumber} for the new balances.
+
+    Optionally accepts an Idempotency-Key header. When supplied, the server
+    persists the response keyed by that value and replays the stored response
+    on retries carrying the same key. See the transfer-idempotency capability
+    spec for the full contract.
+  parameters:
+    - in: header
+      name: Idempotency-Key
+      required: false
+      description: >
+        Optional client-chosen unique token (1..200 printable ASCII
+        characters; UUIDs recommended). When supplied, retries of the same
+        key with the same request body return the original response without
+        re-executing the transfer. Retries with the same key but a different
+        body are rejected with 422 IDEMPOTENCY_KEY_REUSED. A concurrent
+        in-flight retry returns 409 CONCURRENT_IDEMPOTENT_REQUEST.
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 200
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/transfer-request.yaml"
+  responses:
+    "204":
+      description: Transfer accepted; no response body.
+    "400":
+      description: >
+        Validation or business-rule rejection. Body's `code` identifies
+        the cause: BAD_REQUEST_PAYLOAD (malformed/missing fields, non-positive
+        amount, same-account transfer, or malformed Idempotency-Key),
+        ACCOUNT_INACTIVE (source or destination is not Active), or
+        INSUFFICIENT_FUNDS (source would be overdrawn).
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/error-envelope.yaml"
+    "404":
+      description: Source or destination account does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/error-envelope.yaml"
+    "409":
+      description: >
+        Another request bearing the same Idempotency-Key is already in
+        flight. Clients should retry after a short delay. Body's `code` is
+        `CONCURRENT_IDEMPOTENT_REQUEST`.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/error-envelope.yaml"
+    "422":
+      description: >
+        The supplied Idempotency-Key was previously used with a different
+        request body. Body's `code` is `IDEMPOTENCY_KEY_REUSED`. Typical
+        cause: client bug reusing a key across distinct transfers.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/error-envelope.yaml"
+```
+This references `transfer-request.yaml` and `TransferRequest.java` is generated from this definition.
+
+
+The rest endpoint:
+
+```java
+    @Override
+    @Transactional
+    public ResponseEntity<Void> createTransfer(TransferRequest request, String idempotencyKey) {
+        TransferCommand command = mapper.toCommand(request);
+        if (idempotencyKey == null) {
+            transferMetrics.transfer(command);
+            return ResponseEntity.noContent().build();
+        }
+
+        IdempotencyKey key = IdempotencyKey.of(idempotencyKey);
+        RequestFingerprint fingerprint = fingerprintComputer.fingerprintOf(serialise(request));
+
+        ResponseRecord result = idempotencyStore.executeIdempotent(key, fingerprint, () -> runAndCapture(command));
+        return toResponseEntity(result);
+    }
+```

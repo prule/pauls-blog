@@ -17,7 +17,7 @@ https://github.com/prule/bank-example/tree/v1-basic
 {{< /notice >}}
 
 {{< notice type="info" title="Next episode" >}}
-[Evaluating bank-core v2-openspec-claude]( {{< ref "post/coding/2026/evaluating-bank-core-v2-openspec-claude" >}} )
+[Evaluating bank-core v2-openspec-claude]( {{< ref "post/coding/2026/evaluating-bank-core-v2-openspec-claude/" >}} )
 {{< /notice >}}
 
 ---

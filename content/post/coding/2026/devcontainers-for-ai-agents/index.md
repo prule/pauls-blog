@@ -57,9 +57,9 @@ flowchart LR
 
 I rolled this out across five projects — a couple of React/Vite PWAs, a Kotlin/Ktor + React monorepo, and a Supabase app — then wrote it down as a [playbook page](https://prule.github.io/project-setup/DevContainers/) and an installable skill so future projects get it for free. The shape:
 
-- **Node via [`fnm`]( {{< ref "post/coding/2026/switching-to-fnm" >}} )**, driven by `.node-version`. Not corepack.
-- **[`pnpm`]( {{< ref "post/coding/2026/why-switch-to-pnpm" >}} ) installed standalone**, pinned to the repo's `packageManager`.
-- **[OpenSpec]( {{< ref "post/coding/2026/open-spec" >}} ) CLI + Claude Code + GitHub CLI** — the agent's workflow tools, provisioned in the image.
+- **Node via [`fnm`]( {{< ref "post/coding/2026/switching-to-fnm/" >}} )**, driven by `.node-version`. Not corepack.
+- **[`pnpm`]( {{< ref "post/coding/2026/why-switch-to-pnpm/" >}} ) installed standalone**, pinned to the repo's `packageManager`.
+- **[OpenSpec]( {{< ref "post/coding/2026/open-spec/" >}} ) CLI + Claude Code + GitHub CLI** — the agent's workflow tools, provisioned in the image.
 - **JDK from the base image** for the Kotlin/Gradle project; **Gradle** via the wrapper.
 - **Playwright + Chromium** for end-to-end tests the agent can actually run.
 

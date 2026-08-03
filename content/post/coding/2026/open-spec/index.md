@@ -4,7 +4,7 @@ date: 2026-05-22
 tags: [ai, openspec]
 description: ""
 categories: [ code ]
-draft: true
+draft: false
 ---
 
 
@@ -195,41 +195,6 @@ In the OpenSpec workflow, the file in your `changes/` directory should represent
 
 Think of it like a **Git patch** but for your requirements. When you are proposing a change, you aren't just sending "the new bits"—you are providing the updated version of the file as it should look once the work is finished.
 
----
-
-### The "Full File" Strategy
-
-When you run `/opsx:propose`, you (or the AI) should copy the existing spec from `openspec/specs/` into your `openspec/changes/[feature-name]/specs/` folder and then modify it.
-
-* **Why?** It gives the AI agent the complete context. If you only provide a snippet of the change, the AI might lose track of existing constraints, logic, or dependencies that still need to be respected.
-* **The Result:** After you run `/opsx:archive`, OpenSpec simply overwrites the old file in the main `specs/` folder with your new, complete version.
-
-### Example Workflow
-
-#### 1. The Original Spec (`specs/data-model.md`)
-
-```markdown
-# Data Model
-- User: id, email, password_hash
-- LeaveRequest: id, user_id, start_date, end_date
-
-```
-
-#### 2. The Learning Moment
-
-You realize you need to track the "Status" of a leave request (Pending, Approved, Rejected).
-
-#### 3. The Proposed Change (`changes/add-status/specs/data-model.md`)
-
-You don't just write "Add status to LeaveRequest." You write the **entire updated model**:
-
-```markdown
-# Data Model
-- User: id, email, password_hash
-- LeaveRequest: id, user_id, start_date, end_date, status (enum)
-
-```
-
 ### Why this matters for AI Agents
 
 When you use a tool like Cursor or Claude Code with OpenSpec:
@@ -245,5 +210,8 @@ When you use a tool like Cursor or Claude Code with OpenSpec:
 
 By keeping the specs complete, you ensure the AI never "forgets" the original requirements while it’s busy building the new ones.
 
+
+> See https://github.com/prule/intentionhorizon for one of my sample projects that uses openspec
+> * `openspec/` - contains the config.yaml, specs, and an archive of the changes that have happened
 
 

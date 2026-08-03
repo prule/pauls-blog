@@ -1,8 +1,8 @@
 ---
 title: "Dev Containers for AI Agents"
-date: 2026-07-26T14:34:47+10:00
-publishDate: 2026-07-26
-draft: true
+date: 2026-08-03T14:34:47+10:00
+publishDate: 2026-08-03
+draft: false
 layout: "post"
 tags: ["devcontainer", "docker", "ai", "claude-code", "pnpm", "gradle", "tooling"]
 categories: ["coding"]

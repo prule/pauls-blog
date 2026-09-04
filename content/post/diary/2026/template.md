@@ -26,5 +26,8 @@ Things I'm seeing/reading/watching/listening to in July 2026...
 
 ## Posts
 
+## Books
+
+
 ## Other
 

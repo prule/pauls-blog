@@ -85,15 +85,38 @@ limactl show-ssh dev --format=config >> ~/.ssh/config
 
 That writes a real `lima-dev` Host block, which is exactly what the desktop app's SSH dialog wants to consume. The whole integration took about two minutes.
 
-The decision that really matters, though, is this one:
+The decision that really matters, though, is where the code lives — and I went round the houses on this one, so it's worth showing the whole loop rather than just the answer.
 
-```yaml
-mounts: []
+**First position: purist.** `mounts: []`, code inside the VM, files move in and out by git, no exceptions.
+
+**Then I talked myself out of it.** The thing that did it was realising **dev containers already bind-mount the workspace folder.** That's the default. So "never mount the host" wasn't protecting a property I'd had for six weeks — I was inventing a new rule and calling it a principle. And I wanted WebStorm running natively on the Mac so I could watch files change as the agent wrote them. One writable mount of `~/projects/current` gets you that, and it only exposes that one folder — not `~/Documents`, not `~/.ssh`, not the keychain.
+
+**Then I hit the thing that actually decides it.** `node_modules` would be on the shared mount too, which means the native binaries — esbuild, rollup, sharp — belong to whichever OS ran the install last. My containers used per-project `node_modules` volumes specifically to stop that. So the mount costs you that protection, and you're left with a rule you have to remember forever: *pnpm runs in the VM only, never on the host.* One `pnpm install` on the Mac and every build in the VM is broken.
+
+The obvious fix is keeping `node_modules` VM-local with a bind mount. Fast, no mixing — but then WebStorm can't resolve a single import. No config gets you both.
+
+That split is the tell. If the IDE needs `node_modules` and `node_modules` can only safely live in one place, then **the IDE belongs on the same side of the boundary as the code.** I'd been trying to put a wall between two things that need to be in the same room.
+
+So: no mount, and WebStorm's backend runs *in* the VM, with only the thin client on the Mac.
+
+```bash
+brew install --cask jetbrains-gateway
+# Gateway -> SSH -> lima-dev -> pick a project
 ```
 
-The code lives *in* the VM. Mounting `~/projects` from the host is tempting, and it's a trap. You get the filesystem performance penalty back, `node_modules` fills up with wrong-platform binaries, `.DS_Store` files appear everywhere, and you lose the isolation entirely, because the agent now has a path straight back to your home directory. A VM with a host mount is basically decoration.
+Which — of course — is exactly what this line in my old `devcontainer.json` was already doing:
 
-Files move in and out by git, and that's it.
+```json
+"customizations": { "jetbrains": { "backend": "WebStorm" } }
+```
+
+I'd been running the IDE backend next to the code for six weeks without thinking about it as a design choice. The whole detour was me trying to re-solve a problem I'd already solved.
+
+{{< notice type="tip" title="Where that leaves things" >}}
+Two thin clients on the Mac — Claude Code desktop over SSH, WebStorm over Gateway — both pointed at one box. One filesystem, one Node, one set of native binaries, nothing to keep in sync. Which is just the devcontainer model I liked, with one container instead of seven.
+{{< /notice >}}
+
+It costs a bit of RAM: the backend is a real IDE process, so the VM went from 4 CPU / 12 GB to 6 / 14. And `dev.yaml` has to provision two things the backend wants from the OS — a few X and font libraries, and a much higher `fs.inotify.max_user_watches`, because below about 500k the IntelliJ platform quietly stops watching files and falls back to rescanning directory trees. That's the "why does my IDE keep reindexing" bug, and it's a one-line sysctl.
 
 {{< notice type="warning" title="No snapshots" >}}
 `vmType: vz` is fast, but `limactl snapshot` is QEMU-only, so there's no restore point. Recovery is `limactl delete dev && ./bootstrap.sh`, which only works if the YAML is complete. That means any package installed in the VM but missing from `dev.yaml` is a bug in `dev.yaml`, not a fact about the VM — so no casual `sudo apt install`. That discipline is the price of having no snapshots, and honestly I think it's a better property than snapshots would have been anyway.

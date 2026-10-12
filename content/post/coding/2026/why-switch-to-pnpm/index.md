@@ -199,6 +199,97 @@ rm -rf node_modules/.vite
 ```
 {{< /notice >}}
 
+## Making It Stick: Stopping npm From Creeping Back
+
+Migrating is the easy part. The harder part is that `npm install` still works in your pnpm project, and the day someone (or some agent, or you in a hurry) runs it, you get a `package-lock.json`, a flat `node_modules`, and a dependency tree that no longer matches what CI resolves.
+
+No single guard catches every route in, so layer them. Each one below catches what the previous one misses.
+
+### Layer 1: `only-allow` as a preinstall hook
+
+```json
+"scripts": { "preinstall": "npx only-allow pnpm" }
+```
+
+[`only-allow`](https://github.com/pnpm/only-allow) is pnpm's own tool. It reads the `npm_config_user_agent` environment variable to detect which package manager invoked it, and exits non-zero with a readable message if it's the wrong one. This blocks both `npm install` and `yarn install`.
+
+Two gaps worth knowing: `npm install --ignore-scripts` skips `preinstall` entirely, and on a fresh clone `npx` has to fetch `only-allow` over the network before it can run — it cannot be a devDependency, because `preinstall` runs *before* dependencies are installed.
+
+### Layer 2: Refuse to commit the competing lockfiles
+
+```gitignore
+package-lock.json
+yarn.lock
+npm-shrinkwrap.json
+```
+
+This is the layer that actually holds, because it doesn't rely on a script running. An accidental `npm install` still produces a local `node_modules`, but its lockfile can never be committed — so the mistake cannot spread to CI or to another machine.
+
+### Layer 3: Fail CI if one shows up anyway
+
+```yaml
+name: package-manager
+on: [push, pull_request]
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject non-pnpm lockfiles
+        run: |
+          fail=0
+          for f in package-lock.json yarn.lock npm-shrinkwrap.json; do
+            if [ -f "$f" ]; then
+              echo "::error file=$f::This project uses pnpm. Remove $f and run 'pnpm install'."
+              fail=1
+            fi
+          done
+          if [ ! -f pnpm-lock.yaml ]; then
+            echo "::error::pnpm-lock.yaml is missing — it must be committed."
+            fail=1
+          fi
+          exit $fail
+```
+
+Catches both the `--ignore-scripts` bypass and a lockfile that got force-added past `.gitignore`. It also catches the opposite mistake — someone deleting `pnpm-lock.yaml` and not committing the replacement.
+
+### Layer 4: A shell guard, if you control the environment
+
+The three layers above all catch the mistake *after* it happens. If you have a single dev box or VM, you can catch it before anything is written:
+
+```bash
+npm() {
+  case "$1" in
+    install|i|ci|add|update)
+      if [ -f pnpm-lock.yaml ]; then
+        echo "pnpm-lock.yaml present — use pnpm, not npm" >&2; return 1
+      fi ;;
+  esac
+  command npm "$@"
+}
+```
+
+Scoped to install-type commands, and only when a `pnpm-lock.yaml` is actually present — so `npm install -g` keeps working, and so do any projects you have that legitimately still use npm.
+
+{{< notice type="tip" title="What about engine-strict and Corepack?" >}}
+Two other approaches get recommended often, and I'd skip both.
+
+Setting `"engines": { "npm": "please-use-pnpm" }` with `engine-strict=true` in `.npmrc` makes npm refuse to run. But pnpm reads `engine-strict` from `.npmrc` too, so you're relying on it to ignore an `npm` engine entry it can see — verify that before putting it in a dozen repos.
+
+**Corepack** with `COREPACK_ENABLE_STRICT=1` genuinely does block a mismatched package manager. But Corepack ties your package manager to a Node install, which is the exact problem that standalone pnpm solves — an fnm patch bump shouldn't be able to lose your pnpm. Not worth undoing that for this.
+{{< /notice >}}
+
+### One more thing to check: duplicate lockfiles you already have
+
+Before adding guards, look for projects that already have *both*. I found one of mine carrying a `pnpm-lock.yaml` and a `package-lock.json` committed side by side — two different dependency graphs, with which one wins depending on the tool that happens to run. The git log settled it: the pnpm lockfile had been updated recently, the npm one hadn't been touched since the initial commit.
+
+```bash
+# find the conflicts
+for d in */; do
+  [ -f "$d/pnpm-lock.yaml" ] && [ -f "$d/package-lock.json" ] && echo "conflict: $d"
+done
+```
+
 ## Conclusion
 
 Switching to pnpm is a low-risk, high-return upgrade for any development workflow. It frees up storage on your workstation, guarantees that your dependency imports are safe and declared, and speeds up your builds. 

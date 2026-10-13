@@ -124,7 +124,9 @@ It costs a bit of RAM: the backend is a real IDE process, so the VM went from 4 
 
 ## What happened to the Dockerfile
 
-Most of it ported straight across: the `postgresql-client` for raw-SQL migrations, fnm, standalone pnpm, the OpenSpec CLI, and Temurin via apt. That last one incidentally killed off the `jdkDistro: tem` workaround, because apt doesn't choke on Microsoft's `21.0.12+1-ms` version strings the way the devcontainer Feature's regex did.
+Most of it ported straight across: the `postgresql-client` for raw-SQL migrations, fnm, standalone pnpm, the OpenSpec CLI. Java went somewhere else entirely — see below.
+
+The `jdkDistro: tem` workaround died in the process, and the way it died is funny. That workaround existed because the devcontainer java Feature couldn't parse SDKMAN's version identifiers — `21.0.12+1-ms` broke its regex. I now use SDKMAN directly, so those identifiers aren't something to be parsed around. They're just what you type.
 
 Docker Engine installs natively in the guest, so there's no Docker Desktop, no licence question, and no VM-inside-a-VM. Containers run on the guest kernel directly, which is where `supabase-local-platform` now lives — and since it's in the same VM as everything else, `host.docker.internal` is simply `localhost`.
 
@@ -158,14 +160,36 @@ pnpm turned out to be the pleasant surprise. From v10 onwards it self-manages th
 
 fnm stays, but its role changed. It used to auto-switch per directory via `--use-on-cd`; now there's one default and fnm is just the mechanism I use to bump it.
 
-Java is the one place the "one version" rule breaks down, and it's worth being honest about why. Most of my CI already runs on 25, so that's the VM default. But several `laptime-insights` modules pin `jvmToolchain(21)`, and a Gradle toolchain isn't a preference — it's a declared requirement. Without a real JDK 21 on the box, Gradle either downloads one mid-build or fails outright. So:
+Java is the one place the "one version" rule breaks down, and it's worth being honest about why. Most of my CI already runs on 25, so that's the VM default. But several `laptime-insights` modules pin `jvmToolchain(21)`, and a Gradle toolchain isn't a preference — it's a declared requirement. Without a real JDK 21 on the box, Gradle either downloads one mid-build or fails outright.
+
+I initially installed both from apt. That works, but it leaves apt as a second authority on Java versions next to whatever I'd reach for when I actually need to switch. So I gave the whole job to **SDKMAN** instead — apt installs no JDK at all:
 
 ```yaml
-JAVA_VERSIONS: "25 21"   # 25 is the default; 21 is here for the toolchains
-JAVA_DEFAULT: "25"
+JAVA_VERSIONS: "25.0.4-tem 21.0.12-tem"
+JAVA_DEFAULT: "25.0.4-tem"
 ```
 
-Temurin co-installs cleanly from apt, so this costs a few hundred MB and nothing else. The general lesson is that "one version for everything" holds right up until a build tool treats a version as a hard input rather than a default.
+That mirrors how fnm owns every Node version with no apt Node beside it. One authority per language, so "which java is this?" has exactly one answer. `JAVA_HOME` points at SDKMAN's `current` symlink, which means `sdk default java <version>` moves the default for scripts too, from one place.
+
+{{< notice type="warning" title="Three things that only showed up on the real machine" >}}
+I wrote this config, it parsed, the scripts passed `bash -n`, and all three of these still bit me the moment it ran:
+
+**SDKMAN needs `zip`.** My package list had `unzip` but not `zip`. The installer stops with "Please install zip on your system" and leaves no `~/.sdkman` behind at all.
+
+**SDKMAN makes the *first* JDK you install the default.** I installed 21 first, so interactive shells got 21 while scripts got 25 — a split-brain that looks like exactly nothing until a build picks the wrong one. `sdk default` has to be explicit.
+
+**The `java` entry in `PATH` has to come last.** This one took a while. `sdk env` would cheerfully report "Using java version 21.0.12-tem in this shell" and `java -version` would still say 25. `sdkman-init` prepends its own entry and `sdk use` rewrites *that* one — so my hardcoded entry earlier in `PATH` quietly won every time. At the tail it only serves non-interactive shells, which have no `sdk` function anyway.
+{{< /notice >}}
+
+Per project you commit a `.sdkmanrc`:
+
+```
+java=21.0.12-tem
+```
+
+…and `cd` into the directory switches the JDK. With one caveat worth knowing: that's **interactive only**, because it hooks `PROMPT_COMMAND`. Scripts and agent-run commands never see it. For those, Gradle toolchains are the real mechanism — Gradle finds every SDKMAN-installed JDK in the candidates directory, so a declared `jvmToolchain(21)` resolves without downloading anything mid-build.
+
+The general lesson still holds: "one version for everything" works right up until a build tool treats a version as a hard input rather than a default. The narrower lesson is that a version manager and a hardcoded `PATH` are two authorities on the same question, and the hardcoded one wins silently.
 
 ## One gotcha worth knowing
 

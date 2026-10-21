@@ -2,60 +2,29 @@
 title: "One VM Instead of Seven Dev Containers"
 date: 2026-09-19T15:35:00+10:00
 publishDate: 2026-09-19
-draft: true
+draft: false
 layout: "post"
 tags: ["devcontainer", "lima", "vm", "ai", "claude-code", "docker", "pnpm", "tooling"]
 categories: ["coding"]
-description: "Six weeks after standardising on dev containers, I deleted all of them and moved to a single Lima VM. The isolation was the right idea. One container per project was not."
+description: "All my dev work now runs in a single Lima VM, driven from the Claude Code desktop app over SSH. One sandbox, one toolchain, forty repos."
 author: "Paul"
 ---
 
-It turns out I chose the wrong granularity. The isolation was still the right idea.
+All my development now happens inside one Linux VM on my Mac. I drive it from the Claude Code desktop app over SSH, and it holds every one of my forty repos. The agent gets a proper sandbox, my Mac stays out of harm's way, and every project shares one toolchain.
 
-Six weeks ago I wrote [Dev Containers for AI Agents]( {{< ref "post/coding/2026/devcontainers-for-ai-agents/" >}} ): one container per project, the agent safely sandboxed, a reproducible toolchain. I still think all of that is right. But I deleted every one of those containers. I replaced them all with a single Linux VM, and I drive it from the Claude Code desktop app over SSH.
+It replaces the per-project setup from [Dev Containers for AI Agents]( {{< ref "post/coding/2026/devcontainers-for-ai-agents/" >}} ). The sandboxing idea is the same. There's just one box now instead of seven.
 
-The problem I kept hitting is that I am one person, working across forty repos, on one laptop. Isolating each project from every *other* project gave me nothing. The boundary I cared about was between my host machine and the work the agent does. With one container per project, I maintained forty boundaries when I needed only one.
+The idea is simple. I'm one person, on one laptop. The boundary I care about is between my Mac and the work the agent does. I don't need a wall between each project and every other project. So I put that one boundary in place once, around everything.
 
 {{< notice type="info" title="The config" >}}
-https://github.com/prule/devvm — one `dev.yaml`, three scripts. That is the whole environment.
+https://github.com/prule/devvm — one `dev.yaml`, three scripts. That's the whole environment.
 {{< /notice >}}
+
+Because everything lives in one place, a lot of things just work. There's one `~/.claude`, one `~/.config/gh`, one pnpm store and one Playwright cache. You log in once and stay logged in. Supabase is just `localhost`.
 
 ---
 
-## The moment it clicked: ninety lines of workarounds
-
-The final push came from one project's `devcontainer.json`. I looked at how much cruft it contained:
-
-| Workaround | Why it existed |
-|---|---|
-| `CLAUDE_CONFIG_DIR` | Claude Code splits state across `~/.claude/.credentials.json` and `~/.claude.json`. A volume covers one but not the other, so my logins vanished on every rebuild. |
-| `GH_CONFIG_DIR` | The JetBrains backend repoints `XDG_CONFIG_HOME`, so `gh auth login` wrote to a throwaway dir instead of the mounted volume. |
-| `PLAYWRIGHT_SKIP_BROWSER_GC` | Playwright's `.links` files hold absolute paths into a per-project `node_modules` volume. Sibling containers cannot see those paths, so they decide the browsers are orphans and garbage-collect them. |
-| `--add-host=host.docker.internal:host-gateway` | So I could reach the shared Supabase instance on the host. |
-| "Never mount a volume at `PNPM_HOME`" | A mount there shadows the baked-in standalone pnpm. |
-| Shared `devcontainer-cache` / `-claude` / `-gh` volumes | They rebuilt "log in once per machine". A machine already has that property for free. |
-
-Every line in that list was the same thing: an attempt to make seven isolated environments behave like one environment.
-
-At that point it is not a config problem any more. The design is trying to tell you what it wants to be.
-
-{{< notice type="note" >}}
-All six are gone now. I did not work around them. They are gone. There is one `~/.claude`, one `~/.config/gh`, one pnpm store and one Playwright cache. Supabase is just `localhost`.
-{{< /notice >}}
-
-Then there was the disk. Docker Desktop's data directory grew to 47 GB on a machine with 30 GB free. Meanwhile `~/projects`, the source code for all forty repos, is 15 GB. The containers grew to three times the size of the code they existed to build.
-
-## The part I assumed wouldn't work
-
-The obvious objection to a VM is SSH. SSH means a terminal, and I would not give up the GUI.
-
-But the Claude Code desktop app treats SSH sessions as a first-class environment:
-
-1. Open the environment dropdown.
-2. Pick *+ Add SSH connection*.
-3. Give it a name, host, port and key.
-
-On first connect, the app installs Claude Code on the remote for you.
+## How it fits together
 
 {{< mermaid >}}
 flowchart LR
@@ -73,148 +42,123 @@ flowchart LR
     H[Host: Xcode, Finder] -.->|no mounts| sub1
 {{< /mermaid >}}
 
-The GUI stays on the Mac, and execution happens in the VM. It is the same window, with the same permission prompts, the same file pane and the same diffs. When the agent runs `rm -rf node_modules` or a postinstall script fires, it hits the VM's filesystem. It does not touch `~/Documents` or my host SSH keys.
+You don't have to give up the GUI to work in a VM. The Claude Code desktop app treats SSH sessions as a first-class environment. Setting one up takes a minute:
 
-That is the same mental model I reached in the last post. The container is the computer the agent uses, and your editor is a thin client attached to it. The only change is that I stopped running seven computers.
+1. Open the environment dropdown.
+2. Pick *+ Add SSH connection*.
+3. Give it a name, host, port and key.
 
-A lot works in SSH sessions: all four permission modes, the terminal panel, file editing, diffs and git, plugins, connectors, and MCP. Two things do not:
+The first time you connect, the app installs Claude Code on the VM for you.
 
-- `@mention` file autocomplete. Attaching files still works.
-- Shared session history. Each environment keeps its own history.
+From then on, the GUI stays on the Mac and everything runs in the VM. It's the same window, with the same permission prompts, file pane and diffs. If the agent runs `rm -rf node_modules` or a postinstall script misbehaves, it hits the VM's filesystem. Your `~/Documents` and your SSH keys are never in reach.
 
-Losing `@mention` is the one thing that annoys me day to day. But I will happily trade it for 1,500 fewer lines of config.
+I think of it like this: the VM is the computer the agent uses, and the editor is a thin client attached to it.
 
-## Lima, and the one decision that matters
+Most features work over SSH: all four permission modes, the terminal panel, file editing, diffs and git, plugins, connectors, and MCP. Two things don't:
 
-I chose Lima over UTM or Parallels for four reasons:
+- `@mention` file autocomplete. You can still attach files.
+- Shared session history. Each environment keeps its own.
 
-- It is free.
-- It is config-as-code.
-- It supports `vmType: vz` for Apple's native hypervisor.
-- It sets up Rosetta binfmt, so x86-only Docker images still run.
+## Lima
 
-Honestly, though, the deciding factor was mundane:
+I use [Lima](https://lima-vm.io/) to run the VM. It's a good fit:
+
+- It's free.
+- The whole VM is defined in a config file.
+- It supports `vmType: vz`, Apple's native hypervisor.
+- It sets up Rosetta, so x86-only Docker images still run.
+
+The best part is how nicely it plays with SSH. One command gives you a ready-made host entry:
 
 ```bash
 limactl show-ssh dev --format=config >> ~/.ssh/config
 ```
 
-That command writes a real `lima-dev` Host block. The desktop app's SSH dialog wants exactly that block. The whole integration took about two minutes.
+That adds a `lima-dev` Host block, which is exactly what the desktop app's SSH dialog wants. Connecting the two takes about two minutes.
 
-The decision that matters most is where the code lives. I changed my mind several times on this one, so I will show the whole loop and not only the answer.
+## The code lives in the VM
 
-**First position: purist.** `mounts: []`. The code lives inside the VM. Files move in and out by git, with no exceptions.
+The VM has no mounts from the Mac. All the code lives inside it, and git moves changes in and out.
 
-**Then I changed my mind.** The reason: **dev containers already bind-mount the workspace folder.** That is the default. So "never mount the host" did not protect a property I had for the last six weeks. I was inventing a new rule and calling it a principle. I also wanted WebStorm to run natively on the Mac, so I could watch files change as the agent wrote them. One writable mount of `~/projects/current` gives you that. It exposes only that one folder, and not `~/Documents`, `~/.ssh` or the keychain.
+The reason is `node_modules`. It holds native binaries like esbuild, rollup and sharp, and those belong to whichever OS ran the install. If the code sat on a folder shared with the Mac, one stray `pnpm install` on the Mac would break every build in the VM. Your IDE also needs to read `node_modules` to resolve imports. So the IDE and the code need to live on the same side.
 
-**Then I hit the thing that decides it.** `node_modules` would also be on the shared mount. So the native binaries (esbuild, rollup, sharp) belong to whichever OS ran the install last. My containers used per-project `node_modules` volumes specifically to stop that. The mount costs you that protection. That leaves you with a rule you must remember forever: *pnpm runs in the VM only, never on the host.* One `pnpm install` on the Mac breaks every build in the VM.
-
-The obvious fix is to keep `node_modules` local to the VM with a bind mount. That is fast, with no mixing. But then WebStorm cannot resolve a single import. No config gives you both.
-
-That split is the tell. The IDE needs `node_modules`, and `node_modules` can live safely in only one place. So **the IDE belongs on the same side of the boundary as the code.** I was trying to put a wall between two things that need to be in the same room.
-
-So the answer is no mount. WebStorm's backend runs *in* the VM, and only the thin client runs on the Mac.
+That means the IDE runs in the VM too. WebStorm's backend runs inside the VM, and JetBrains Gateway gives you the thin client on the Mac:
 
 ```bash
 brew install --cask jetbrains-gateway
 # Gateway -> SSH -> lima-dev -> pick a project
 ```
 
-And of course, this line in my old `devcontainer.json` already did exactly that:
-
-```json
-"customizations": { "jetbrains": { "backend": "WebStorm" } }
-```
-
-I ran the IDE backend next to the code for six weeks, and I never thought of it as a design choice. The whole detour was me trying to solve a problem I already solved.
-
-{{< notice type="tip" title="Where that leaves things" >}}
-Two thin clients run on the Mac: Claude Code desktop over SSH, and WebStorm over Gateway. Both point at one box. There is one filesystem, one Node, one set of native binaries, and nothing to keep in sync. That is the devcontainer model I liked, with one container instead of seven.
+{{< notice type="tip" title="The result" >}}
+Two thin clients run on the Mac: Claude Code desktop over SSH, and WebStorm over Gateway. Both point at the same box. One filesystem, one Node, one set of native binaries, and nothing to keep in sync.
 {{< /notice >}}
 
-It costs a bit of RAM. The backend is a real IDE process, so the VM went from 4 CPU / 12 GB to 6 / 14. `dev.yaml` must also provision two things that the backend wants from the OS:
+The IDE backend does need a bit more room. I give the VM 6 CPUs and 14 GB of RAM. `dev.yaml` also sets up two things the backend expects from the OS:
 
 - A few X and font libraries.
 - A much higher `fs.inotify.max_user_watches`. Below about 500k, the IntelliJ platform quietly stops watching files and rescans directory trees instead.
 
-That second one is the "why does my IDE keep reindexing" bug. The fix is a one-line sysctl.
+If your IDE ever seems to reindex all the time, that sysctl is the one-line fix.
 
 {{< notice type="warning" title="No snapshots" >}}
-`vmType: vz` is fast, but `limactl snapshot` is QEMU-only, so there is no restore point. Recovery is `limactl delete dev && ./bootstrap.sh`, which works only if the YAML is complete. So if a package is installed in the VM but missing from `dev.yaml`, that is a bug in `dev.yaml`, not a fact about the VM. No casual `sudo apt install`. That discipline is the price of no snapshots. Honestly, I think it is a better property than snapshots would have been anyway.
+`vmType: vz` is fast, but `limactl snapshot` only works with QEMU, so there's no restore point. To recover, run `limactl delete dev && ./bootstrap.sh`. That only works if the YAML is complete. So treat any package in the VM that isn't in `dev.yaml` as a bug in `dev.yaml`, and skip the casual `sudo apt install`. I actually like this. It keeps the config honest.
 {{< /notice >}}
 
-## What happened to the Dockerfile
+## What's in the box
 
-Most of it ported directly: the `postgresql-client` for raw-SQL migrations, fnm, standalone pnpm, and the OpenSpec CLI. Java went somewhere else entirely (see below).
+The VM comes with:
 
-The `jdkDistro: tem` workaround died in the process, and the way it died is funny. That workaround existed because the devcontainer java Feature could not parse SDKMAN's version identifiers. `21.0.12+1-ms` broke its regex. Now I use SDKMAN directly, so I do not need to work around those identifiers. They are just what you type.
+- `postgresql-client`, for raw-SQL migrations.
+- fnm, for Node.
+- Standalone pnpm.
+- The OpenSpec CLI.
+- SDKMAN, for Java (more on that below).
+- Docker Engine, installed natively.
 
-Docker Engine installs natively in the guest. So there is no Docker Desktop, no licence question, and no VM inside a VM. Containers run directly on the guest kernel, and `supabase-local-platform` now lives there. It is in the same VM as everything else, so `host.docker.internal` is simply `localhost`.
+Docker runs straight on the VM's kernel. There's no Docker Desktop, no licence question and no VM inside a VM. My `supabase-local-platform` runs there too. It's in the same VM as everything else, so it's just `localhost`.
 
-The interesting part is what did *not* port. The old `post-create.sh` had six steps, and three of them do not exist any more:
+Every project shares the default pnpm store at `~/.local/share/pnpm/store`, so packages download once for the whole machine.
 
-```bash
-# GONE — step 1: named volumes are created root-owned, and mounting one at
-# ~/.cache/ms-playwright makes Docker create ~/.cache root-owned too
-sudo chown vscode:vscode /cache/pnpm-store ~/.cache ~/.claude ~/.config/gh
+## One toolchain for everything
 
-# GONE — step 4: pnpm ignores PNPM_STORE_DIR and .npmrc for store-dir, and the
-# JetBrains backend redirects XDG_CONFIG_HOME, so this had to be written twice
-pnpm config set --global store-dir /cache/pnpm-store
-XDG_CONFIG_HOME=/.jbdevcontainer/config pnpm config set --global store-dir /cache/pnpm-store
-```
+With one VM, every repo uses the same Node. Bumping Node updates all forty repos at once. That's the point, but it cuts both ways. If a repo doesn't build on the new version, it's telling you something about that repo, and it's worth fixing sooner rather than later.
 
-Every project on the machine already shares the default pnpm store at `~/.local/share/pnpm/store`. That is all `/cache` ever tried to be.
+fnm keeps one default Node version and is how I bump it.
 
-I marked each deletion with `GONE:` in the YAML, at the spot where the ported step used to be. That way the omissions stay reviewable and do not quietly disappear.
+pnpm makes this easy. From v10 onwards, it manages the `packageManager` field itself. So one standalone binary happily serves repos pinned to different pnpm versions.
 
-## "One toolchain" really does mean one
+### Java
 
-This is the part that is not free. My repos had pins all over the place:
+Java is the one place where a single version isn't enough. Most of my CI runs on 25, so that's the default. But some modules pin `jvmToolchain(21)`, and Gradle treats that as a hard requirement. Without a real JDK 21 in the VM, Gradle either downloads one mid-build or fails.
 
-- **Node**: `22`, `24.15.0`, `24.21.0`, `25.9.0`, `26.7.0`
-- **pnpm**: `11.5.2` through `12.4.2`, six distinct pins
-
-Each Dockerfile was effectively a toolchain lockfile for its own repo. With one VM, a Node bump changes all forty repos at once. That is the synchronisation I wanted, but it cuts both ways. If a repo does not build on Node 26, that repo is now telling me something. It is no longer a problem I can quietly defer forever.
-
-pnpm was the pleasant surprise. From v10 onwards, it self-manages the `packageManager` field. So a single standalone binary transparently serves repos pinned anywhere in that range. I install one binary and normalise the pins later.
-
-fnm stays, but its role changed. It used to switch versions automatically per directory, via `--use-on-cd`. Now there is one default, and fnm is just the tool I use to bump it.
-
-Java is the one place where the "one version" rule fails, and I want to be honest about why. Most of my CI already runs on 25, so 25 is the VM default. But several `laptime-insights` modules pin `jvmToolchain(21)`. A Gradle toolchain is not a preference. It is a declared requirement. Without a real JDK 21 on the box, Gradle either downloads one mid-build or fails outright.
-
-At first I installed both from apt. That works, but it makes apt a second authority on Java versions, next to whatever tool I would use when I actually need to switch. So I gave the whole job to **SDKMAN** instead. apt installs no JDK at all:
+SDKMAN handles every JDK, and apt installs none. That way there's exactly one answer to "which java is this?", just like fnm for Node. You list the versions in `dev.yaml`:
 
 ```yaml
 JAVA_VERSIONS: "25.0.4-tem 21.0.12-tem"
 JAVA_DEFAULT: "25.0.4-tem"
 ```
 
-That mirrors fnm, which owns every Node version with no apt Node beside it. One authority per language means "which java is this?" has exactly one answer. `JAVA_HOME` points at SDKMAN's `current` symlink. So `sdk default java <version>` moves the default for scripts too, from one place.
+`JAVA_HOME` points at SDKMAN's `current` symlink. So `sdk default java <version>` changes the default for scripts too, from one place.
 
-{{< notice type="warning" title="Three things that appeared only on the real machine" >}}
-I wrote this config. It parsed, and the scripts passed `bash -n`. All three of these problems still bit me the moment it ran:
-
-**SDKMAN needs `zip`.** My package list had `unzip` but not `zip`. The installer stops with "Please install zip on your system" and leaves no `~/.sdkman` at all.
-
-**SDKMAN makes the *first* JDK you install the default.** I installed 21 first. So interactive shells got 21 while scripts got 25. That split-brain looks like nothing at all until a build picks the wrong JDK. `sdk default` must be explicit.
-
-**The `java` entry in `PATH` must come last.** This one took a while to find. `sdk env` cheerfully reported "Using java version 21.0.12-tem in this shell", and `java -version` still said 25. `sdkman-init` prepends its own entry, and `sdk use` rewrites *that* entry. So my hardcoded entry earlier in `PATH` quietly won every time. At the end of `PATH`, my entry serves only non-interactive shells, and those have no `sdk` function anyway.
-{{< /notice >}}
-
-In each project, you commit a `.sdkmanrc`:
+For a project that needs a different JDK, commit a `.sdkmanrc`:
 
 ```
 java=21.0.12-tem
 ```
 
-…and a `cd` into the directory switches the JDK. One caveat: this works in **interactive shells only**, because it hooks `PROMPT_COMMAND`. Scripts and agent-run commands never see it. For those, Gradle toolchains are the real mechanism. Gradle finds every SDKMAN-installed JDK in the candidates directory. So a declared `jvmToolchain(21)` resolves without a download mid-build.
+Now a `cd` into that directory switches the JDK. This works in **interactive shells only**, because it hooks `PROMPT_COMMAND`. Scripts and agent-run commands don't see it. For those, Gradle toolchains do the job. Gradle finds every SDKMAN-installed JDK, so `jvmToolchain(21)` resolves without downloading anything.
 
-The general lesson still holds. "One version for everything" works until a build tool treats a version as a hard input and not as a default. The narrower lesson: a version manager and a hardcoded `PATH` are two authorities on the same question, and the hardcoded one wins silently.
+{{< notice type="warning" title="Three SDKMAN tips" >}}
+**Install `zip`.** SDKMAN needs `zip`, not only `unzip`. Without it, the installer stops with "Please install zip on your system" and leaves no `~/.sdkman` at all.
 
-## One gotcha worth knowing
+**Set the default explicitly.** SDKMAN makes the *first* JDK you install the default. Always run `sdk default`, or interactive shells and scripts can quietly end up on different JDKs.
 
-Lima automatically forwards guest ports bound to `0.0.0.0`. But by default, the host cannot see ports bound to `127.0.0.1` *inside* the guest. That is exactly what a default Vite config does.
+**Put the hardcoded `java` entry last in `PATH`.** `sdkman-init` adds its own entry, and `sdk use` changes *that* one. A hardcoded entry earlier in `PATH` wins every time, so `sdk env` reports one version while `java -version` reports another. At the end of `PATH`, the hardcoded entry only serves non-interactive shells, which have no `sdk` function anyway.
+{{< /notice >}}
+
+## One port tip
+
+Lima forwards guest ports bound to `0.0.0.0` to the Mac automatically. Ports bound to `127.0.0.1` inside the VM stay hidden from the Mac by default, and that's what a default Vite config does. The fix is one line:
 
 ```ts
 // vite.config.ts
@@ -223,19 +167,10 @@ export default defineConfig({
 })
 ```
 
-You can also declare explicit `portForwards` in `dev.yaml` instead. I do that for the Supabase CLI, which hardcodes localhost. But binding to `0.0.0.0` is the fix that always works.
+You can also declare `portForwards` in `dev.yaml`. I do that for the Supabase CLI, which hardcodes localhost. But binding to `0.0.0.0` always works.
 
-## So, was it worth it?
+## Wrapping up
 
-Last time, I ended with this idea: the container is cheap, and the real win is the confidence to let the agent actually run things. That is still true. Nothing about the sandboxing argument changed.
+The agent gets a real computer to run things on, and I can let it run things with confidence. My Mac stays clean. All of it is one YAML file and three shell scripts in a single repo.
 
-What changed is that I stopped paying for it forty times over. All of this is gone:
-
-- Seven `.devcontainer/` directories.
-- Seven copies of `docs/DevContainers.md`.
-- A scaffolding skill to keep them all consistent.
-- 47 GB of Docker.
-
-One YAML file and three shell scripts in a single repo replaced all of it.
-
-The boundary that matters is host versus work. It turns out you need to put it there only once.
+The boundary that matters is between your machine and the work. You only need to draw it once.

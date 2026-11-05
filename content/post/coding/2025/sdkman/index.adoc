@@ -16,11 +16,11 @@ SDKMAN! lets you install, manage and work with multiple versions of software dev
 
 This means for example, you can install multiple versions of Java, Kotlin, Scala, Groovy, Gradle, Maven, Grails, Spring Boot, and many more. See the full list as of mid 2024 link:sdk-list.txt[here].
 
-=== Installation
+== Installation
 
 For installation instructions see the SDKMAN! website link:https://sdkman.io/install[here].
 
-=== Usage
+== Usage
 
 For common usage demonstration, using JAVA as an example:
 
@@ -163,7 +163,7 @@ Using java version 21.0.3-tem in this shell.
 
 See the full documentation at https://sdkman.io/usage/
 
-=== Summary
+== Summary
 
 When starting a new project, install specific versions of the tools you need using SDKMAN!.
 

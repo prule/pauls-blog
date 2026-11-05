@@ -1,6 +1,6 @@
 baseURL = 'https://prule.github.io/pauls-blog/'
 canonifyURLs = true
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Pauls Blog'
 theme = 'hugo-simple-beauty'
 timezone = 'Australia/Sydney'

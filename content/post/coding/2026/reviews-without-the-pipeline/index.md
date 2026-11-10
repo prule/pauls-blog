@@ -2,7 +2,7 @@
 title: "Reviews Without the Pipeline: Building the Same API a Third Time"
 date: 2026-11-10T14:00:00+11:00
 publishDate: 2026-11-10
-draft: true
+draft: false
 layout: "post"
 tags: ["claude-code", "openspec", "ponytail", "code-review", "multi-agent", "sdlc-pipeline", "ai-assisted-coding", "process"]
 categories: ["coding"]

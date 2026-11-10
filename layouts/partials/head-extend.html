@@ -1,4 +1,33 @@
 <link rel="stylesheet" href="https://promo-manager.netlify.app/promo-style.css">
 <style>
     body { margin-bottom:25px; }
+
+    /* The theme has no table styles. Wide tables scroll inside themselves. */
+    .content table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        font-family: var(--font-ui);
+        font-size: 0.9rem;
+        line-height: 1.45;
+        font-variant-numeric: tabular-nums;
+    }
+    .content th, .content td {
+        padding: 0.55rem 0.9rem;
+        border-bottom: 1px solid var(--border-color);
+        vertical-align: top;
+        text-align: left;
+    }
+    .content thead th {
+        color: var(--heading-color);
+        font-weight: 600;
+        background: var(--section-bg);
+        border-bottom-width: 2px;
+    }
+    .content tbody tr:hover { background: var(--section-bg); }
+    .content td code { white-space: nowrap; }
+
+    .content .mermaid { margin: 2rem 0; text-align: center; }
 </style>

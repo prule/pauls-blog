@@ -1,5 +1,14 @@
 <!-- before body close -->
 
+{{/* This file overrides the theme's body-before-close.html, so it must load mermaid itself. */}}
+{{ if .HasShortcode "mermaid" }}
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default';
+    mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+{{ end }}
+
 <div id="promo-banner" class="promo-banner">
     <div class="promo-content">
         <span></span>

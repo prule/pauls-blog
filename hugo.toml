@@ -70,6 +70,10 @@ timezone = 'Australia/Sydney'
     name = "Software Development"
     url = "/page/software"
     weight = 7
+[[menu.main]]
+    name = "Presentations"
+    url = "/page/presentations"
+    weight = 8
 
 [params]
   description = "Practical software development: Java, Kotlin, AI-assisted engineering, and clean code."

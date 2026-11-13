@@ -56,7 +56,9 @@ Example:
 2. Use editing tools (`replace_file_content` or `multi_replace_file_content`) to append new items to the bottom of their respective sections:
    - Ensure you do not destroy existing list items.
    - Maintain a single empty line between list items or before the next heading where appropriate.
-3. Save the changes and present the diff/changes clearly to the user.
+   - If an item's section heading is missing, add it back in the standard order: Videos, Podcasts, Posts, Other.
+3. Remove any section heading left with no items, so the published post shows no empty headings.
+4. Save the changes and present the diff/changes clearly to the user.
 
 ---
 

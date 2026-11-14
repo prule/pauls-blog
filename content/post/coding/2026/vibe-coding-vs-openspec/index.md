@@ -31,7 +31,7 @@ In [Reviews Without the Pipeline]( {{< ref "post/coding/2026/reviews-without-the
 | Contract bugs left (live probes) | 1 | 1 |
 | Human prompts, items 1–5 | 11 | 19 |
 
-Both builds ran on Claude Opus 5.5. The full report, with charts and every probe, is in the repo: [reports/comparison/vibe-vs-openspec.html](https://github.com/prule/math-api-vibe-coded/blob/main/reports/comparison/vibe-vs-openspec.html).
+Both builds ran on Claude Opus 5.5. The full report, with charts and every probe, is in the repo: [reports/comparison/vibe-vs-openspec.html](https://htmlpreview.github.io/?https://github.com/prule/math-api-vibe-coded/blob/main/reports/comparison/vibe-vs-openspec.html).
 
 ## 1. The only difference is the propose step
 

@@ -2,7 +2,7 @@
 title: "With and Without OpenSpec, Part 2: An Outcome Backlog"
 date: 2026-11-14T10:30:00+11:00
 publishDate: 2026-11-14
-draft: true
+draft: false
 layout: "post"
 tags: ["claude-code", "openspec", "ponytail", "code-review", "ai-assisted-coding", "process", "sonarqube"]
 categories: ["coding"]

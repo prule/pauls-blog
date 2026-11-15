@@ -32,7 +32,7 @@ The rule of thumb: if a tool's output is a red line in `./gradlew build`, the ag
 
 ## The evidence
 
-The project: a stateless Spring Boot 4 / Java 25 REST API for exact decimal arithmetic, about 1,600 lines. It already had a decent build: JUnit, ArchUnit layer rules, Spotless. Every change had gone through OpenSpec, three AI code reviews and CI.
+The project: a stateless Spring Boot 4 / Java 25 REST API for exact decimal arithmetic, about 1,600 lines. It already had a decent build: JUnit, ArchUnit layer rules, Spotless. Every change had gone through OpenSpec, three AI code reviews and CI. The code, the gates and the demo are public: [math-api-outcome-based-backlog-openspec-quality-gates](https://github.com/prule/math-api-outcome-based-backlog-openspec-quality-gates).
 
 ### Seeded defects
 
@@ -476,7 +476,7 @@ detekt {
 
 ## Prove your gates, and keep proving them
 
-The demo harness is worth keeping after the blog post. Each defect is a short script: a heredoc that writes a file, plus a header naming the gate it should trip. The runner:
+The [demo harness](https://github.com/prule/math-api-outcome-based-backlog-openspec-quality-gates/tree/main/demo) is worth keeping after the blog post. Each defect is a short script: a heredoc that writes a file, plus a header naming the gate it should trip. The runner:
 
 1. Exports the `baseline` tag and the current tree into two working copies, one per side, each with a throwaway git repo.
 2. For each defect: `git reset --hard && git clean -fd` (build output stays, so `buildSrc` compiles once), runs the defect script, runs `spotlessApply` and then `build` (plus `pitest` if the defect asks for it).

@@ -102,7 +102,7 @@ Every build's DOMAIN-MODEL already stated the rule exactly: `-1000 â‰¤ scale() â
 
 Both vibe builds had the rule only in DOMAIN-MODEL, one layer away from the diff, and all their reviewers read the line and moved on. The model made the same mistake every time. What changed the outcome was whether something written down *for that change* disagreed with the code.
 
-*Corrected 2026-11-15: an earlier version said the vibe builds had no written statement of the rule. They had one in DOMAIN-MODEL, but nothing per change.*
+*Corrected 2026-11-15: an earlier version said the vibe builds had no written statement of the rule. They had one in DOMAIN-MODEL, but nothing per change. [One Feature, Six Specs]( {{< ref "post/coding/2026/specifying-requirements-math-api/" >}} ) covers this.*
 
 {{< notice type="info" >}}
 This is one data point per build, not a rate. But it points the same way five times: the written rule is the part of the plan that matters, not the ceremony around it.

@@ -16,15 +16,13 @@ See LinkedIn for https://www.linkedin.com/in/paulrule/details/recommendations/[r
 
 == Summary
 
-Senior Software Engineer with 20+ years of experience designing and delivering scalable JVM-based systems using Java, Spring Boot, and Kotlin. Known for building software that stays clean, adaptable, and maintainable long after the first release — with a strong focus on architecture, engineering discipline, and code that communicates clearly.
+I'm a software engineer who loves building things. My background is in JVM systems (Java, Spring Boot and Kotlin), but these days I'm most excited about how AI is changing the way software gets made, and I'm learning about it by building.
 
-I care about creating systems that teams can move quickly and confidently within: well-structured codebases, consistent patterns, pragmatic design decisions, and engineering practices that reduce complexity instead of adding to it.
+I use Claude and Claude Code every day as a working partner. I've gone beyond chat-based coding into building my own agent workflows: custom skills, multi-agent delivery pipelines that go from use case to spec, implementation, review and QA, and reusable engineering standards that agents can follow. I'm interested in what makes AI-assisted development reliable and not just fast: clear specs, good guardrails, and code that humans and agents can both understand.
 
-Beyond hands-on development, I’ve built a reputation as a highly collaborative engineer who works closely with developers, product teams, and stakeholders to shape solutions together. I enjoy mentoring, lifting engineering standards, and helping teams build shared ownership and momentum — not just shipping features.
+Outside work, I run a steady stream of side projects and experiments. Some are small tools, some are prototypes to test an idea, and some are deliberate tries at pushing an AI-driven workflow further to see where it breaks. Many of them don't survive, and that's part of the point. Each one teaches me something I bring back to my team. I write about what I learn on https://prule.github.io/pauls-blog/[my blog], and you can see some of the projects on https://portfolio.vamonossoftware.com[my portfolio].
 
-I’m most energised by product-focused teams that value thoughtful engineering, continuous improvement, and high-quality delivery.
-
-Currently exploring senior and lead engineering opportunities with modern, high-performing teams — either hybrid in Sydney or fully remote.
+I enjoy working closely with developers, product people and stakeholders, sharing what I learn, and helping teams adopt new ways of working with care. I'm looking for a product-focused team that likes to experiment, collaborate, learns quickly, and wants to work out what great engineering looks like with AI in the loop.
 
 **Skills**
 
@@ -38,16 +36,16 @@ Currently exploring senior and lead engineering opportunities with modern, high-
 |PostgreSQL, Apache Spark, JPA, Hibernate, SpiceDB
 
 |Architecture & Design
-|Clean architecture, domain modelling, REST/HATEOAS, ReBAC, CRDT
+|Clean architecture, domain modelling, REST/HATEOAS, ReBAC
 
 |Testing
 |TDD, BDD, JBehave, JUnit
 
 |Tooling & Platforms
-|Git, Gradle, Maven, IntelliJ IDEA, Renovate
+|Claude, Git, Gradle, Maven, IntelliJ IDEA, Renovate
 
 |Practices
-|Agile/Scrum, technical mentoring, code review, pair programming, AI assisted development
+|Agile/Scrum, technical mentoring, code review, pair programming, AI development
 |===
 
 <<<

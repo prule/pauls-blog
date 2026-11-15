@@ -15,7 +15,7 @@ Use one agent with reviews from the first change, and write the rules down exact
 - **The process didn't change the design.** Every build ended up with the same layers, the same `Operation` enum and the same Jackson limits. The docs decided the architecture, not the workflow.
 - **Reviews are cheap.** A plan review and two code reviews per change added about **8%** in time and tokens. They found more issues than a five-agent pipeline that cost **2.4× the time**.
 - **OpenSpec's overhead depends on the backlog.** It cost **52% more time** when the backlog already held the design, and **16% more** when the builder had to design. Either way it wrote about **1.4× the output tokens**.
-- **Written rules catch bugs.** The same `Math.abs(scale)` bug appeared in five builds. Each build that caught it had the rule written down as two comparisons, or had tests that were proven to fail.
+- **Written rules catch bugs.** The same `Math.abs(scale)` bug appeared in five builds, though every build's domain model stated the rule exactly. Each build that caught it had restated the rule next to the change, or had tests that were proven to fail.
 
 This post sums up the four detailed write-ups. The numbers, probes and caveats are in those posts.
 
@@ -94,13 +94,15 @@ if (Math.abs(operand.scale()) > MAX_SCALE) { ... }
 
 `Math.abs(Integer.MIN_VALUE)` is still negative, so `1E+2147483648` gets past the check. The original avoided the bug by casting to `long`.
 
-Each build that caught the bug had an independent statement of intent to compare the code against:
+Every build's DOMAIN-MODEL already stated the rule exactly: `-1000 ≤ scale() ≤ 1000`. That wasn't enough. Each build that caught the bug had a statement of intent for *that change* to compare the code against:
 
 - **pipeline:** a mutant proved that a test couldn't fail.
 - **one-agent-2:** both code reviews compared the code with design.md, which said "two comparisons".
 - **outcome openspec:** design.md said `-1000 <= scale() <= 1000`, and the agent noticed its own code didn't match.
 
-Both vibe builds had no such statement, and all their reviewers read the line and moved on. The model made the same mistake every time. What changed the outcome was whether something written down disagreed with the code.
+Both vibe builds had the rule only in DOMAIN-MODEL, one layer away from the diff, and all their reviewers read the line and moved on. The model made the same mistake every time. What changed the outcome was whether something written down *for that change* disagreed with the code.
+
+*Corrected 2026-11-15: an earlier version said the vibe builds had no written statement of the rule. They had one in DOMAIN-MODEL, but nothing per change.*
 
 {{< notice type="info" >}}
 This is one data point per build, not a rate. But it points the same way five times: the written rule is the part of the plan that matters, not the ceremony around it.

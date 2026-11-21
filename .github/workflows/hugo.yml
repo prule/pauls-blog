@@ -58,7 +58,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Cache Node.js modules
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ~/.npm # Cache npm modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json', '**/npm-shrinkwrap.json') }}

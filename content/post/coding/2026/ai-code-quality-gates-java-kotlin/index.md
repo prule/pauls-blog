@@ -22,7 +22,7 @@ The short list, in order of value for AI-generated code:
 4. **Dependency rules** (Maven Enforcer, or Gradle resolution strategy): blocks banned and drifting dependencies
 5. **Testcontainers + Flyway validate + Squawk**: real database, schema checks, migration safety
 6. **detekt** and Kotlin `allWarningsAsErrors` (Kotlin)
-7. **Spotless**, **OpenRewrite**, **Gitleaks**, **OWASP dependency-check**: hygiene
+7. **Spotless**, **OpenRewrite**, **Betterleaks**, **OWASP dependency-check**: hygiene
 
 Skip **Checkstyle** and **PMD** if Sonar is already gating. They mostly duplicate it.
 
@@ -75,7 +75,7 @@ AI agents fail in predictable ways. Sonar catches the generic ones (complexity, 
 | Silences a check instead of fixing the code | No-suppressions check + locked config |
 | SQL that passes on H2 and fails on Postgres | Testcontainers |
 | `ADD COLUMN ... NOT NULL DEFAULT` that locks a large table in production | Squawk |
-| An API key pasted into a test fixture | Gitleaks |
+| An API key pasted into a test fixture | Betterleaks |
 
 ## Integrating it into an AI build
 
@@ -472,7 +472,7 @@ detekt {
 
 - **Spotless**: `spotlessCheck` in the build, `spotlessApply` in the agent's instructions. It keeps PR diffs to real changes.
 - **OpenRewrite**: a fixer, not a gate. `rewrite:dryRun` with `failOnDryRunResults=true` fails CI when the code doesn't match your recipes. It's also the best tool for framework and JDK upgrades.
-- **Gitleaks**: first step in CI (`gitleaks/gitleaks-action@v2`, with `fetch-depth: 0` so it scans the whole history), and optionally pre-commit.
+- **[Betterleaks](https://github.com/betterleaks/betterleaks)**: the successor to Gitleaks, from the same maintainers. Make it the first step in CI, and optionally run it pre-commit too (`betterleaks git --pre-commit --staged`). It has no official GitHub Action, so download the pinned release binary and run `betterleaks git --redact .`. Check out with `fetch-depth: 0` so it scans the whole history. Two differences from Gitleaks catch people out: it only reads a `.betterleaks.toml` when you pass `--config`, and exemptions are Expr `filter`s rather than `[[allowlists]]`. *(Updated 2026-11-21: this post originally used Gitleaks.)*
 
 ## Prove your gates, and keep proving them
 

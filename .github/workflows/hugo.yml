@@ -42,7 +42,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '${{ env.HUGO_VERSION }}'
           extended: true # Use extended version for Sass/SCSS support

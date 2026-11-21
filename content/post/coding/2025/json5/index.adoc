@@ -7,8 +7,8 @@ date:    2025-03-06
 author: "Paul"
 publishDate: 2025-03-06
 tags:
-    - Web dev
-    - App
+    - web dev
+    - app
 categories: [ code ]
 ---
 

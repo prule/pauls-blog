@@ -7,7 +7,7 @@ date:    2026-04-30
 author: "Paul"
 publishDate: 2026-04-30
 tags:
-    - Web dev
+    - web dev
 categories: [ code ]
 ---
 

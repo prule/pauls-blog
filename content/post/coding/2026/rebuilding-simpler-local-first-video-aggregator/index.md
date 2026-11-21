@@ -4,7 +4,7 @@ date: 2026-06-10T14:11:22+10:00
 publishDate: 2026-06-10
 draft: false
 layout: "post"
-tags: ["Web dev", "PWA", "IndexedDB", "Cloudflare"]
+tags: ["web dev", "pwa", "indexeddb", "cloudflare"]
 categories: ["coding"]
 description: "Rebuilding a YouTube feed aggregator as a streamlined, local-first PWA deployed on Cloudflare Pages."
 author: "Paul"

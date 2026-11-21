@@ -6,9 +6,9 @@ date:    2026-03-01
 author: "Paul"
 publishDate: 2026-03-01
 tags:
-    - F1
-    - MotorSport
-    - SimRacing
+    - f1
+    - motorsport
+    - simracing
 categories: [ simracing ]
 ---
 

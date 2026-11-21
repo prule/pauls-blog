@@ -4,7 +4,7 @@ date: 2026-05-22T11:00:00+10:00
 publishDate: 2026-05-22
 draft: true
 layout: "post"
-tags: ["Databases", "Migrations", "Deployment", "Architecture"]
+tags: ["databases", "migrations", "deployment", "architecture"]
 categories: ["code"]
 description: "Zero-downtime is a property of how you migrate, not which database you picked. Here's the playbook."
 author: "Paul"

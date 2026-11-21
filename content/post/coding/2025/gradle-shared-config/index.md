@@ -7,9 +7,9 @@ date:    2025-02-08
 author: "Paul"
 publishDate: 2025-02-08
 tags:
-    - Gradle
-    - Kotlin
-    - Java
+    - gradle
+    - kotlin
+    - java
 categories: [ code ]
 ---
 

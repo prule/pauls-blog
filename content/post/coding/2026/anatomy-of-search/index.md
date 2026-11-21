@@ -6,15 +6,15 @@ date:    2026-05-11
 author: "Paul"
 publishDate: 2026-05-11
 tags:
-  - Programming
-  - Clean architecture
-  - LTI
-  - Kotlin
-  - Exposed
-  - Database
-  - KTOR
-  - HATEOAS
-  - Search
+  - programming
+  - clean architecture
+  - lti
+  - kotlin
+  - exposed
+  - database
+  - ktor
+  - hateoas
+  - search
 categories: [ code ]
 draft: false
 ---

@@ -6,9 +6,9 @@ date:    2026-04-20
 author: "Paul"
 publishDate: 2026-04-20
 tags:
-  - Programming
-  - AI
-  - Productivity
+  - programming
+  - ai
+  - productivity
 categories: [ code ]
 draft: false
 ---

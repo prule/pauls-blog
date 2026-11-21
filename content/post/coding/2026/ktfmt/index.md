@@ -6,10 +6,10 @@ date:    2026-04-21
 author: "Paul"
 publishDate: 2026-04-21
 tags:
-  - Kotlin
-  - Programming
+  - kotlin
+  - programming
   - ktfmt
-  - Productivity
+  - productivity
 categories: [ code ]
 ---
 

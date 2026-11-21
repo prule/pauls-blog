@@ -6,10 +6,10 @@ date: 2026-06-08T20:58:00+10:00
 author: "Paul"
 publishDate: 2026-06-08
 tags:
-  - NodeJS
+  - nodejs
   - pnpm
-  - Performance
-  - Productivity
+  - performance
+  - productivity
 categories: [ coding ]
 ---
 

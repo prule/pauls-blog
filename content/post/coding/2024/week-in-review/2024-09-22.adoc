@@ -6,7 +6,7 @@ date:    2024-09-22
 author: "Paul"
 publishDate: 2024-09-22
 tags:
-    - WeekInReview
+    - weekinreview
 categories: [ general ]
 ---
 

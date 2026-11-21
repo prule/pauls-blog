@@ -7,8 +7,8 @@ date:    2025-02-02
 author: "Paul"
 publishDate: 2025-02-02
 tags:
-    - Hugo
-    - Markdown
+    - hugo
+    - markdown
 categories: [ tips ]
 ---
 

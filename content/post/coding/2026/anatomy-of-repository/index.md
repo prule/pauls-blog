@@ -6,12 +6,12 @@ date:    2026-05-15
 author: "Paul"
 publishDate: 2026-05-15
 tags:
-  - Programming
-  - Clean architecture
-  - LTI
-  - Kotlin
-  - Exposed
-  - Database
+  - programming
+  - clean architecture
+  - lti
+  - kotlin
+  - exposed
+  - database
 categories: [ code ]
 draft: false
 ---

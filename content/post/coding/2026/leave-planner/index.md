@@ -7,9 +7,9 @@ date:    2026-01-07
 author: "Paul"
 publishDate: 2026-01-07
 tags:
-    - Web dev
-    - App
-    - LPA
+    - web dev
+    - app
+    - lpa
 categories: [ code ]
 ---
 

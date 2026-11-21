@@ -7,8 +7,8 @@ author: "Paul"
 publishDate: 2026-05-03
 tags:
   - data
-  - Programming
-  - Productivity
+  - programming
+  - productivity
 categories: [ code ]
 ---
 

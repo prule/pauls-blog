@@ -1,7 +1,7 @@
 ---
 title: "Letting Renovate Upgrade My Dev VM"
-date: 2026-11-22T15:20:00+11:00
-publishDate: 2026-11-22
+date: 2026-11-25T15:20:00+11:00
+publishDate: 2026-11-25
 draft: true
 layout: "post"
 tags: ["renovate", "lima", "devvm", "dependencies", "yaml", "regex"]

@@ -1,7 +1,7 @@
 ---
 title: "Names Instead of Port Numbers: Caddy in My Dev VM"
-date: 2026-11-22T16:00:00+11:00
-publishDate: 2026-11-22
+date: 2026-11-27T16:00:00+11:00
+publishDate: 2026-11-27
 draft: true
 layout: "post"
 tags: ["caddy", "lima", "devvm", "networking", "vite", "hugo", "reverse-proxy"]

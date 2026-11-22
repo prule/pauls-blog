@@ -1,7 +1,7 @@
 ---
 title: "Static Analysis as the Agent's Feedback Loop"
-date: 2026-11-22T15:14:37+11:00
-publishDate: 2026-11-22
+date: 2026-11-30T15:14:37+11:00
+publishDate: 2026-11-30
 draft: true
 layout: "post"
 tags: ["ai", "claude-code", "static-analysis", "sonarqube", "pmd", "eslint", "oxlint", "playwright", "code-coverage", "testing"]

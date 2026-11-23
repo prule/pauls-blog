@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": ["github>prule/renovate-config"],
   "ignorePaths": [
     "**/node_modules/**",
     "**/bower_components/**",
@@ -11,15 +11,5 @@
     "**/tests/**",
     "**/__fixtures__/**",
     "content/**"
-  ],
-  "customManagers": [
-    {
-      "description": "Version pins in workflows, each annotated with a `# renovate:` comment (HUGO_VERSION)",
-      "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( extractVersion=(?<extractVersion>\\S+))?\\s+\\w+: \"?(?<currentValue>[^\"\\s]+)\"?"
-      ]
-    }
   ]
 }

@@ -2,7 +2,7 @@
 title: "Secret Scanning Every Commit in My Dev VM with Betterleaks"
 date: 2026-11-22T13:27:45+11:00
 publishDate: 2026-11-22
-draft: true
+draft: false
 layout: "post"
 tags: ["betterleaks", "gitleaks", "security", "git-hooks", "husky", "lima", "claude-code", "ai"]
 categories: ["coding"]

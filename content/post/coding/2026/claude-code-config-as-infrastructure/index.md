@@ -2,7 +2,7 @@
 title: "Claude Code Config as Infrastructure: Rebuilt on Every Boot"
 date: 2026-11-28T16:20:00+11:00
 publishDate: 2026-11-28
-draft: true
+draft: false
 layout: "post"
 tags: ["claude-code", "ai", "devvm", "lima", "skills", "plugins", "claude-md"]
 categories: ["coding"]

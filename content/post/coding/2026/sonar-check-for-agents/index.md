@@ -2,7 +2,7 @@
 title: "sonar-check: Making SonarQube Part of an Agent's Definition of Done"
 date: 2026-11-26T15:40:00+11:00
 publishDate: 2026-11-26
-draft: true
+draft: false
 layout: "post"
 tags: ["sonarqube", "static-analysis", "claude-code", "ai", "devvm", "quality-gates", "docker"]
 categories: ["coding"]

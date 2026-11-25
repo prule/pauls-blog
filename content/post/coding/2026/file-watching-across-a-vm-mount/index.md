@@ -2,7 +2,7 @@
 title: "File Watching Doesn't Cross the Mount: Why My Code Lives in the VM"
 date: 2026-11-29T14:36:01+11:00
 publishDate: 2026-11-29
-draft: true
+draft: false
 layout: "post"
 tags: ["lima", "devvm", "macos", "linux", "inotify", "virtiofs", "vite", "file-watching"]
 categories: ["coding"]

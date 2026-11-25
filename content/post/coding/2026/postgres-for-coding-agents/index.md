@@ -2,7 +2,7 @@
 title: "A Local Postgres for Coding Agents: One Role to Look, One Role to Change"
 date: 2026-11-24T15:00:00+11:00
 publishDate: 2026-11-24
-draft: true
+draft: false
 layout: "post"
 tags: ["postgres", "docker", "lima", "claude-code", "ai", "devvm", "databases"]
 categories: ["coding"]

@@ -2,7 +2,7 @@
 title: "Formatting Belongs in the Test Command, Not Just the Commit Hook"
 date: 2026-11-23T14:23:53+11:00
 publishDate: 2026-11-23
-draft: true
+draft: false
 layout: "post"
 tags: ["formatting", "linting", "spotless", "prettier", "eslint", "gradle", "maven", "pnpm", "git-hooks", "claude-code", "ai"]
 categories: ["coding"]
